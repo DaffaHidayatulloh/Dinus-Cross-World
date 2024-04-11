@@ -10,12 +10,14 @@ public class NPCFollow : MonoBehaviour
     public float stoppingDistance = 2f; // Jarak di mana NPC berhenti
     public BoxCollider2D npcCollider; // Collider NPC
 
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private bool isFollowing = true;
     private bool isPassable = false; // Apakah NPC dapat dilewati saat karakter di atasnya
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         // Membuat collider NPC tidak aktif saat awal permainan
         npcCollider.enabled = false;
@@ -40,6 +42,16 @@ public class NPCFollow : MonoBehaviour
         else
         {
             rb.velocity = Vector2.zero;
+        }
+        float moveHorizontal = Input.GetAxis("Horizontal");
+
+        if (moveHorizontal > 0)
+        {
+            Facing(true); // Menghadap ke kanan
+        }
+        else if (moveHorizontal < 0)
+        {
+            Facing(false); // Menghadap ke kiri
         }
     }
 
@@ -72,6 +84,18 @@ public class NPCFollow : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             SetPassable(false);
+        }
+    }
+    private void Facing(bool isFacingRight)
+    {
+        // Fungsi untuk membalik player
+        if (isFacingRight)
+        {
+            spriteRenderer.flipX = false; // Tidak flip
+        }
+        else
+        {
+            spriteRenderer.flipX = true; // Melakukan flip pada sumbu X
         }
     }
 }

@@ -5,12 +5,43 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
   public float moveSpeed = 5f;
+  private SpriteRenderer spriteRenderer;
 
-  void Update()
-  {
-    float horizontalInput = Input.GetAxis("Horizontal");
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-           
-    transform.Translate(new Vector2(horizontalInput * moveSpeed * Time.deltaTime, 0));
-  }
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("SpriteRenderer not found!");
+        }
+    }
+    private void Update()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(new Vector2(horizontalInput * moveSpeed * Time.deltaTime, 0));
+
+        float moveHorizontal = Input.GetAxis("Horizontal");
+
+        if (moveHorizontal > 0)
+        {
+            Facing(true); // Menghadap ke kanan
+        }
+        else if (moveHorizontal < 0)
+        {
+            Facing(false); // Menghadap ke kiri
+        }
+    }
+    private void Facing(bool isFacingRight)
+    {
+        // Fungsi untuk membalik player
+        if (isFacingRight)
+        {
+            spriteRenderer.flipX = false; // Tidak flip
+        }
+        else
+        {
+            spriteRenderer.flipX = true; // Melakukan flip pada sumbu X
+        }
+    }
 }
