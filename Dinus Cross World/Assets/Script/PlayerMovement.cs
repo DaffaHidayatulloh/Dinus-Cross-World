@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
   public float moveSpeed = 5f;
   private SpriteRenderer spriteRenderer;
+  private Animator animator;
 
     private void Start()
     {
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("SpriteRenderer not found!");
         }
+
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -22,6 +25,16 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(new Vector2(horizontalInput * moveSpeed * Time.deltaTime, 0));
 
         float moveHorizontal = Input.GetAxis("Horizontal");
+        if (horizontalInput != 0)
+        {
+            SetAnimParam(true);
+        }
+
+        if (moveHorizontal == 0) 
+        {
+            SetAnimParam(false);
+        }
+       
 
         if (moveHorizontal > 0)
         {
@@ -43,5 +56,9 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true; // Melakukan flip pada sumbu X
         }
+    }
+    private void SetAnimParam(bool IsMove)
+    {
+        animator.SetBool("IsMove", IsMove);
     }
 }
