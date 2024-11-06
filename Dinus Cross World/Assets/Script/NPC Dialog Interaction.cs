@@ -11,6 +11,7 @@ public class NPCDialogInteraction : MonoBehaviour
     public DialogManager dialogManager; // Reference to the DialogManager script
     public GameObject dialogPanel;
     public GameObject dialogText;
+    public GameObject Nama;
 
     private bool playerInRange = false;
 
@@ -27,6 +28,7 @@ public class NPCDialogInteraction : MonoBehaviour
             dialogPanel.SetActive(true);
             dialogText.SetActive(true);
             dialogManager.ShowIdleDialog();
+            Nama.SetActive(true);
         }
     }
 
@@ -48,6 +50,7 @@ public class NPCDialogInteraction : MonoBehaviour
             playerInRange = false;
             dialogPanel.SetActive(false);
             dialogText.SetActive(false);
+            Nama?.SetActive(false);
         }
     }
 
