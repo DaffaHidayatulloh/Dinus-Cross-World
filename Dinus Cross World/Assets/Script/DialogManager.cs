@@ -16,6 +16,10 @@ public class DialogManager : MonoBehaviour
 
     private bool isDialogInProgress = false; // Flag to prevent dialog from being skipped too quickly
 
+    private Coroutine typingCoroutine; // Menyimpan coroutine mengetik
+
+    public float typingSpeed = 0.05f; // Kecepatan mengetik (dalam detik per karakter)
+
 
 
     private void Update()
@@ -47,19 +51,25 @@ public class DialogManager : MonoBehaviour
     // Method to display the current idle dialog
     public void ShowIdleDialog()
     {
-        isDialogInProgress = true; // Mark dialog as in progress to prevent skipping
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine); // Hentikan coroutine sebelumnya jika ada
+        }
 
-        // Set the text of the UI Text component to the current idle dialog
-        dialogText.text = idleDialogs[currentIdleDialogIndex];
-
-        // Start a coroutine to wait for a short time before allowing the dialog to be skipped
-        StartCoroutine(DialogInProgress());
+        dialogText.text = ""; // Kosongkan teks sebelum mengetik ulang
+        isDialogInProgress = true; // Tandai dialog sedang berlangsung
+        typingCoroutine = StartCoroutine(TypeText(idleDialogs[currentIdleDialogIndex]));
     }
 
-    // Coroutine to mark dialog as no longer in progress after a short delay
-    private System.Collections.IEnumerator DialogInProgress()
+    // Coroutine untuk mengetik teks satu per satu
+    private IEnumerator TypeText(string dialog)
     {
-        yield return new WaitForSeconds(0.5f); // Adjust as needed
-        isDialogInProgress = false;
+        foreach (char letter in dialog.ToCharArray())
+        {
+            dialogText.text += letter; // Tambahkan huruf ke teks
+            yield return new WaitForSeconds(typingSpeed); // Tunggu sesuai kecepatan mengetik
+        }
+
+        isDialogInProgress = false; // Tandai dialog selesai
     }
 }

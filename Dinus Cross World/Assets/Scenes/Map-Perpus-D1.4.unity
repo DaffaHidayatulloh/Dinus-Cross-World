@@ -1300,7 +1300,7 @@ Transform:
   m_GameObject: {fileID: 425835368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.5, y: -2.91, z: -10}
+  m_LocalPosition: {x: -11.9, y: -2.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1529,7 +1529,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -63.787766, y: -0.7600949, z: -10}
+  m_LocalPosition: {x: -11.899992, y: -0.76030326, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2160,6 +2160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactCollider: {fileID: 0}
   interactKey: 101
+  toggleDialogKey: 32
   dialogManager: {fileID: 1064966900}
   dialogPanel: {fileID: 269915147}
   dialogText: {fileID: 1340965400}
@@ -2199,6 +2200,7 @@ MonoBehaviour:
   - Selamat datang, anak muda.
   - Kamu pasti kebingungan.Tidak perlu panik,biar aku jelaskan.
   - Kalau aku juga tidak tau apa-apa
+  typingSpeed: 0.05
 --- !u!4 &1064966901
 Transform:
   m_ObjectHideFlags: 0
@@ -3797,7 +3799,7 @@ Transform:
   m_GameObject: {fileID: 2009291442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.5, y: -2.91, z: 0}
+  m_LocalPosition: {x: -11.9, y: -2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
