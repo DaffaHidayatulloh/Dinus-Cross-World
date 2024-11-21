@@ -2165,6 +2165,7 @@ MonoBehaviour:
   dialogPanel: {fileID: 269915147}
   dialogText: {fileID: 1340965400}
   Nama: {fileID: 230708897}
+  isInStory: 0
 --- !u!1 &1064966899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,10 +2197,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogText: {fileID: 1340965402}
   idleDialogs:
+  - Aku lelah berdiri terus
+  - Kapan aku bisa beristirahat
+  StoryDialogs:
   - Oh, ada lagi yang muncul!
   - Selamat datang, anak muda.
   - Kamu pasti kebingungan.Tidak perlu panik,biar aku jelaskan.
   - Kalau aku juga tidak tau apa-apa
+  - Tapi aku akan tahu bila dikasih tahu!
   typingSpeed: 0.05
 --- !u!4 &1064966901
 Transform:
@@ -2542,7 +2547,7 @@ MonoBehaviour:
     m_LineSpacing: 1.2
   m_Text: 'Test
 
-    Tes'
+    Test'
 --- !u!222 &1340965403
 CanvasRenderer:
   m_ObjectHideFlags: 0

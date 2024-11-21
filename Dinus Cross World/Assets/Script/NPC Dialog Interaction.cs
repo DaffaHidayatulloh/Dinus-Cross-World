@@ -7,28 +7,40 @@ public class NPCDialogInteraction : MonoBehaviour
 {
     public BoxCollider2D interactCollider;
     public KeyCode interactKey = KeyCode.E; // Key to trigger interaction
+    public KeyCode toggleDialogKey = KeyCode.Space;
     public DialogManager dialogManager; // Reference to the DialogManager script
     public GameObject dialogPanel;
     public GameObject dialogText;
     public GameObject Nama;
 
     private bool playerInRange = false;
+    public bool isInStory = false;
 
     private void Start()
     {
         dialogPanel.SetActive(false);
         dialogText.SetActive(false);
+        Nama.SetActive(false);
     }
     void Update()
     {
-        // Check if player is in range and presses the interaction key
+        // Jika pemain berada dalam area dan menekan tombol interaksi
         if (playerInRange && Input.GetKeyDown(interactKey))
         {
             dialogPanel.SetActive(true);
             dialogText.SetActive(true);
-            dialogManager.ShowIdleDialog();
             Nama.SetActive(true);
+
+            if (isInStory)
+            {
+                dialogManager.ShowStoryDialog();
+            }
+            else
+            {
+                dialogManager.ShowIdleDialog();
+            }
         }
+
     }
 
     // Check if player enters the interaction area
@@ -50,16 +62,6 @@ public class NPCDialogInteraction : MonoBehaviour
             dialogPanel.SetActive(false);
             dialogText.SetActive(false);
             Nama?.SetActive(false);
-        }
-    }
-
-    // Menggambar gizmo untuk menunjukkan area interaksi di Scene View
-    void OnDrawGizmosSelected()
-    {
-        if (interactCollider != null)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireCube(interactCollider.bounds.center, interactCollider.bounds.size);
         }
     }
 }

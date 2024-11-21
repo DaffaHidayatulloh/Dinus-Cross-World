@@ -10,15 +10,18 @@ public class DialogManager : MonoBehaviour
 
     // Array for storing dialog texts for idle dialog
     public string[] idleDialogs;
+    public string[] StoryDialogs;
 
     // Index to keep track of current dialog in idleDialogs array
     private int currentIdleDialogIndex = 0;
+    private int currentStoryDialogIndex = 0;
 
     private bool isDialogInProgress = false; // Flag to prevent dialog from being skipped too quickly
 
     private Coroutine typingCoroutine; // Menyimpan coroutine mengetik
 
     public float typingSpeed = 0.05f; // Kecepatan mengetik (dalam detik per karakter)
+    private bool isInStoryMode = false;
 
 
 
@@ -27,24 +30,55 @@ public class DialogManager : MonoBehaviour
         // Check for input to advance to the next idle dialog
         if (Input.GetKeyDown(KeyCode.Space) && !isDialogInProgress)
         {
-            NextIdleDialog();
+            if (isInStoryMode)
+            {
+                NextStoryDialog();
+            }
+            else
+            {
+                NextIdleDialog();
+            }
         }
+    }
+
+    public void ShowStoryDialog()
+    {
+        isInStoryMode = true;
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+
+        dialogText.text = "";
+        isDialogInProgress = true;
+        typingCoroutine = StartCoroutine(TypeText(StoryDialogs[currentStoryDialogIndex]));
+
     }
 
     // Method to show the next idle dialog
     private void NextIdleDialog()
     {
         currentIdleDialogIndex++;
-
-        if (currentIdleDialogIndex < idleDialogs.Length)
+        if (currentIdleDialogIndex >= idleDialogs.Length)
         {
-            ShowIdleDialog();
+            currentIdleDialogIndex = 0; // Reset jika mencapai akhir
+        }
+
+        ShowIdleDialog();
+    }
+
+    private void NextStoryDialog()
+    {
+        currentStoryDialogIndex++;
+        if (currentStoryDialogIndex < StoryDialogs.Length)
+        {
+            ShowStoryDialog();
         }
         else
         {
-            // Reset the index to loop back to the start of the array
-            currentIdleDialogIndex = 0;
-            ShowIdleDialog();
+            // Jika dialog story habis, keluar dari mode story
+            isInStoryMode = false;
+            currentStoryDialogIndex = 0; // Reset ke dialog pertama jika diperlukan
         }
     }
 
