@@ -2199,12 +2199,17 @@ MonoBehaviour:
   idleDialogs:
   - Aku lelah berdiri terus
   - Kapan aku bisa beristirahat
-  StoryDialogs:
+  storyDialogs:
   - Oh, ada lagi yang muncul!
   - Selamat datang, anak muda.
-  - Kamu pasti kebingungan.Tidak perlu panik,biar aku jelaskan.
-  - Kalau aku juga tidak tau apa-apa
-  - Tapi aku akan tahu bila dikasih tahu!
+  - Kamu pasti kebingungan. Tidak perlu panik, biar aku jelaskan
+  - Pertama-tama, kamu berada di Udinus.
+  - Tapi, Udinus di sini tidak seperti yang biasa kamu kenal.
+  - Tempat ini terperangkap di antara dua dimensi yang berbeda.
+  - sebuah wilayah yang terisolasi dari aliran waktu.
+  dialogPanel: {fileID: 269915147}
+  namaPanel: {fileID: 230708897}
+  dialogTextObject: {fileID: 1340965400}
   typingSpeed: 0.05
 --- !u!4 &1064966901
 Transform:
@@ -2536,9 +2541,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 20
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0

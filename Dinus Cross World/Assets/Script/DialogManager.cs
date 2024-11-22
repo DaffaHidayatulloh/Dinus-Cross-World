@@ -5,29 +5,25 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    // Reference to the UI Text component
-    public Text dialogText;
+    public Text dialogText; // UI Text untuk dialog
+    public string[] idleDialogs; // Array dialog idle
+    public string[] storyDialogs; // Array dialog story
 
-    // Array for storing dialog texts for idle dialog
-    public string[] idleDialogs;
-    public string[] StoryDialogs;
+    public GameObject dialogPanel; // Panel dialog (referensi dari NPCDialogInteraction)
+    public GameObject namaPanel; // Nama NPC yang muncul di dialog
+    public GameObject dialogTextObject;
 
-    // Index to keep track of current dialog in idleDialogs array
-    private int currentIdleDialogIndex = 0;
-    private int currentStoryDialogIndex = 0;
-
-    private bool isDialogInProgress = false; // Flag to prevent dialog from being skipped too quickly
-
+    private int currentIdleDialogIndex = 0; // Indeks dialog idle
+    private int currentStoryDialogIndex = 0; // Indeks dialog story
+    private bool isDialogInProgress = false; // Flag dialog sedang berlangsung
     private Coroutine typingCoroutine; // Menyimpan coroutine mengetik
 
-    public float typingSpeed = 0.05f; // Kecepatan mengetik (dalam detik per karakter)
-    private bool isInStoryMode = false;
-
-
+    public float typingSpeed = 0.05f; // Kecepatan mengetik (detik per karakter)
+    private bool isInStoryMode = false; // Status mode story
 
     private void Update()
     {
-        // Check for input to advance to the next idle dialog
+        // Jika tombol Space ditekan
         if (Input.GetKeyDown(KeyCode.Space) && !isDialogInProgress)
         {
             if (isInStoryMode)
@@ -41,69 +37,94 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void ShowStoryDialog()
+    // Menampilkan dialog idle
+    public void ShowIdleDialog()
     {
-        isInStoryMode = true;
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
         }
 
+        currentIdleDialogIndex = 0; // Pastikan mulai dari dialog pertama
         dialogText.text = "";
+        dialogPanel.SetActive(true);
+        namaPanel.SetActive(true);
+        dialogTextObject.SetActive(true);
         isDialogInProgress = true;
-        typingCoroutine = StartCoroutine(TypeText(StoryDialogs[currentStoryDialogIndex]));
-
-    }
-
-    // Method to show the next idle dialog
-    private void NextIdleDialog()
-    {
-        currentIdleDialogIndex++;
-        if (currentIdleDialogIndex >= idleDialogs.Length)
-        {
-            currentIdleDialogIndex = 0; // Reset jika mencapai akhir
-        }
-
-        ShowIdleDialog();
-    }
-
-    private void NextStoryDialog()
-    {
-        currentStoryDialogIndex++;
-        if (currentStoryDialogIndex < StoryDialogs.Length)
-        {
-            ShowStoryDialog();
-        }
-        else
-        {
-            // Jika dialog story habis, keluar dari mode story
-            isInStoryMode = false;
-            currentStoryDialogIndex = 0; // Reset ke dialog pertama jika diperlukan
-        }
-    }
-
-    // Method to display the current idle dialog
-    public void ShowIdleDialog()
-    {
-        if (typingCoroutine != null)
-        {
-            StopCoroutine(typingCoroutine); // Hentikan coroutine sebelumnya jika ada
-        }
-
-        dialogText.text = ""; // Kosongkan teks sebelum mengetik ulang
-        isDialogInProgress = true; // Tandai dialog sedang berlangsung
         typingCoroutine = StartCoroutine(TypeText(idleDialogs[currentIdleDialogIndex]));
     }
 
-    // Coroutine untuk mengetik teks satu per satu
+    // Menampilkan dialog story
+    public void ShowStoryDialog()
+    {
+        isInStoryMode = true; // Aktifkan mode story
+
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+
+        currentStoryDialogIndex = 0; // Pastikan mulai dari dialog pertama
+        dialogText.text = "";
+        dialogPanel.SetActive(true);
+        namaPanel.SetActive(true);
+        dialogTextObject.SetActive(true);
+        isDialogInProgress = true;
+        typingCoroutine = StartCoroutine(TypeText(storyDialogs[currentStoryDialogIndex]));
+    }
+
+    // Pindah ke dialog idle berikutnya
+    private void NextIdleDialog()
+    {
+        currentIdleDialogIndex++;
+        if (currentIdleDialogIndex < idleDialogs.Length)
+        {
+            typingCoroutine = StartCoroutine(TypeText(idleDialogs[currentIdleDialogIndex]));
+        }
+        else
+        {
+            CloseDialog(); // Tutup dialog jika semua dialog selesai
+        }
+    }
+
+    // Pindah ke dialog story berikutnya
+    private void NextStoryDialog()
+    {
+        currentStoryDialogIndex++;
+        if (currentStoryDialogIndex < storyDialogs.Length)
+        {
+            typingCoroutine = StartCoroutine(TypeText(storyDialogs[currentStoryDialogIndex]));
+        }
+        else
+        {
+            isInStoryMode = false; // Kembali ke mode idle setelah dialog selesai
+            CloseDialog(); // Tutup dialog
+        }
+    }
+
+    // Coroutine untuk mengetik teks dengan efek mengetik
     private IEnumerator TypeText(string dialog)
     {
+        dialogText.text = ""; // Reset teks sebelum mengetik ulang
         foreach (char letter in dialog.ToCharArray())
         {
-            dialogText.text += letter; // Tambahkan huruf ke teks
-            yield return new WaitForSeconds(typingSpeed); // Tunggu sesuai kecepatan mengetik
+            dialogText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
         }
 
         isDialogInProgress = false; // Tandai dialog selesai
+    }
+
+    // Menutup dialog dan reset indeks
+    private void CloseDialog()
+    {
+        dialogPanel.SetActive(false);
+        namaPanel.SetActive(false);
+        dialogTextObject.SetActive(false);
+        dialogText.text = ""; // Kosongkan teks
+        
+
+        currentIdleDialogIndex = 0; // Reset indeks idle
+        currentStoryDialogIndex = 0; // Reset indeks story
     }
 }
