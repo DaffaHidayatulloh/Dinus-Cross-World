@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: bf3a00afa7ddca848be25a26b6dadf34
+  - enabled: 1
+    path: Assets/Scenes/Map Depan.unity
+    guid: aba33fac602fa904da9ed59aefd054de
+  - enabled: 1
     path: Assets/Scenes/Map-Perpus-D1.4.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Map Lab Gambar.unity
+    guid: 9eef8046e408876438e946a100a03688
+  - enabled: 1
+    path: Assets/Scenes/Map Galeri-Aula.unity
+    guid: c0e0761194d87114ab138c88c58f5527
+  - enabled: 1
+    path: Assets/Scenes/Map Dalam Kelas D1.4.unity
+    guid: 8f956b5a4c255784a85e871d3c728fe8
+  - enabled: 1
+    path: Assets/Scenes/Map Kantin.unity
+    guid: bf467bf09a0552c4a951b0f3f002c094
   m_configObjects: {}
