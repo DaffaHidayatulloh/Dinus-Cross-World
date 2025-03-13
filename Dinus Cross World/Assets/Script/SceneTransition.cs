@@ -5,15 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-   
-    public string sceneName; 
+    public string sceneName; // Nama scene tujuan
+    private bool isPlayerInRange = false; // Apakah player berada dalam trigger
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player")) // Cek apakah yang masuk adalah player
         {
-            SceneManager.LoadScene(sceneName); 
+            isPlayerInRange = true; // Aktifkan flag saat player masuk area trigger
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) // Cek apakah yang keluar adalah player
+        {
+            isPlayerInRange = false; // Matikan flag saat player keluar area trigger
+        }
+    }
+
+    private void Update()
+    {
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E)) // Cek jika player dalam jangkauan & tekan "E"
+        {
+            SceneManager.LoadScene(sceneName); // Pindah scene
         }
     }
 }
+
 
