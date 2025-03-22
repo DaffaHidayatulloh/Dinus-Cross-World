@@ -12,6 +12,7 @@ public class DialogManager : MonoBehaviour
     public GameObject dialogPanel; // Panel dialog (referensi dari NPCDialogInteraction)
     public GameObject namaPanel; // Nama NPC yang muncul di dialog
     public GameObject dialogTextObject;
+    public GameObject dialogInteraction;
 
     private int currentIdleDialogIndex = 0; // Indeks dialog idle
     private int currentStoryDialogIndex = 0; // Indeks dialog story
@@ -20,6 +21,9 @@ public class DialogManager : MonoBehaviour
 
     public float typingSpeed = 0.05f; // Kecepatan mengetik (detik per karakter)
     private bool isInStoryMode = false; // Status mode story
+
+    private bool isDialogActive = false;
+
 
     private void Update()
     {
@@ -37,9 +41,18 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    public void SetDialogActive(bool state)
+    {
+        isDialogActive = state;
+    }
+
     // Menampilkan dialog idle
     public void ShowIdleDialog()
     {
+        if (isDialogActive) return; // **Cegah dialog dibuka lagi jika sudah aktif**
+
+        SetDialogActive(true);
+
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
@@ -50,6 +63,7 @@ public class DialogManager : MonoBehaviour
         dialogPanel.SetActive(true);
         namaPanel.SetActive(true);
         dialogTextObject.SetActive(true);
+        dialogInteraction.SetActive(false);
         isDialogInProgress = true;
         typingCoroutine = StartCoroutine(TypeText(idleDialogs[currentIdleDialogIndex]));
     }
@@ -57,6 +71,10 @@ public class DialogManager : MonoBehaviour
     // Menampilkan dialog story
     public void ShowStoryDialog()
     {
+        if (isDialogActive) return; // **Cegah dialog dibuka lagi jika sudah aktif**
+
+        SetDialogActive(true);
+
         isInStoryMode = true; // Aktifkan mode story
 
         if (typingCoroutine != null)
@@ -69,8 +87,10 @@ public class DialogManager : MonoBehaviour
         dialogPanel.SetActive(true);
         namaPanel.SetActive(true);
         dialogTextObject.SetActive(true);
+        dialogInteraction.SetActive(false );
         isDialogInProgress = true;
         typingCoroutine = StartCoroutine(TypeText(storyDialogs[currentStoryDialogIndex]));
+
     }
 
     // Pindah ke dialog idle berikutnya
@@ -99,6 +119,7 @@ public class DialogManager : MonoBehaviour
         {
             isInStoryMode = false; // Kembali ke mode idle setelah dialog selesai
             CloseDialog(); // Tutup dialog
+
         }
     }
 
@@ -118,13 +139,15 @@ public class DialogManager : MonoBehaviour
     // Menutup dialog dan reset indeks
     private void CloseDialog()
     {
+        SetDialogActive(false);
         dialogPanel.SetActive(false);
         namaPanel.SetActive(false);
         dialogTextObject.SetActive(false);
         dialogText.text = ""; // Kosongkan teks
-        
+
 
         currentIdleDialogIndex = 0; // Reset indeks idle
         currentStoryDialogIndex = 0; // Reset indeks story
+        dialogInteraction.SetActive(true);
     }
 }

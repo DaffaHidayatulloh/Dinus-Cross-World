@@ -26,9 +26,13 @@ public class SceneTransition : MonoBehaviour
 
     private void Update()
     {
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E)) // Cek jika player dalam jangkauan & tekan "E"
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene(sceneName); // Pindah scene
+            // Simpan posisi dan arah player sebelum berpindah
+            SaveManager.Instance.SavePlayerState(GameObject.FindGameObjectWithTag("Player").transform.position,
+                                                 !GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().flipX);
+
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

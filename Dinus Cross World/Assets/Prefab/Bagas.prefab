@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2472803614851247125}
   - component: {fileID: 4156144774150739267}
   - component: {fileID: 5291087037650978972}
-  - component: {fileID: 5703446957638309900}
   m_Layer: 0
   m_Name: Bagas
   m_TagString: Player
@@ -242,18 +241,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5703446957638309900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4329728013211653934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1125605e0777f94c8e3d4fd4c3dcdce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5735875939393784763
 GameObject:
   m_ObjectHideFlags: 0

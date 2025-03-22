@@ -13,6 +13,7 @@ public class NPCDialogInteraction : MonoBehaviour
     public GameObject dialogText;
     public GameObject Nama;
 
+    private bool isDialogActive = false;
     private bool playerInRange = false;
     public bool isInStory = false;
 
@@ -24,12 +25,15 @@ public class NPCDialogInteraction : MonoBehaviour
     }
     void Update()
     {
+        isDialogActive = false;
         // Jika pemain berada dalam area dan menekan tombol interaksi
-        if (playerInRange && Input.GetKeyDown(interactKey))
+        if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
         {
+            isDialogActive = true;
             dialogPanel.SetActive(true);
             dialogText.SetActive(true);
             Nama.SetActive(true);
+            
 
             if (isInStory)
             {
@@ -58,10 +62,12 @@ public class NPCDialogInteraction : MonoBehaviour
         // Memeriksa apakah objek yang keluar collider adalah pemain
         if (other.CompareTag("Player"))
         {
+            isDialogActive = false;
             playerInRange = false;
             dialogPanel.SetActive(false);
             dialogText.SetActive(false);
             Nama?.SetActive(false);
+            
         }
     }
 }

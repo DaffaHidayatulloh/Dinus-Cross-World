@@ -18,6 +18,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         animator = GetComponent<Animator>();
+
+        (Vector2 lastPosition, bool isFacingRight) = SaveManager.Instance.LoadPlayerState();
+        if (lastPosition != Vector2.zero)
+        {
+            transform.position = lastPosition;
+            Facing(!isFacingRight); // Membalik arah saat kembali ke scene sebelumnya
+        }
     }
     private void Update()
     {
@@ -61,4 +68,10 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("IsMove", IsMove);
     }
+    private void OnDestroy()
+    {
+        // Simpan posisi dan arah player sebelum berpindah scene
+        SaveManager.Instance.SavePlayerState(transform.position, !spriteRenderer.flipX);
+    }
+
 }

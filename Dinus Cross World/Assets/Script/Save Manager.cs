@@ -20,20 +20,22 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public void SavePlayerPosition(Vector2 position)
+    public void SavePlayerState(Vector2 position, bool isFacingRight)
     {
         string sceneKey = SceneManager.GetActiveScene().name + "_Player";
         PlayerPrefs.SetFloat(sceneKey + "_X", position.x);
         PlayerPrefs.SetFloat(sceneKey + "_Y", position.y);
+        PlayerPrefs.SetInt(sceneKey + "_FacingRight", isFacingRight ? 1 : 0);
         PlayerPrefs.Save();
     }
 
-    public Vector2 LoadPlayerPosition()
+    public (Vector2, bool) LoadPlayerState()
     {
         string sceneKey = SceneManager.GetActiveScene().name + "_Player";
         float x = PlayerPrefs.GetFloat(sceneKey + "_X", 0);
         float y = PlayerPrefs.GetFloat(sceneKey + "_Y", 0);
-        return new Vector2(x, y);
+        bool isFacingRight = PlayerPrefs.GetInt(sceneKey + "_FacingRight", 1) == 1;
+        return (new Vector2(x, y), isFacingRight);
     }
 }
 
