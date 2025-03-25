@@ -8,6 +8,8 @@ public class MainMenuManager : MonoBehaviour
     public string sceneName; 
     public void StartGame()
     {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save(); 
         SceneManager.LoadScene(sceneName);
     }
     public void ExitGame ()
