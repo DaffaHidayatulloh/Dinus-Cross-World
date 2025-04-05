@@ -1445,9 +1445,11 @@ GameObject:
   m_Component:
   - component: {fileID: 470838236}
   - component: {fileID: 470838237}
+  - component: {fileID: 470838239}
+  - component: {fileID: 470838238}
   m_Layer: 0
   m_Name: Item Pengaris
-  m_TagString: Untagged
+  m_TagString: Ruler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1520,6 +1522,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &470838238
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470838235}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.013878703, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15420794, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &470838239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470838235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b44b558379f5c14d9bb6dafd398dafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &483310952 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8078790623688369490, guid: fdd7c07d7eeb84449bb118187d23968a, type: 3}
@@ -1768,9 +1827,11 @@ GameObject:
   m_Component:
   - component: {fileID: 639510895}
   - component: {fileID: 639510896}
+  - component: {fileID: 639510898}
+  - component: {fileID: 639510897}
   m_Layer: 0
   m_Name: Extension Udinus dalam Perpus 1920x1080
-  m_TagString: Untagged
+  m_TagString: Terpal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1843,6 +1904,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &639510897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639510894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316bf9c4d14a8a044b053f9aefe47740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToKantin: {fileID: 1628682777}
+--- !u!61 &639510898
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639510894}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.039167285, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.4957983, y: 3.697479}
+    newSize: {x: 16.134455, y: 9.07563}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.660249, y: 3.697479}
+  m_EdgeRadius: 0
 --- !u!1 &660304573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3652,6 +3771,7 @@ GameObject:
   - component: {fileID: 1494156151}
   - component: {fileID: 1494156150}
   - component: {fileID: 1494156149}
+  - component: {fileID: 1494156152}
   m_Layer: 0
   m_Name: UI Indikator Kantin
   m_TagString: Untagged
@@ -3733,6 +3853,19 @@ Transform:
   - {fileID: 1227922616}
   m_Father: {fileID: 639510895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1494156152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494156148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316bf9c4d14a8a044b053f9aefe47740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToKantin: {fileID: 0}
 --- !u!4 &1529907804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8078790623688369490, guid: fdd7c07d7eeb84449bb118187d23968a, type: 3}
@@ -3995,6 +4128,7 @@ GameObject:
   - component: {fileID: 1628682778}
   - component: {fileID: 1628682780}
   - component: {fileID: 1628682779}
+  - component: {fileID: 1628682781}
   m_Layer: 0
   m_Name: UI Indikator Unlocked
   m_TagString: Untagged
@@ -4076,6 +4210,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7030678, y: 4.473532}
   m_EdgeRadius: 0
+--- !u!114 &1628682781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628682777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f0780bfdc7f844c9f9572e1e0d4c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Map Kantin
 --- !u!1 &1636759278
 GameObject:
   m_ObjectHideFlags: 0
@@ -4690,7 +4837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1882696383
 Transform:
   m_ObjectHideFlags: 0
