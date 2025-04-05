@@ -5,8 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - HideSpot
-  - Ruler
-  - Terpal
   layers:
   - Default
   - TransparentFX
