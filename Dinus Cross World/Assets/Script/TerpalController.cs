@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TerpalController : MonoBehaviour
 {
+    public Text warningText;
     public GameObject ToKantin;
     private bool isPlayerInRange = false;
     private bool isOpened = false;
@@ -25,6 +27,10 @@ public class TerpalController : MonoBehaviour
                 Debug.Log("Tombol E ditekan dalam jangkauan!");
                 OpenDoor();
                 PlayerPrefs.SetInt("TerpalOpened", 1);
+            }
+            else
+            {
+                ShowWarning("Kamu butuh penggaris untuk membuka jalan ke Kantin!");
             }
         }
     }
@@ -57,6 +63,24 @@ public class TerpalController : MonoBehaviour
             isPlayerInRange = false;
         }
     }
+
+    private void ShowWarning(string message)
+    {
+        if (warningText != null)
+        {
+            warningText.text = message;
+            StopAllCoroutines(); // agar tidak overlap jika ditekan berulang
+            StartCoroutine(HideWarning());
+        }
+    }
+
+    private IEnumerator HideWarning()
+    {
+        warningText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f); // tampil selama 2 detik
+        warningText.gameObject.SetActive(false);
+    }
 }
+
 
 
