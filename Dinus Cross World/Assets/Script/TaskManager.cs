@@ -7,46 +7,84 @@ public class TaskManager : MonoBehaviour
 
 {
     public Text taskText;
+    private RectTransform taskRect;
+    private CanvasGroup canvasGroup;
+
     private int currentTaskIndex = 0;
 
     private string[] tasks = {
         "Pergi ke kantin!",
-        "Jelajahi kampus!"
+        "Jelajahi kampus!",
+        "Berbicara dengan Clara!"
     };
 
     void Start()
     {
-        // Load task index dari PlayerPrefs
+        taskRect = taskText.GetComponent<RectTransform>();
+        canvasGroup = taskText.GetComponent<CanvasGroup>();
+
         currentTaskIndex = PlayerPrefs.GetInt("TaskIndex", 0);
-        UpdateTaskText();
+        taskText.text = tasks[currentTaskIndex];
     }
 
     public void CompleteTask()
     {
+        if (currentTaskIndex < tasks.Length)
+        {
+            StartCoroutine(AnimateTaskChange());
+        }
+    }
+
+    IEnumerator AnimateTaskChange()
+    {
+        // ANIMASI KELUAR: Geser ke kiri & fade out
+        float duration = 0.5f;
+        float elapsed = 0f;
+        Vector3 startPos = taskRect.anchoredPosition;
+        Vector3 endPos = startPos + new Vector3(-200, 0, 0); // Geser ke kiri
+
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            taskRect.anchoredPosition = Vector3.Lerp(startPos, endPos, t);
+            canvasGroup.alpha = 1 - t;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        taskRect.anchoredPosition = endPos;
+        canvasGroup.alpha = 0;
+
+        // Ganti teks jika masih ada task
         currentTaskIndex++;
-        // Simpan task index ke PlayerPrefs
         PlayerPrefs.SetInt("TaskIndex", currentTaskIndex);
         PlayerPrefs.Save();
 
         if (currentTaskIndex < tasks.Length)
         {
-            UpdateTaskText();
+            taskText.text = tasks[currentTaskIndex];
         }
         else
         {
             taskText.text = "Semua tugas selesai!";
         }
-    }
 
-    void UpdateTaskText()
-    {
-        if (currentTaskIndex < tasks.Length)
+        // Reset posisi ke kanan & fade in
+        elapsed = 0f;
+        Vector3 enterStart = endPos + new Vector3(400, 0, 0); // Muncul dari kanan
+        Vector3 enterEnd = startPos;
+        taskRect.anchoredPosition = enterStart;
+
+        while (elapsed < duration)
         {
-            taskText.text = "" + tasks[currentTaskIndex];
+            float t = elapsed / duration;
+            taskRect.anchoredPosition = Vector3.Lerp(enterStart, enterEnd, t);
+            canvasGroup.alpha = t;
+            elapsed += Time.deltaTime;
+            yield return null;
         }
-        else
-        {
-            taskText.text = "Semua tugas selesai!";
-        }
+
+        taskRect.anchoredPosition = enterEnd;
+        canvasGroup.alpha = 1;
     }
 }
