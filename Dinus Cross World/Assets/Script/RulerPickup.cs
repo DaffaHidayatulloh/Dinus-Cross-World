@@ -5,10 +5,10 @@ using UnityEngine;
 public class RulerPickup : MonoBehaviour
 {
     private bool isPlayerInRange = false;
+    private GameObject player;
 
     void Start()
     {
-        // Jika kunci sudah diambil sebelumnya, maka hilangkan objeknya
         if (PlayerPrefs.GetInt("HasRuler", 0) == 1)
         {
             Destroy(gameObject);
@@ -21,6 +21,16 @@ public class RulerPickup : MonoBehaviour
         {
             Debug.Log("Tombol E ditekan dalam jangkauan!");
             PlayerPrefs.SetInt("HasRuler", 1);
+
+            if (player != null)
+            {
+                PlayerTextController textController = player.GetComponent<PlayerTextController>();
+                if (textController != null)
+                {
+                    textController.ShowText("Aku menemukan sebuah penggaris.");
+                }
+            }
+
             Destroy(gameObject);
         }
     }
@@ -30,6 +40,7 @@ public class RulerPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
+            player = other.gameObject;
         }
     }
 
@@ -38,7 +49,7 @@ public class RulerPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+            player = null;
         }
     }
 }
-

@@ -9,12 +9,19 @@ public class TerpalController : MonoBehaviour
     public GameObject ToKantin;
     private bool isPlayerInRange = false;
     private bool isOpened = false;
+    private bool isWarningShowing = false;
+    private CanvasGroup warningCanvasGroup;
 
     private void Start()
     {
         if (PlayerPrefs.GetInt("TerpalOpened", 0) == 1)
         {
             OpenDoor();
+        }
+
+        if (warningText != null)
+        {
+            warningCanvasGroup = warningText.GetComponent<CanvasGroup>();
         }
     }
 
@@ -66,19 +73,44 @@ public class TerpalController : MonoBehaviour
 
     private void ShowWarning(string message)
     {
-        if (warningText != null)
+        if (warningText != null && !isWarningShowing)
         {
             warningText.text = message;
             StopAllCoroutines(); // agar tidak overlap jika ditekan berulang
-            StartCoroutine(HideWarning());
+            StartCoroutine(AnimateWarning());
         }
     }
 
-    private IEnumerator HideWarning()
+    private IEnumerator AnimateWarning()
     {
+        isWarningShowing = true;
+
         warningText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2f); // tampil selama 2 detik
+        warningCanvasGroup.alpha = 1f;
+
+        RectTransform rectTransform = warningText.GetComponent<RectTransform>();
+        Vector3 startPos = rectTransform.anchoredPosition;
+        Vector3 endPos = startPos + new Vector3(0, 30f, 0); // Naik 30 satuan
+
+        float duration = 2f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            // Gerakkan posisi dan ubah alpha
+            rectTransform.anchoredPosition = Vector3.Lerp(startPos, endPos, t);
+            warningCanvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
+
+            yield return null;
+        }
+
         warningText.gameObject.SetActive(false);
+        // Reset posisi ke awal agar bisa dipakai lagi
+        rectTransform.anchoredPosition = startPos;
+        isWarningShowing = false;
     }
 }
 

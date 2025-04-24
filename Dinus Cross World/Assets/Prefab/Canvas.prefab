@@ -1383,6 +1383,7 @@ GameObject:
   - component: {fileID: 5756212609017387577}
   - component: {fileID: 2656438545333136611}
   - component: {fileID: 641479436447836113}
+  - component: {fileID: 6468799239520172779}
   m_Layer: 0
   m_Name: Task Text
   m_TagString: Untagged
@@ -1451,6 +1452,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Pergi ke kantin!
+--- !u!225 &6468799239520172779
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7205905390419800859}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7556180526854195017
 GameObject:
   m_ObjectHideFlags: 0
