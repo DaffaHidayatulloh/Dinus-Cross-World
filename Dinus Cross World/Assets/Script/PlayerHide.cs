@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerHide : MonoBehaviour
 {
+    public static bool IsHiding = false;
     public KeyCode hideKey = KeyCode.E; // Tombol untuk bersembunyi
     private bool isHiding = false;
     private bool canHide = false;
@@ -33,6 +34,7 @@ public class PlayerHide : MonoBehaviour
     private void ToggleHide()
     {
         isHiding = !isHiding;
+        IsHiding = isHiding;
         if (isHiding)
         {
             spriteRenderer.color = new Color(1f, 1f, 1f, 0.0f); // Transparan
