@@ -15,12 +15,14 @@ public class PlayerHide : MonoBehaviour
     public GameObject Player2;
     private Collider2D playerCollider;
     private Animator animator;
+    private PlayerMovement playerMovement;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>(); // Ambil komponen kontrol
     }
 
     private void Update()
@@ -35,26 +37,26 @@ public class PlayerHide : MonoBehaviour
     {
         isHiding = !isHiding;
         IsHiding = isHiding;
+
         if (isHiding)
         {
             spriteRenderer.color = new Color(1f, 1f, 1f, 0.0f); // Transparan
             Shadow.gameObject.SetActive(false);
             Player2.gameObject.SetActive(true);
-            //animator.SetBool("isMoving", false); // Berhenti bergerak
-            //animator.SetBool("isHiding", true); // Aktifkan animasi sembunyi jika ada
+            if (playerMovement != null) playerMovement.enabled = false; // Nonaktifkan kontrol
         }
         else
         {
-            spriteRenderer.color = new Color(1f, 1f, 1f, 1f); // Kembali normal
+            spriteRenderer.color = new Color(1f, 1f, 1f, 1f); // Normal
             Shadow.gameObject.SetActive(true);
             Player2.gameObject.SetActive(false);
-            //animator.SetBool("isHiding", false);
+            if (playerMovement != null) playerMovement.enabled = true; // Aktifkan kontrol
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("HideSpot")) // Pastikan tempat sembunyi memiliki tag "HideSpot"
+        if (other.CompareTag("HideSpot"))
         {
             canHide = true;
         }

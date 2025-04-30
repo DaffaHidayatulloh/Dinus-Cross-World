@@ -7,6 +7,7 @@ public class TerpalController : MonoBehaviour
 {
     public Text warningText;
     public GameObject ToKantin;
+    public Image coverImage; // UI Image yang akan ditampilkan selama 3 detik
     private bool isPlayerInRange = false;
     private bool isOpened = false;
     private bool isWarningShowing = false;
@@ -23,6 +24,11 @@ public class TerpalController : MonoBehaviour
         {
             warningCanvasGroup = warningText.GetComponent<CanvasGroup>();
         }
+
+        if (coverImage != null)
+        {
+            coverImage.gameObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -32,7 +38,7 @@ public class TerpalController : MonoBehaviour
             if (PlayerPrefs.GetInt("HasRuler", 0) == 1)
             {
                 Debug.Log("Tombol E ditekan dalam jangkauan!");
-                OpenDoor();
+                StartCoroutine(OpenDoorWithCover()); // Gunakan coroutine
                 PlayerPrefs.SetInt("TerpalOpened", 1);
             }
             else
@@ -42,17 +48,34 @@ public class TerpalController : MonoBehaviour
         }
     }
 
+    private IEnumerator OpenDoorWithCover()
+    {
+        // Tampilkan cover selama 3 detik
+        if (coverImage != null)
+        {
+            coverImage.gameObject.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        if (coverImage != null)
+        {
+            coverImage.gameObject.SetActive(false);
+        }
+
+        OpenDoor(); // Buka pintu setelah 3 detik
+    }
+
     private void OpenDoor()
     {
         isOpened = true;
 
-        // Aktifkan objek setelah pintu terbuka
         if (ToKantin != null)
         {
             ToKantin.SetActive(true);
         }
 
-        Destroy(gameObject); // Hapus penghalang pintu
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -90,7 +113,7 @@ public class TerpalController : MonoBehaviour
 
         RectTransform rectTransform = warningText.GetComponent<RectTransform>();
         Vector3 startPos = rectTransform.anchoredPosition;
-        Vector3 endPos = startPos + new Vector3(0, 30f, 0); // Naik 30 satuan
+        Vector3 endPos = startPos + new Vector3(0, 30f, 0);
 
         float duration = 2f;
         float elapsed = 0f;
@@ -100,7 +123,6 @@ public class TerpalController : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
 
-            // Gerakkan posisi dan ubah alpha
             rectTransform.anchoredPosition = Vector3.Lerp(startPos, endPos, t);
             warningCanvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
 
@@ -108,7 +130,6 @@ public class TerpalController : MonoBehaviour
         }
 
         warningText.gameObject.SetActive(false);
-        // Reset posisi ke awal agar bisa dipakai lagi
         rectTransform.anchoredPosition = startPos;
         isWarningShowing = false;
     }
