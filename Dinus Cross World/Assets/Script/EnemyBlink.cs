@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TestTools;
+using UnityEngine.UI;
 
 public class EnemyBlink : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class EnemyBlink : MonoBehaviour
     public float waitTime = 1.5f;
     public Transform leftLimit;
     public Transform rightLimit;
+    public Image jumpscareImage;
 
     private bool isChasing = false;
     private float waitTimer = 0f;
@@ -132,6 +135,7 @@ public class EnemyBlink : MonoBehaviour
             if (PlayerHide.IsHiding) return;
             Time.timeScale = 0f;
             //masukan jumpscare screen disini
+            jumpscareImage.gameObject.SetActive(true);
             Debug.Log("Player menyentuh Enemy! Time Freeze!");
         }
     }
