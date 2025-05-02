@@ -13,6 +13,9 @@ public class EnemyBlink : MonoBehaviour
     public Transform rightLimit;
     public Image jumpscareImage;
 
+    public Image warningImage;            
+    public float fadeSpeed = 2f;
+
     private bool isChasing = false;
     private float waitTimer = 0f;
     private int direction = 0;
@@ -30,10 +33,27 @@ public class EnemyBlink : MonoBehaviour
         if (isChasing)
         {
             waitTimer -= Time.deltaTime;
+            if (warningImage != null)
+            {
+                Color c = warningImage.color;
+                c.a = Mathf.MoveTowards(c.a, 0.5f, fadeSpeed * Time.deltaTime);  // Fade to black (alpha 1)
+                warningImage.color = c;
+            }
             if (waitTimer <= 0f)
             {
                 Blink();
                 waitTimer = waitTime;
+            }
+        }
+
+        else
+        {
+            // Fade out jika tidak sedang mengejar
+            if (warningImage != null)
+            {
+                Color c = warningImage.color;
+                c.a = Mathf.MoveTowards(c.a, 0f, fadeSpeed * Time.deltaTime);  // Fade out
+                warningImage.color = c;
             }
         }
     }
@@ -91,6 +111,13 @@ public class EnemyBlink : MonoBehaviour
         }
 
         transform.position = new Vector2(newX, transform.position.y);
+
+        if (warningImage != null)
+        {
+            Color c = warningImage.color;
+            c.a = 0f;
+            warningImage.color = c;
+        }
     }
 
     private bool CheckIfPlayerPassed(float newX)
