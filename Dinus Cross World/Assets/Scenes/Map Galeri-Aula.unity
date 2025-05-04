@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1902766037}
-  blinkDistance: 4.5
-  waitTime: 1.5
+  blinkDistance: 5.8
+  waitTime: 1.6
   leftLimit: {fileID: 1634247946}
   rightLimit: {fileID: 798517913}
   jumpscareImage: {fileID: 1546398885}
@@ -1458,11 +1458,11 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 657159765333638556, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1546398884}
+      insertIndex: 0
+      addedObject: {fileID: 512515122}
     - targetCorrespondingSourceObject: {fileID: 657159765333638556, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 512515122}
+      addedObject: {fileID: 1546398884}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
 --- !u!114 &651549805 stripped
