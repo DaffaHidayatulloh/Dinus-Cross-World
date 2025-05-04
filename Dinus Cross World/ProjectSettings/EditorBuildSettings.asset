@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map Dalam Kelas D1.4.unity
     guid: 8f956b5a4c255784a85e871d3c728fe8
+  - enabled: 1
+    path: Assets/Scenes/CutScene.unity
+    guid: 4e0da5e1c574f5e4ab685b0b7743267a
   m_configObjects: {}
