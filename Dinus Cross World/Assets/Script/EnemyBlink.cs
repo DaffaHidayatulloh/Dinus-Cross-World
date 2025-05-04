@@ -13,8 +13,7 @@ public class EnemyBlink : MonoBehaviour
     public Transform rightLimit;
     public Image jumpscareImage;
 
-    public Image warningImage;            
-    public float fadeSpeed = 2f;
+    public Image blinkIndicator;
 
     private bool isChasing = false;
     private float waitTimer = 0f;
@@ -33,27 +32,18 @@ public class EnemyBlink : MonoBehaviour
         if (isChasing)
         {
             waitTimer -= Time.deltaTime;
-            if (warningImage != null)
-            {
-                Color c = warningImage.color;
-                c.a = Mathf.MoveTowards(c.a, 0.5f, fadeSpeed * Time.deltaTime);  // Fade to black (alpha 1)
-                warningImage.color = c;
-            }
+            float fadeProgress = 1 - (waitTimer / waitTime);
+            Color color = blinkIndicator.color;
+            color.a = Mathf.Clamp01(fadeProgress);
+            blinkIndicator.color = color;
+
             if (waitTimer <= 0f)
             {
                 Blink();
                 waitTimer = waitTime;
-            }
-        }
 
-        else
-        {
-            // Fade out jika tidak sedang mengejar
-            if (warningImage != null)
-            {
-                Color c = warningImage.color;
-                c.a = Mathf.MoveTowards(c.a, 0f, fadeSpeed * Time.deltaTime);  // Fade out
-                warningImage.color = c;
+                color.a = 0f;
+                blinkIndicator.color = color;
             }
         }
     }
@@ -111,13 +101,6 @@ public class EnemyBlink : MonoBehaviour
         }
 
         transform.position = new Vector2(newX, transform.position.y);
-
-        if (warningImage != null)
-        {
-            Color c = warningImage.color;
-            c.a = 0f;
-            warningImage.color = c;
-        }
     }
 
     private bool CheckIfPlayerPassed(float newX)
@@ -147,6 +130,10 @@ public class EnemyBlink : MonoBehaviour
             direction = (player.position.x > transform.position.x) ? 1 : -1;
             isChasing = true;
             waitTimer = waitTime;
+
+            Color color = blinkIndicator.color;
+            color.a = 0f;
+            blinkIndicator.color = color;
         }
     }
 

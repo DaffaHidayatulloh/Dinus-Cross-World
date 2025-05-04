@@ -286,8 +286,7 @@ MonoBehaviour:
   leftLimit: {fileID: 1634247946}
   rightLimit: {fileID: 798517913}
   jumpscareImage: {fileID: 1546398885}
-  warningImage: {fileID: 512515123}
-  fadeSpeed: 2
+  blinkIndicator: {fileID: 512515123}
 --- !u!61 &110259774
 BoxCollider2D:
   m_ObjectHideFlags: 0
