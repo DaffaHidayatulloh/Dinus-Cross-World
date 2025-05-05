@@ -11,7 +11,6 @@ public class DialogManager : MonoBehaviour
     public GameObject dialogPanel; // Panel dialog (referensi dari NPCDialogInteraction)
     public GameObject namaPanel; // Nama NPC yang muncul di dialog
     public GameObject dialogTextObject;
-    public GameObject dialogInteraction;
 
     private int currentIdleDialogIndex = 0; // Indeks dialog idle
     private bool isDialogInProgress = false; // Flag dialog sedang berlangsung
@@ -51,7 +50,6 @@ public class DialogManager : MonoBehaviour
         dialogPanel.SetActive(true);
         namaPanel.SetActive(true);
         dialogTextObject.SetActive(true);
-        dialogInteraction.SetActive(false);
         isDialogInProgress = true;
         typingCoroutine = StartCoroutine(TypeText(idleDialogs[currentIdleDialogIndex]));
     }
@@ -93,6 +91,5 @@ public class DialogManager : MonoBehaviour
         dialogText.text = ""; // Kosongkan teks
 
         currentIdleDialogIndex = 0; // Reset indeks
-        dialogInteraction.SetActive(true);
     }
 }
