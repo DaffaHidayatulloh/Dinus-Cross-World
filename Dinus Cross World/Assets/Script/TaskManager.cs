@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
-
 {
     public Text taskText;
     private RectTransform taskRect;
     private CanvasGroup canvasGroup;
 
     private int currentTaskIndex = 0;
+
+    public NPCDialogInteraction npcSatpam;
+    public NPCDialogInteraction npcClara;
+    // Tambahkan NPC lain jika ada
 
     private string[] tasks = {
         "Pergi Berbicara Dengan Pak Satpam",
@@ -27,6 +30,8 @@ public class TaskManager : MonoBehaviour
 
         currentTaskIndex = PlayerPrefs.GetInt("TaskIndex", 0);
         taskText.text = tasks[currentTaskIndex];
+
+        UpdateNPCInteractable();
     }
 
     public void CompleteTask()
@@ -39,11 +44,10 @@ public class TaskManager : MonoBehaviour
 
     IEnumerator AnimateTaskChange()
     {
-        // ANIMASI KELUAR: Geser ke kiri & fade out
         float duration = 0.5f;
         float elapsed = 0f;
         Vector3 startPos = taskRect.anchoredPosition;
-        Vector3 endPos = startPos + new Vector3(-200, 0, 0); // Geser ke kiri
+        Vector3 endPos = startPos + new Vector3(-200, 0, 0);
 
         while (elapsed < duration)
         {
@@ -57,7 +61,6 @@ public class TaskManager : MonoBehaviour
         taskRect.anchoredPosition = endPos;
         canvasGroup.alpha = 0;
 
-        // Ganti teks jika masih ada task
         currentTaskIndex++;
         PlayerPrefs.SetInt("TaskIndex", currentTaskIndex);
         PlayerPrefs.Save();
@@ -71,9 +74,11 @@ public class TaskManager : MonoBehaviour
             taskText.text = "Semua tugas selesai!";
         }
 
-        // Reset posisi ke kanan & fade in
+        UpdateNPCInteractable();  // Panggil update NPC
+
+        // Fade in
         elapsed = 0f;
-        Vector3 enterStart = endPos + new Vector3(400, 0, 0); // Muncul dari kanan
+        Vector3 enterStart = endPos + new Vector3(400, 0, 0);
         Vector3 enterEnd = startPos;
         taskRect.anchoredPosition = enterStart;
 
@@ -89,4 +94,23 @@ public class TaskManager : MonoBehaviour
         taskRect.anchoredPosition = enterEnd;
         canvasGroup.alpha = 1;
     }
+
+    private void UpdateNPCInteractable()
+    {
+        //Default semua NPC tidak bisa diajak bicara
+        npcSatpam.SetInteractable(false);
+        npcClara.SetInteractable(false);
+        // Tambahkan reset untuk NPC lain jika ada
+
+        if (currentTaskIndex == 0)
+        {
+            npcSatpam.SetInteractable(true); //Hanya Satpam yang aktif
+        }
+        else if (currentTaskIndex == 1)
+        {
+            npcClara.SetInteractable(true); //Hanya Clara yang aktif
+        }
+        // Tambahkan untuk task lainnya jika ada
+    }
 }
+

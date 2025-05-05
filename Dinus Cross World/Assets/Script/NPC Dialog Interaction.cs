@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class NPCDialogInteraction : MonoBehaviour
 {
     public BoxCollider2D interactCollider;
-    public KeyCode interactKey = KeyCode.E; // Tombol untuk interaksi
-    public DialogManager dialogManager; // Referensi ke DialogManager
+    public KeyCode interactKey = KeyCode.E;
+    public DialogManager dialogManager;
     public GameObject dialogPanel;
     public GameObject dialogText;
     public GameObject Nama;
@@ -16,19 +16,19 @@ public class NPCDialogInteraction : MonoBehaviour
 
     private bool isDialogActive = false;
     private bool playerInRange = false;
+    private bool isInteractable = true; // Tambahkan ini
 
     private void Start()
     {
         dialogPanel.SetActive(false);
         dialogText.SetActive(false);
         Nama.SetActive(false);
-        dialogIndicator.SetActive(false); // Indikator dimulai dalam keadaan tidak aktif
+        dialogIndicator.SetActive(false);
     }
 
     void Update()
     {
-        // Cek hanya jika pemain dalam range dan dialog belum aktif
-        if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
+        if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive && isInteractable) //tambah isInteractable
         {
             isDialogActive = true;
             dialogPanel.SetActive(true);
@@ -36,18 +36,16 @@ public class NPCDialogInteraction : MonoBehaviour
             Nama.SetActive(true);
 
             dialogManager.ShowIdleDialog();
-            dialogIndicator.SetActive(false); // Sembunyikan indikator setelah interaksi
+            dialogIndicator.SetActive(false);
         }
     }
 
-    // Cek jika pemain masuk area interaksi
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            // Tampilkan indikator hanya jika dialog belum aktif
-            if (!isDialogActive)
+            if (!isDialogActive && isInteractable) //cek juga isInteractable
             {
                 dialogIndicator.SetActive(true);
             }
@@ -62,10 +60,21 @@ public class NPCDialogInteraction : MonoBehaviour
             dialogPanel.SetActive(false);
             dialogText.SetActive(false);
             Nama?.SetActive(false);
-            dialogIndicator.SetActive(false); // Sembunyikan indikator saat pemain keluar area interaksi
-            isDialogActive = false; // Reset status dialog saat keluar area
+            dialogIndicator.SetActive(false);
+            isDialogActive = false;
+        }
+    }
+
+    // Tambahkan ini untuk mengontrol dari TaskManager
+    public void SetInteractable(bool state)
+    {
+        isInteractable = state;
+        if (!isInteractable)
+        {
+            dialogIndicator.SetActive(false); // Matikan indikator jika tidak bisa diajak bicara
         }
     }
 }
+
 
 
