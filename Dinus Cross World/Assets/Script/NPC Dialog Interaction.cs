@@ -6,26 +6,30 @@ using UnityEngine.UI;
 public class NPCDialogInteraction : MonoBehaviour
 {
     public BoxCollider2D interactCollider;
-    public KeyCode interactKey = KeyCode.E; // Key to trigger interaction
-    public KeyCode toggleDialogKey = KeyCode.Space;
-    public DialogManager dialogManager; // Reference to the DialogManager script
+    public KeyCode interactKey = KeyCode.E; // Tombol untuk interaksi
+    public DialogManager dialogManager; // Referensi ke DialogManager
     public GameObject dialogPanel;
     public GameObject dialogText;
     public GameObject Nama;
 
+    public GameObject dialogIndicator; // Indikator dialog yang muncul ketika pemain dekat NPC
+    public Text indicatorText; // Teks yang ditampilkan di indikator
+
     private bool isDialogActive = false;
     private bool playerInRange = false;
-    public bool isInStory = false;
 
     private void Start()
     {
         dialogPanel.SetActive(false);
         dialogText.SetActive(false);
         Nama.SetActive(false);
+        dialogIndicator.SetActive(false); // Indikator dimulai dalam keadaan tidak aktif
     }
+
     void Update()
     {
         isDialogActive = false;
+
         // Jika pemain berada dalam area dan menekan tombol interaksi
         if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
         {
@@ -33,33 +37,28 @@ public class NPCDialogInteraction : MonoBehaviour
             dialogPanel.SetActive(true);
             dialogText.SetActive(true);
             Nama.SetActive(true);
-            
 
-            if (isInStory)
-            {
-                dialogManager.ShowStoryDialog();
-            }
-            else
-            {
-                dialogManager.ShowIdleDialog();
-            }
+            dialogManager.ShowIdleDialog();
+            dialogIndicator.SetActive(false); // Sembunyikan indikator setelah interaksi
         }
-
+        else if (playerInRange)
+        {
+            indicatorText.text = "Press E to Talk"; // Instruksi interaksi
+        }
     }
 
-    // Check if player enters the interaction area
+    // Cek jika pemain masuk area interaksi
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Memeriksa apakah objek yang masuk collider adalah pemain
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            dialogIndicator.SetActive(true); // Tampilkan indikator saat pemain dekat NPC
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        // Memeriksa apakah objek yang keluar collider adalah pemain
         if (other.CompareTag("Player"))
         {
             isDialogActive = false;
@@ -67,8 +66,7 @@ public class NPCDialogInteraction : MonoBehaviour
             dialogPanel.SetActive(false);
             dialogText.SetActive(false);
             Nama?.SetActive(false);
-            
+            dialogIndicator.SetActive(false); // Sembunyikan indikator saat pemain keluar area interaksi
         }
     }
 }
-

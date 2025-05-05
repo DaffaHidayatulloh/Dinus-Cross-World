@@ -2859,7 +2859,6 @@ GameObject:
   - component: {fileID: 1025461465}
   - component: {fileID: 1025461464}
   - component: {fileID: 1025461468}
-  - component: {fileID: 1025461469}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -3023,25 +3022,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactCollider: {fileID: 0}
   interactKey: 101
-  toggleDialogKey: 32
   dialogManager: {fileID: 1064966900}
   dialogPanel: {fileID: 269915147}
   dialogText: {fileID: 1340965400}
   Nama: {fileID: 230708897}
-  isInStory: 0
---- !u!114 &1025461469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025461463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79662f05e96de64e85a7267fa518b75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indicator: {fileID: 821538011}
+  dialogIndicator: {fileID: 821538011}
+  indicatorText: {fileID: 0}
 --- !u!1 &1064966899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,14 +3061,6 @@ MonoBehaviour:
   idleDialogs:
   - Hmmp!
   - Jangan berbicara denganku!
-  storyDialogs:
-  - Oh, ada lagi yang muncul!
-  - Selamat datang, anak muda.
-  - Kamu pasti kebingungan. Tidak perlu panik, biar aku jelaskan
-  - Pertama-tama, kamu berada di Udinus.
-  - Tapi, Udinus di sini tidak seperti yang biasa kamu kenal.
-  - Tempat ini terperangkap di antara dua dimensi yang berbeda.
-  - sebuah wilayah yang terisolasi dari aliran waktu.
   dialogPanel: {fileID: 269915147}
   namaPanel: {fileID: 230708897}
   dialogTextObject: {fileID: 1340965400}
@@ -5891,6 +5869,14 @@ PrefabInstance:
     - target: {fileID: 641479436447836113, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 641479436447836113, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 641479436447836113, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 657159765333638556, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
       propertyPath: m_Pivot.x

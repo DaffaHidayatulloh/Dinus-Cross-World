@@ -13,9 +13,11 @@ public class TaskManager : MonoBehaviour
     private int currentTaskIndex = 0;
 
     private string[] tasks = {
-        "Pergi ke kantin!",
-        "Jelajahi kampus!",
-        "Berbicara dengan Clara!"
+        "Pergi Berbicara Dengan Pak Satpam",
+        "Dapatkan Tahu Kuning di Kantin",
+        "Cari Informasi Keberadaan Kepingan Artifact",
+        "Cari Kunci yang Tergeletak di Depan Aula",
+        "Berbicara Dengan Pak Khamadi di Kelas D1.4"
     };
 
     void Start()
