@@ -14,6 +14,7 @@ public class TaskManager : MonoBehaviour
     private string[] tasks = {
         "Pergi Berbicara Dengan Pak Satpam",
         "Dapatkan Tahu Kuning di Kantin",
+        "Bawa Tahu Kuning ke Pak Satpam",
         "Cari Informasi Keberadaan Kepingan Artifact",
         "Cari Kunci yang Tergeletak di Depan Aula",
         "Berbicara Dengan Pak Khamadi di Kelas D1.4"
