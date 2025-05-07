@@ -11,10 +11,6 @@ public class TaskManager : MonoBehaviour
 
     private int currentTaskIndex = 0;
 
-    public NPCDialogInteraction npcSatpam;
-    public NPCDialogInteraction npcClara;
-    // Tambahkan NPC lain jika ada
-
     private string[] tasks = {
         "Pergi Berbicara Dengan Pak Satpam",
         "Dapatkan Tahu Kuning di Kantin",
@@ -22,6 +18,9 @@ public class TaskManager : MonoBehaviour
         "Cari Kunci yang Tergeletak di Depan Aula",
         "Berbicara Dengan Pak Khamadi di Kelas D1.4"
     };
+
+    private NPCDialogInteraction npcSatpam;
+    private NPCDialogInteraction npcClara;
 
     void Start()
     {
@@ -31,7 +30,19 @@ public class TaskManager : MonoBehaviour
         currentTaskIndex = PlayerPrefs.GetInt("TaskIndex", 0);
         taskText.text = tasks[currentTaskIndex];
 
+        FindNPCsInScene();
         UpdateNPCInteractable();
+    }
+
+    private void FindNPCsInScene()
+    {
+        GameObject satpamObj = GameObject.FindGameObjectWithTag("Satpam");
+        if (satpamObj != null)
+            npcSatpam = satpamObj.GetComponent<NPCDialogInteraction>();
+
+        GameObject claraObj = GameObject.FindGameObjectWithTag("Clara");
+        if (claraObj != null)
+            npcClara = claraObj.GetComponent<NPCDialogInteraction>();
     }
 
     public void CompleteTask()
@@ -74,9 +85,8 @@ public class TaskManager : MonoBehaviour
             taskText.text = "Semua tugas selesai!";
         }
 
-        UpdateNPCInteractable();  // Panggil update NPC
+        UpdateNPCInteractable();
 
-        // Fade in
         elapsed = 0f;
         Vector3 enterStart = endPos + new Vector3(400, 0, 0);
         Vector3 enterEnd = startPos;
@@ -97,20 +107,11 @@ public class TaskManager : MonoBehaviour
 
     private void UpdateNPCInteractable()
     {
-        //Default semua NPC tidak bisa diajak bicara
-        npcSatpam.SetInteractable(false);
-        npcClara.SetInteractable(false);
-        // Tambahkan reset untuk NPC lain jika ada
-
-        if (currentTaskIndex == 0)
-        {
-            npcSatpam.SetInteractable(true); //Hanya Satpam yang aktif
-        }
-        else if (currentTaskIndex == 1)
-        {
-            npcClara.SetInteractable(true); //Hanya Clara yang aktif
-        }
-        // Tambahkan untuk task lainnya jika ada
+        if (npcSatpam != null)
+            npcSatpam.enabled = (currentTaskIndex == 0);
+        if (npcClara != null)
+            npcClara.enabled = (currentTaskIndex == 1);
     }
 }
+
 

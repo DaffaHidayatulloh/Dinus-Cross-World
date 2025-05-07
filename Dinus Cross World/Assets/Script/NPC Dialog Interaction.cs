@@ -16,7 +16,6 @@ public class NPCDialogInteraction : MonoBehaviour
 
     private bool isDialogActive = false;
     private bool playerInRange = false;
-    private bool isInteractable = true; // Tambahkan ini
 
     private void Start()
     {
@@ -28,8 +27,8 @@ public class NPCDialogInteraction : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive && isInteractable) //tambah isInteractable
-        {
+        if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
+        { 
             isDialogActive = true;
             dialogPanel.SetActive(true);
             dialogText.SetActive(true);
@@ -45,7 +44,7 @@ public class NPCDialogInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            if (!isDialogActive && isInteractable) //cek juga isInteractable
+            if (!isDialogActive && enabled) 
             {
                 dialogIndicator.SetActive(true);
             }
@@ -65,15 +64,18 @@ public class NPCDialogInteraction : MonoBehaviour
         }
     }
 
-    // Tambahkan ini untuk mengontrol dari TaskManager
-    public void SetInteractable(bool state)
+    private void OnEnable()
     {
-        isInteractable = state;
-        if (!isInteractable)
-        {
-            dialogIndicator.SetActive(false); // Matikan indikator jika tidak bisa diajak bicara
-        }
+        if (dialogIndicator != null)
+            dialogIndicator.SetActive(false);
     }
+
+    private void OnDisable()
+    {
+        if (dialogIndicator != null)
+            dialogIndicator.SetActive(false);
+    }
+
 }
 
 
