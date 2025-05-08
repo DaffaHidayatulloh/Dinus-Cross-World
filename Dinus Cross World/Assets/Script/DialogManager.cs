@@ -20,6 +20,10 @@ public class DialogManager : MonoBehaviour
     private bool isDialogActive = false;
     private bool isTyping = false;
 
+    public PlayerMovement playerMovement;
+    public Animator playerAnimator;
+
+   
     private void Update()
     {
         // Jika tombol Space ditekan
@@ -32,6 +36,16 @@ public class DialogManager : MonoBehaviour
     public void SetDialogActive(bool state)
     {
         isDialogActive = state;
+
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = !state; // Nonaktifkan/aktifkan player movement
+        }
+
+        if (playerAnimator != null && state)
+        {
+            playerAnimator.SetBool("IsMove", false); // Pastikan parameternya sesuai Animator kamu
+        }
     }
 
     // Menampilkan dialog idle
