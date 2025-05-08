@@ -1473,7 +1473,7 @@ MonoBehaviour:
   dialogText: {fileID: 1207899234919245298}
   idleDialogs:
   - Oh, satu lagi yang muncul...
-  - Sepertinya kamu yang terakhir, ya.
+  - Sepertinya kamu yang            terakhir, ya.
   - Sebentar lagi waktunya habis, tinggal hitungan menit.
   dialogPanel: {fileID: 7109312628810279700}
   namaPanel: {fileID: 3948575500652890123}
@@ -1627,6 +1627,10 @@ PrefabInstance:
     - target: {fileID: 2880068913609429638, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756212609017387577, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60.69995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4421,6 +4425,11 @@ MonoBehaviour:
   dialogText: {fileID: 9064954034619107562}
   Nama: {fileID: 3948575500652890123}
   dialogIndicator: {fileID: 6034134912922453682}
+  specialDialogs:
+  - Oh, tahu kuning!
+  - Ehem.Baiklah, karena kamu  sudah memberikannya
+  - Akan kuberi tahu cara untuk  kembali.
+  useSpecialDialog: 0
 --- !u!222 &8724313563162951950
 CanvasRenderer:
   m_ObjectHideFlags: 0
