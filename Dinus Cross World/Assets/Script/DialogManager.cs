@@ -92,4 +92,40 @@ public class DialogManager : MonoBehaviour
 
         currentIdleDialogIndex = 0; // Reset indeks
     }
+
+    public void ShowCustomDialog(string[] customDialogs)
+    {
+        if (isDialogActive) return;
+
+        SetDialogActive(true);
+
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+
+        currentIdleDialogIndex = 0;
+        dialogText.text = "";
+        dialogPanel.SetActive(true);
+        namaPanel.SetActive(true);
+        dialogTextObject.SetActive(true);
+        isDialogInProgress = true;
+        typingCoroutine = StartCoroutine(TypeCustomText(customDialogs));
+    }
+
+    private IEnumerator TypeCustomText(string[] dialogs)
+    {
+        foreach (string dialog in dialogs)
+        {
+            dialogText.text = "";
+            foreach (char letter in dialog.ToCharArray())
+            {
+                dialogText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        }
+
+        CloseDialog();
+    }
 }

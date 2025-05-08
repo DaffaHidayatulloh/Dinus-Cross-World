@@ -109,7 +109,15 @@ public class TaskManager : MonoBehaviour
     private void UpdateNPCInteractable()
     {
         if (npcSatpam != null)
-            npcSatpam.enabled = (currentTaskIndex == 0);
+        {
+            npcSatpam.enabled = (currentTaskIndex == 0 || currentTaskIndex == 2);
+
+            if (currentTaskIndex == 2)
+                npcSatpam.useSpecialDialog = true;
+            else
+                npcSatpam.useSpecialDialog = false;
+        }
+
         if (npcClara != null)
             npcClara.enabled = (currentTaskIndex == 1);
     }

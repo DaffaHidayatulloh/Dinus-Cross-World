@@ -12,8 +12,10 @@ public class NPCDialogInteraction : MonoBehaviour
     public GameObject dialogText;
     public GameObject Nama;
 
-    public GameObject dialogIndicator; // Objek indikator (tanpa teks)
+    public GameObject dialogIndicator;
+    public string[] specialDialogs;
 
+    public bool useSpecialDialog = false;
     private bool isDialogActive = false;
     private bool playerInRange = false;
 
@@ -28,13 +30,20 @@ public class NPCDialogInteraction : MonoBehaviour
     void Update()
     {
         if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
-        { 
+        {
             isDialogActive = true;
             dialogPanel.SetActive(true);
             dialogText.SetActive(true);
             Nama.SetActive(true);
 
-            dialogManager.ShowIdleDialog();
+            if (useSpecialDialog && specialDialogs.Length > 0)
+            {
+                dialogManager.ShowCustomDialog(specialDialogs);
+            }
+            else
+            {
+                dialogManager.ShowIdleDialog();
+            }
             dialogIndicator.SetActive(false);
         }
     }
