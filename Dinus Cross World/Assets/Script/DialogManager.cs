@@ -18,11 +18,12 @@ public class DialogManager : MonoBehaviour
 
     public float typingSpeed = 0.05f; // Kecepatan mengetik (detik per karakter)
     private bool isDialogActive = false;
+    private bool isTyping = false;
 
     private void Update()
     {
         // Jika tombol Space ditekan
-        if (Input.GetKeyDown(KeyCode.Space) && !isDialogInProgress)
+        if (Input.GetKeyDown(KeyCode.Space) && !isDialogInProgress && !isTyping)
         {
             NextIdleDialog();
         }
@@ -71,6 +72,7 @@ public class DialogManager : MonoBehaviour
     // Coroutine untuk mengetik teks dengan efek mengetik
     private IEnumerator TypeText(string dialog)
     {
+        isTyping = true;
         dialogText.text = ""; // Reset teks sebelum mengetik ulang
         foreach (char letter in dialog.ToCharArray())
         {
@@ -79,6 +81,7 @@ public class DialogManager : MonoBehaviour
         }
 
         isDialogInProgress = false; // Tandai dialog selesai
+        isTyping = false;
     }
 
     // Menutup dialog dan reset indeks
@@ -123,7 +126,7 @@ public class DialogManager : MonoBehaviour
                 dialogText.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
             }
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) && !isTyping);
         }
 
         CloseDialog();
