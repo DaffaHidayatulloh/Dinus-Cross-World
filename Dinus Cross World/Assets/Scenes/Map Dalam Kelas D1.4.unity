@@ -263,6 +263,8 @@ MonoBehaviour:
   namaPanel: {fileID: 2532415100107700329}
   dialogTextObject: {fileID: 7504674593530951816}
   typingSpeed: 0.05
+  playerMovement: {fileID: 315546743}
+  playerAnimator: {fileID: 315546742}
 --- !u!1 &75634167
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +404,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 729573127028816727, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
   m_PrefabInstance: {fileID: 315546740}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &315546742 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5291087037650978972, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+  m_PrefabInstance: {fileID: 315546740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &315546743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2472803614851247125, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+  m_PrefabInstance: {fileID: 315546740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c29279ea2869f44a7adff042c7cb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &392392848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2078,8 @@ MonoBehaviour:
   dialogText: {fileID: 7504674593530951816}
   Nama: {fileID: 2532415100107700329}
   dialogIndicator: {fileID: 5068053546260133584}
+  specialDialogs: []
+  useSpecialDialog: 0
 --- !u!114 &7312394640468064110
 MonoBehaviour:
   m_ObjectHideFlags: 0

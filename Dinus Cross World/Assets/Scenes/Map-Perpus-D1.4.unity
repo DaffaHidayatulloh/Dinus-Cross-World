@@ -2619,7 +2619,7 @@ GameObject:
   - component: {fileID: 1064966901}
   - component: {fileID: 1064966900}
   m_Layer: 0
-  m_Name: Dialog NPC Raden Naufal
+  m_Name: Dialog NPC Clara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2645,6 +2645,8 @@ MonoBehaviour:
   namaPanel: {fileID: 1241838662944329596}
   dialogTextObject: {fileID: 6501758029747851165}
   typingSpeed: 0.05
+  playerMovement: {fileID: 8158906151123853892}
+  playerAnimator: {fileID: 8158906151123853891}
 --- !u!4 &1064966901
 Transform:
   m_ObjectHideFlags: 0
@@ -6001,6 +6003,8 @@ MonoBehaviour:
   dialogText: {fileID: 6501758029747851165}
   Nama: {fileID: 1241838662944329596}
   dialogIndicator: {fileID: 8379580888397889989}
+  specialDialogs: []
+  useSpecialDialog: 0
 --- !u!212 &6270017748042954150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6381,6 +6385,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+--- !u!95 &8158906151123853891 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5291087037650978972, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+  m_PrefabInstance: {fileID: 8158906151123853890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8158906151123853892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2472803614851247125, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+  m_PrefabInstance: {fileID: 8158906151123853890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c29279ea2869f44a7adff042c7cb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8379580888397889989
 GameObject:
   m_ObjectHideFlags: 0

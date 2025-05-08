@@ -1437,7 +1437,7 @@ GameObject:
   - component: {fileID: 638190129}
   - component: {fileID: 638190130}
   m_Layer: 0
-  m_Name: Dialog Pak Satpam 1
+  m_Name: Dialog Pak Satpam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1479,6 +1479,8 @@ MonoBehaviour:
   namaPanel: {fileID: 3948575500652890123}
   dialogTextObject: {fileID: 9064954034619107562}
   typingSpeed: 0.05
+  playerMovement: {fileID: 1628090004}
+  playerAnimator: {fileID: 1628090002}
 --- !u!1001 &697399127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2986,6 +2988,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 729573127028816727, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
   m_PrefabInstance: {fileID: 1628089999}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1628090002 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5291087037650978972, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+  m_PrefabInstance: {fileID: 1628089999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1628090004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2472803614851247125, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+  m_PrefabInstance: {fileID: 1628089999}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c29279ea2869f44a7adff042c7cb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1679641837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8078790623688369490, guid: fdd7c07d7eeb84449bb118187d23968a, type: 3}
@@ -4452,7 +4470,7 @@ GameObject:
   - component: {fileID: 266279259486301827}
   - component: {fileID: 8187559653787846333}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: NPC Pak Satpam
   m_TagString: Satpam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

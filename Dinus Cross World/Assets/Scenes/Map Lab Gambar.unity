@@ -1198,6 +1198,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 729573127028816727, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
   m_PrefabInstance: {fileID: 1301846525}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1301846527 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5291087037650978972, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+  m_PrefabInstance: {fileID: 1301846525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1301846528 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2472803614851247125, guid: fd8d34052a05b034fb574d8ce9262193, type: 3}
+  m_PrefabInstance: {fileID: 1301846525}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c29279ea2869f44a7adff042c7cb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1302755960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1830,8 @@ MonoBehaviour:
   namaPanel: {fileID: 4804317973949632}
   dialogTextObject: {fileID: 5408847709848677409}
   typingSpeed: 0.05
+  playerMovement: {fileID: 1301846528}
+  playerAnimator: {fileID: 1301846527}
 --- !u!4 &1840585361
 Transform:
   m_ObjectHideFlags: 0
@@ -2399,6 +2417,8 @@ MonoBehaviour:
   dialogText: {fileID: 5408847709848677409}
   Nama: {fileID: 4804317973949632}
   dialogIndicator: {fileID: 7305036802103370361}
+  specialDialogs: []
+  useSpecialDialog: 0
 --- !u!1 &5408847709848677409
 GameObject:
   m_ObjectHideFlags: 0
