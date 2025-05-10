@@ -1473,8 +1473,16 @@ MonoBehaviour:
   dialogText: {fileID: 1207899234919245298}
   idleDialogs:
   - Oh, satu lagi yang muncul...
-  - Sepertinya kamu yang            terakhir, ya.
-  - Sebentar lagi waktunya habis, tinggal hitungan menit.
+  - Sepertinya kamu yang            terakhir, ya?
+  - Sebentar lagi waktunya habis, tinggal hitungan menit
+  - Tenang saja, jangan panik.    Biar aku jelaskan pelan-pelan
+  - Selamat datang di Universitas Dian Nuswantoro Kediri
+  - Tapi karena aku tidak            mengenalmu
+  - Kamu pasti tidak berasal dari sini
+  - Aku tahu jalan untuk kembali
+  - Tapi sebelum itu, aku butuh      sesuatu darimu!
+  - Beri aku tahu kuning dulu!
+  - Hehe, sudah lama aku tidak    makan itu
   dialogPanel: {fileID: 7109312628810279700}
   namaPanel: {fileID: 3948575500652890123}
   dialogTextObject: {fileID: 9064954034619107562}
@@ -4446,8 +4454,21 @@ MonoBehaviour:
   specialDialogs:
   - Oh, tahu kuning!
   - Ehem.Baiklah, karena kamu  sudah memberikannya
-  - Akan kuberi tahu cara untuk  kembali.
-  useSpecialDialog: 0
+  - Akan kuberi tahu cara untuk  kembali
+  - Kamu harus mencari 4 keping artefak!
+  - Jika disatukan ke 4 keping artefak itu akan berbentuk jam saku
+  - 'Kumpulkan semuanya, dan    kamu bisa kembali pulang... '
+  - Ketempat mu berasal!
+  - Kamu berani mempertanyakan kata-kataku?
+  - 'Aku telah melihat sendiri! '
+  - Salah satu penyintas berhasil kabur dari sini menggunakan artefak itu!
+  - Karena itu ke 4 kepingan       artefak kami bawa
+  - 'Kami sangat terobsesi dengan artefak itu '
+  - Jadi jika kamu ingin mengambilnya maka bersiaplah
+  - Untuk menukarkannya dengan sesuatu yang setimpal!
+  - Apa? aku tidak membawanya
+  - Hanya ini yang bisa kuberitahu, jadi carilah sendiri!
+  useSpecialDialog: 1
 --- !u!222 &8724313563162951950
 CanvasRenderer:
   m_ObjectHideFlags: 0
