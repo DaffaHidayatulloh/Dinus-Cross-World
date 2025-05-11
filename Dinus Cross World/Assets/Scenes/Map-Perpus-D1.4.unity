@@ -2639,8 +2639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogText: {fileID: 3977976050210480773}
   idleDialogs:
-  - Kantin?
-  - Kantin berada di sebelah Perpus
+  - "Kantin\u2026?"
+  - Ah, tentu saja. Letaknya tepat  di sebelah perpus
   dialogPanel: {fileID: 4998599741482871907}
   namaPanel: {fileID: 1241838662944329596}
   dialogTextObject: {fileID: 6501758029747851165}
@@ -4062,7 +4062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1686970931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6142,7 +6142,7 @@ GameObject:
   - component: {fileID: 2613721945927150068}
   - component: {fileID: 6221656846957347274}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: NPC Clara
   m_TagString: Clara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

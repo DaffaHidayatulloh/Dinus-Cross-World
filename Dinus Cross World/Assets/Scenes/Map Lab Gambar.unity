@@ -1830,12 +1830,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogText: {fileID: 2746747221122974009}
   idleDialogs:
-  - Sepertinya kamu bukan          mahasiswa di sini?
-  - Oh lagi?
-  - Pergilah ke pak Hamadi!
-  - Beliau sedang ada di ruang      kelas D1.4
+  - Hm? Kamu bukan anak sini ya?
+  - Datang lagi aja?
+  - Udah, ke Pak Hamadi sana
+  - Beliau di kelas D1.4
   - Tapi kelas itu sedang terkunci
-  - Kalau tidak salah, tadi aku melihat kuncinya tergeletak di depan Aula!
+  - Tadi sih, aku lihat kunci di depan Aula. Coba cek aja!
   dialogPanel: {fileID: 6085598760454262751}
   namaPanel: {fileID: 4804317973949632}
   dialogTextObject: {fileID: 5408847709848677409}

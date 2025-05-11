@@ -260,7 +260,7 @@ MonoBehaviour:
   dialogText: {fileID: 372544873790379408}
   idleDialogs:
   - "Kepingan Artefak, ya? Hmm\u2026 seingatku, ada satu di sini"
-  - Tapi jika kau benar-benar        menginginkannya
+  - Tapi kalau kamu bener-bener mau...
   - Lewati ujianku terlebih dahulu!
   dialogPanel: {fileID: 8593290618671176566}
   namaPanel: {fileID: 2532415100107700329}
