@@ -732,6 +732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Indikator Pintu
       objectReference: {fileID: 0}
+    - target: {fileID: 6167387315015342195, guid: 7bc9e22106867824e9bebc9b878e377d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1806,7 +1810,7 @@ GameObject:
   - component: {fileID: 1840585361}
   - component: {fileID: 1840585360}
   m_Layer: 0
-  m_Name: Dialog Pak Gilang
+  m_Name: Dialog Pak Galang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1825,7 +1829,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 2746747221122974009}
-  idleDialogs: []
+  idleDialogs:
+  - Sepertinya kamu bukan          mahasiswa di sini?
+  - Oh lagi?
+  - Pergilah ke pak Hamadi!
+  - Beliau sedang ada di ruang      kelas D1.4
+  - Tapi kelas itu sedang terkunci
+  - Kalau tidak salah, tadi aku melihat kuncinya tergeletak di depan Aula!
   dialogPanel: {fileID: 6085598760454262751}
   namaPanel: {fileID: 4804317973949632}
   dialogTextObject: {fileID: 5408847709848677409}
@@ -2473,7 +2483,7 @@ GameObject:
   - component: {fileID: 3850360443159464520}
   - component: {fileID: 5151334979738280566}
   m_Layer: 0
-  m_Name: NPC Pak Gilang
+  m_Name: NPC Pak Galang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2624,7 +2634,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pak Gilang
+  m_Text: Pak Galang
 --- !u!1 &7305036802103370361
 GameObject:
   m_ObjectHideFlags: 0

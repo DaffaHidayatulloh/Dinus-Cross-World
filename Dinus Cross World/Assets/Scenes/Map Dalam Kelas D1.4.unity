@@ -258,7 +258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 372544873790379408}
-  idleDialogs: []
+  idleDialogs:
+  - "Kepingan Artefak, ya? Hmm\u2026 seingatku, ada satu di sini"
+  - Tapi jika kau benar-benar        menginginkannya
+  - Lewati ujianku terlebih dahulu!
   dialogPanel: {fileID: 8593290618671176566}
   namaPanel: {fileID: 2532415100107700329}
   dialogTextObject: {fileID: 7504674593530951816}
@@ -2001,7 +2004,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pak Khamadi
+  m_Text: Pak Hamadi
 --- !u!222 &5855412596756781981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2165,7 +2168,7 @@ GameObject:
   - component: {fileID: 1610839449946873569}
   - component: {fileID: 7226258985028990687}
   m_Layer: 0
-  m_Name: NPC Pak Khamadi
+  m_Name: NPC Pak Hamadi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

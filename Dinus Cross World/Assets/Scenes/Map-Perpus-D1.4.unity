@@ -2639,8 +2639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogText: {fileID: 3977976050210480773}
   idleDialogs:
-  - Hmmp!
-  - Jangan berbicara denganku!
+  - Kantin?
+  - Kantin berada di sebelah Perpus
   dialogPanel: {fileID: 4998599741482871907}
   namaPanel: {fileID: 1241838662944329596}
   dialogTextObject: {fileID: 6501758029747851165}
@@ -3498,6 +3498,10 @@ PrefabInstance:
     - target: {fileID: 6167387315015342195, guid: 7bc9e22106867824e9bebc9b878e377d, type: 3}
       propertyPath: m_Name
       value: UI Indikator Pintu (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6167387315015342195, guid: 7bc9e22106867824e9bebc9b878e377d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4392,6 +4396,10 @@ PrefabInstance:
     - target: {fileID: 6167387315015342195, guid: 7bc9e22106867824e9bebc9b878e377d, type: 3}
       propertyPath: m_Name
       value: UI Indikator Pintu (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6167387315015342195, guid: 7bc9e22106867824e9bebc9b878e377d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6313,6 +6321,10 @@ PrefabInstance:
     - target: {fileID: 6167387315015342195, guid: 7bc9e22106867824e9bebc9b878e377d, type: 3}
       propertyPath: m_Name
       value: UI Indikator Pintu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6167387315015342195, guid: 7bc9e22106867824e9bebc9b878e377d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
