@@ -23,7 +23,7 @@ public class DialogManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public Animator playerAnimator;
 
-   
+
     private void Update()
     {
         // Jika tombol Space ditekan
@@ -80,6 +80,7 @@ public class DialogManager : MonoBehaviour
         else
         {
             CloseDialog(); // Tutup dialog jika semua dialog selesai
+            currentIdleDialogIndex = 0;
         }
     }
 
@@ -144,5 +145,19 @@ public class DialogManager : MonoBehaviour
         }
 
         CloseDialog();
+        currentIdleDialogIndex = 0;
+    }
+    public bool IsDialogInProgress()
+    {
+        return isDialogInProgress;
+    }
+
+    public bool IsTyping()
+    {
+        return isTyping;
+    }
+    public bool IsDialogPanelActive()
+    {
+        return dialogPanel != null && dialogPanel.activeSelf;
     }
 }

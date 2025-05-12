@@ -38,10 +38,20 @@ public class NPCDialogInteraction : MonoBehaviour
 
             if (useSpecialDialog && specialDialogs.Length > 0)
             {
+                TaskTriggerOnDialogComplete taskTrigger = GetComponent<TaskTriggerOnDialogComplete>();
+                if (taskTrigger != null)
+                {
+                    taskTrigger.BeginWatch();
+                }
                 dialogManager.ShowCustomDialog(specialDialogs);
             }
             else
             {
+                TaskTriggerOnDialogComplete taskTrigger = GetComponent<TaskTriggerOnDialogComplete>();
+                if (taskTrigger != null)
+                {
+                    taskTrigger.BeginWatch();
+                }
                 dialogManager.ShowIdleDialog();
             }
             dialogIndicator.SetActive(false);

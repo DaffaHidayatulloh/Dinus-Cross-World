@@ -4490,6 +4490,7 @@ GameObject:
   - component: {fileID: 4344586881701216609}
   - component: {fileID: 266279259486301827}
   - component: {fileID: 8187559653787846333}
+  - component: {fileID: 8895053180752006212}
   m_Layer: 0
   m_Name: NPC Pak Satpam
   m_TagString: Satpam
@@ -4497,6 +4498,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8895053180752006212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895053180752006211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d94ef1703e98d44bfd01e6a6c545c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 638190130}
+  taskManager: {fileID: 2020390210}
 --- !u!224 &9047461846399229310
 RectTransform:
   m_ObjectHideFlags: 0
