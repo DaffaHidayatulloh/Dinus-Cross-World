@@ -20,6 +20,7 @@ public class DialogManager : MonoBehaviour
     private bool isDialogActive = false;
     private bool isTyping = false;
 
+    public static event System.Action OnDialogFinished;
     public PlayerMovement playerMovement;
     public Animator playerAnimator;
 
@@ -109,6 +110,7 @@ public class DialogManager : MonoBehaviour
         dialogText.text = ""; // Kosongkan teks
 
         currentIdleDialogIndex = 0; // Reset indeks
+        OnDialogFinished?.Invoke();
     }
 
     public void ShowCustomDialog(string[] customDialogs)
