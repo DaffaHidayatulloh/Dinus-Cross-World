@@ -147,10 +147,8 @@ public class EnemyBlink : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             if (PlayerHide.IsHiding) return;
-            Time.timeScale = 0f;
             //masukan jumpscare screen disini
             jumpscareImage.gameObject.SetActive(true);
-            Debug.Log("Player menyentuh Enemy! Time Freeze!");
         }
     }
 }
