@@ -3191,6 +3191,7 @@ GameObject:
   - component: {fileID: 1546398884}
   - component: {fileID: 1546398886}
   - component: {fileID: 1546398885}
+  - component: {fileID: 1546398887}
   m_Layer: 0
   m_Name: BG Jumpscare
   m_TagString: Untagged
@@ -3258,6 +3259,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546398883}
   m_CullTransparentMesh: 1
+--- !u!114 &1546398887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546398883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3368e6c19be8174fae89f1fd4b25017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueButton: {fileID: 248416170}
+  player: {fileID: 1902766037}
+  respawnPosition: {x: -24.51, y: -2.15}
+  jumpscarePanel: {fileID: 1546398883}
 --- !u!1 &1551697213
 GameObject:
   m_ObjectHideFlags: 0

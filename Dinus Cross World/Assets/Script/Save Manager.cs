@@ -37,5 +37,6 @@ public class SaveManager : MonoBehaviour
         bool isFacingRight = PlayerPrefs.GetInt(sceneKey + "_FacingRight", 1) == 1;
         return (new Vector2(x, y), isFacingRight);
     }
+
 }
 
