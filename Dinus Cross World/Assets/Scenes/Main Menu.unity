@@ -1005,8 +1005,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.24069214, y: -1401.3577}
-  m_SizeDelta: {x: 679.1248, y: 2583.1448}
+  m_AnchoredPosition: {x: -0.24069214, y: -1498.398}
+  m_SizeDelta: {x: 679.1248, y: 2777.2249}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &917882123
 CanvasGroup:
@@ -1053,10 +1053,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "~Dinus Cross World~\r\n\r\nProduced by      Ringin Studios\r\n\r\n~Design~\r\n\r\nGame
+  m_Text: "~Dinus Cross World~\r\n\r\nProduced by      Ringin Studios\r\n\r\n\n~Design~\r\n\r\nGame
     Desinger     Daffa Siubekti\r\n\r\nUI & UX           Naufal R\r\n\r\n\r\n~Art
-    & Animation Charakter~\r\n\r\nDesign Charakter Bagas       Fathony\r\n\r\nDesign
-    Charakter Clara       Fathony\r\n\r\nCharakter Animation Bagas    Fathony\r\n\r\n\r\nDesign
+    & Animation Charakter~\r\n\r\nDesign Charakter Bagas       Fathony\r\n\r\nCharakter
+    Animation Bagas    Fathony\r\n\r\nDesign Charakter Clara       Fathony\r\n\r\n\r\n\r\nDesign
     Charakter Pak Satpam        Al\r\n\r\nCharakter Animation Pak Satpam     Al\r\n\r\nDesign
     Charakter Pak Galang        Al\r\n\r\nCharakter Animation Pak Galang     Al\r\n\r\nDesign
     Charakter Pak Hamadi        Al\r\n\r\nCharakter Animation Pak Hamadi     Al\r\n\r\n\r\nDesign
@@ -1065,12 +1065,12 @@ MonoBehaviour:
     control              Fathony\r\n\r\nGame Tester                  Naufal R\r\n\r\n\r\n~Environment
     Art~\r\n\r\nBackground Campus            Daffa Siubekti\r\n\r\nBackground Classroom        
     Daffa Siubekti\r\n\r\n\r\n~Programmer~\r\n\r\nProgrammer                   Daffa
-    Siubekti\r\n\r\n\r\n~Spesial Thanks~\r\n\r\nPembimbing                   Pak
-    Khamadi\r\n \r\nThanks Too     Blood Effect https://squaremeapixel.itch.io/blood-screen-effects\r\n\r\nThanks
-    Too     Sound Main Menu https://crowshade.itch.io/horror-music-pack\r\n\r\nThanks
-    Too     UI Surat dan Kertas https://srtoasty.itch.io/ui-assets-pack-2\r\n\r\nThanks
-    Too     UI Pixel Keyboard https://dreammix.itch.io/keyboard-keys-for-ui\r\n\r\nThanks
-    Too     Universitas Dian Nuswantoro dan semua dosen maupun staffnya\r\n\n"
+    Siubekti\r\n\r\n\r\n~Audio~\r\n\r\nMain Menu Music     https://crowshade.itch.io/horror-music-pack\r\n\r\nSound
+    Effect                 Pixabay\r\n\r\n\r\n~Spesial Thanks~\r\n\r\nPembimbing                  
+    Pak Khamadi\r\n \r\nThanks Too          Blood Effect https://squaremeapixel.itch.io/blood-screen-effects\r\n\r\nThanks
+    Too          UI Surat dan Kertas https://srtoasty.itch.io/ui-assets-pack-2\r\n\r\nThanks
+    Too          UI Pixel Keyboard https://dreammix.itch.io/keyboard-keys-for-ui\r\n\r\nThanks
+    Too          Universitas Dian Nuswantoro dan semua dosen maupun staffnya\r\n"
 --- !u!222 &917882125
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2018,8 +2018,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creditText: {fileID: 917882122}
   scrollSpeed: 30
-  resetPositionY: -1450
-  endPositionY: 1500
+  resetPositionY: -1550
+  endPositionY: 1550
 --- !u!1 &2045657766
 GameObject:
   m_ObjectHideFlags: 0
