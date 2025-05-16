@@ -151,4 +151,17 @@ public class EnemyBlink : MonoBehaviour
             jumpscareImage.gameObject.SetActive(true);
         }
     }
+    public void ResetChaseState()
+    {
+        isChasing = false;
+        hasPassedHiddenPlayer = false;
+
+        // Reset indikator blink jika perlu
+        if (blinkIndicator != null)
+        {
+            Color color = blinkIndicator.color;
+            color.a = 0f;
+            blinkIndicator.color = color;
+        }
+    }
 }

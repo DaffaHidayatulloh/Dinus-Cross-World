@@ -12,6 +12,10 @@ public class JumpscareHandler : MonoBehaviour
     public Vector2 respawnPosition; // Titik posisi ulang player
     public GameObject jumpscarePanel; // Panel jumpscare yang ingin dimatikan
 
+    public EnemyBlink enemyScript; // Referensi ke script EnemyBlink
+    public Vector2 enemyRespawnPosition; // Posisi ulang enemy
+
+
     private void Start()
     {
         if (continueButton != null)
@@ -22,19 +26,24 @@ public class JumpscareHandler : MonoBehaviour
 
     private void OnContinueButtonPressed()
     {
+        // Reset posisi player
         if (player != null)
         {
-            player.position = respawnPosition; // Reset posisi player
+            player.position = respawnPosition;
         }
 
+        // Reset posisi enemy dan state pengejaran
+        if (enemyScript != null)
+        {
+            enemyScript.transform.position = enemyRespawnPosition;
+            enemyScript.ResetChaseState();
+        }
+
+        // Nonaktifkan panel jumpscare
         if (jumpscarePanel != null)
         {
-            jumpscarePanel.SetActive(false); // Sembunyikan jumpscare
+            jumpscarePanel.SetActive(false);
         }
-
-        // Reset game state lainnya jika perlu, misal musuh berhenti mengejar
-        // atau nyalakan kembali kontrol player
     }
 }
-
 
