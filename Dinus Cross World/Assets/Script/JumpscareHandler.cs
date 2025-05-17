@@ -14,6 +14,8 @@ public class JumpscareHandler : MonoBehaviour
 
     public EnemyBlink enemyScript; // Referensi ke script EnemyBlink
     public Vector2 enemyRespawnPosition; // Posisi ulang enemy
+    public GameObject keyObject;
+    public TaskManager taskManager;
 
 
     private void Start()
@@ -37,6 +39,17 @@ public class JumpscareHandler : MonoBehaviour
         {
             enemyScript.transform.position = enemyRespawnPosition;
             enemyScript.ResetChaseState();
+        }
+
+        PlayerPrefs.DeleteKey("HasKey");
+        if (keyObject != null)
+        {
+            keyObject.SetActive(true);
+        }
+
+        if (taskManager != null)
+        {
+            taskManager.SetTaskIndex(4);
         }
 
         // Nonaktifkan panel jumpscare

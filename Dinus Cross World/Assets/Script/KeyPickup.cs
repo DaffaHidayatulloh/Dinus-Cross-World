@@ -10,10 +10,9 @@ public class KeyPickup : MonoBehaviour
 
     void Start()
     {
-        // Cek apakah tahu sudah diambil sebelumnya
         if (PlayerPrefs.GetInt("HasKey", 0) == 1)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false); // Jangan destroy, cukup nonaktifkan
         }
     }
 
@@ -22,7 +21,7 @@ public class KeyPickup : MonoBehaviour
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Tombol E ditekan dalam jangkauan!");
-            PlayerPrefs.SetInt("HasKey", 1); // Menandai bahwa key sudah diambil
+            PlayerPrefs.SetInt("HasKey", 1); // Simpan bahwa kunci sudah diambil
 
             if (player != null)
             {
@@ -32,10 +31,9 @@ public class KeyPickup : MonoBehaviour
                     textController.ShowText("Aku menemukan sebuah kunci.");
                     taskManager.CompleteTask();
                 }
-
             }
 
-            Destroy(gameObject);
+            gameObject.SetActive(false); // Nonaktifkan key saat diambil
         }
     }
 

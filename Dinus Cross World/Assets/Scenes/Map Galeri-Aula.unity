@@ -3337,6 +3337,8 @@ MonoBehaviour:
   jumpscarePanel: {fileID: 1546398883}
   enemyScript: {fileID: 110259773}
   enemyRespawnPosition: {x: 54.17, y: -1.63}
+  keyObject: {fileID: 1494828049}
+  taskManager: {fileID: 952068628}
 --- !u!1 &1551697213
 GameObject:
   m_ObjectHideFlags: 0

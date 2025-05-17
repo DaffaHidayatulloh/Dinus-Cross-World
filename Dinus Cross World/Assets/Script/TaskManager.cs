@@ -83,7 +83,7 @@ public class TaskManager : MonoBehaviour
         }
         else
         {
-            taskText.text = "Semua tugas selesai!";
+            taskText.text = "";
         }
 
         UpdateNPCInteractable();
@@ -120,6 +120,18 @@ public class TaskManager : MonoBehaviour
 
         if (npcClara != null)
             npcClara.enabled = (currentTaskIndex == 1);
+    }
+    public void SetTaskIndex(int index)
+    {
+        if (index >= 0 && index < tasks.Length)
+        {
+            currentTaskIndex = index;
+            PlayerPrefs.SetInt("TaskIndex", currentTaskIndex);
+            PlayerPrefs.Save();
+
+            taskText.text = tasks[currentTaskIndex];
+            UpdateNPCInteractable();
+        }
     }
 }
 
