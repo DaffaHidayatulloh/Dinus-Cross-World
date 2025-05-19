@@ -1057,11 +1057,11 @@ MonoBehaviour:
     Desinger     Daffa Siubekti\r\n\r\nUI & UX           Naufal R\r\n\r\n\r\n~Art
     & Animation Charakter~\r\n\r\nDesign Charakter Bagas       Fathony\r\n\r\nCharakter
     Animation Bagas    Fathony\r\n\r\nDesign Charakter Clara       Fathony\r\n\r\n\r\n\r\nDesign
-    Charakter Pak Satpam        Al\r\n\r\nCharakter Animation Pak Satpam     Al\r\n\r\nDesign
-    Charakter Pak Galang        Al\r\n\r\nCharakter Animation Pak Galang     Al\r\n\r\nDesign
-    Charakter Pak Hamadi        Al\r\n\r\nCharakter Animation Pak Hamadi     Al\r\n\r\n\r\nDesign
+    Charakter Pak Satpam        Emoet\r\n\r\nCharakter Animation Pak Satpam     Emoet\r\n\r\nDesign
+    Charakter Pak Galang        Emoet\r\n\r\nCharakter Animation Pak Galang     Emoet\r\n\r\nDesign
+    Charakter Pak Hamadi        Emoet\r\n\r\nCharakter Animation Pak Hamadi     Emoet\r\n\r\n\r\nDesign
     Charakter Gondolruwo     Daffa Siubekti\r\n\r\nCharakter Animation Gondolruwo    
-    Al\r\n\r\nCut Scene Animation             Daffa Siubekti\r\n\r\n\r\n~QA Team~\r\n\r\nQuality
+    Emoet\r\n\r\nCut Scene Animation             Daffa Siubekti\r\n\r\n\r\n~QA Team~\r\n\r\nQuality
     control              Fathony\r\n\r\nGame Tester                  Naufal R\r\n\r\n\r\n~Environment
     Art~\r\n\r\nBackground Campus            Daffa Siubekti\r\n\r\nBackground Classroom        
     Daffa Siubekti\r\n\r\n\r\n~Programmer~\r\n\r\nProgrammer                   Daffa
@@ -1588,7 +1588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -311.5476, y: 21.699997}
+  m_AnchoredPosition: {x: -294.33, y: 21.699997}
   m_SizeDelta: {x: 130.7579, y: 54.803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293079177
