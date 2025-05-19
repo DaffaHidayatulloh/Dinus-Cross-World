@@ -925,8 +925,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -718, y: -527}
-  m_SizeDelta: {x: 429.1556, y: 89.8123}
+  m_AnchoredPosition: {x: -743.8, y: -526.6}
+  m_SizeDelta: {x: 429.1556, y: 113.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905668390
 MonoBehaviour:
@@ -961,7 +961,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Beta Version 1.0.0
+  m_Text: "Demo Version 3.25.18\nGame ini adalah karya fiksi.\r"
 --- !u!222 &905668391
 CanvasRenderer:
   m_ObjectHideFlags: 0
