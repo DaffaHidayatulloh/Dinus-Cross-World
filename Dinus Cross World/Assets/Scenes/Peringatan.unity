@@ -250,7 +250,7 @@ MonoBehaviour:
   text2: {fileID: 1279517588}
   text2Group: {fileID: 1279517587}
   fadeDuration: 2
-  displayDuration: 5
+  displayDuration: 6
   nextSceneName: Main Menu
 --- !u!1 &530878726
 GameObject:
@@ -628,20 +628,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '
 
-    
+
 
     Cerita dalam game ini adalah fiksi.
 
-    Beberapa latar
-    tempat mungkin terinspirasi dari lokasi nyata, namun seluruh karakter, peristiwa,
-    dan alur cerita adalah hasil imajinasi dan tidak dimaksudkan untuk mencerminkan
-    kejadian atau individu sebenarnya.
+    Beberapa latar tempat
+    mungkin terinspirasi dari lokasi nyata, namun seluruh karakter, peristiwa, dan
+    alur cerita adalah hasil imajinasi dan tidak dimaksudkan untuk mencerminkan kejadian
+    atau individu sebenarnya.
 
-    
 
-    Jika terdapat kemiripan nama,
-    karakter, atau peristiwa dengan kehidupan nyata, hal tersebut adalah kebetulan
-    semata dan tidak disengaja.'
+
+    Jika terdapat kemiripan nama, karakter, atau
+    peristiwa dengan kehidupan nyata, hal tersebut adalah kebetulan semata dan tidak
+    disengaja.'
 --- !u!222 &1088802543
 CanvasRenderer:
   m_ObjectHideFlags: 0
