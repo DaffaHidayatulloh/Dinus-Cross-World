@@ -481,7 +481,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -6
-  m_Sprite: {fileID: 21300000, guid: 50d1245bde7446748bf88e40ca896d89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc45b362b9757fc4ead3ec2d8c525d8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -583,7 +583,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 679c6730fd9bfe040994da23710b1ec4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dd1e063f7bdd3848b06f0cc8de9c266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -652,7 +652,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: a65a254be2d85ec49bd659f90fcfc22f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e0775fc890b1af4dbfeea1afc7725ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -925,7 +925,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.3774242, y: -4.308443}
+  m_Offset: {x: -3.3774242, y: -4.287636}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -936,7 +936,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.832294, y: 0.36467934}
+  m_Size: {x: 22.832294, y: 0.40629387}
   m_EdgeRadius: 0
 --- !u!4 &887857428
 Transform:
@@ -1216,7 +1216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e07b0eb30f9880f47af7764578c58ac5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c22767f301ee742479f3c27bc503c774, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1685,6 +1685,10 @@ PrefabInstance:
     - target: {fileID: 2880068913609429638, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756212609017387577, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60.69995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
