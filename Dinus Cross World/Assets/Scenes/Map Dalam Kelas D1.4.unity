@@ -247,8 +247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.48, y: -4.8}
-  m_SizeDelta: {x: 206.5453, y: 56.5972}
+  m_AnchoredPosition: {x: 144.76485, y: -4.8}
+  m_SizeDelta: {x: 237.1149, y: 56.5972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19004621
 MonoBehaviour:
@@ -283,7 +283,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 'x = -4/x = 1/2
+
+'
 --- !u!222 &19004622
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -362,7 +364,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2017
+  m_Text: 'x = 2/x = 3
+
+'
 --- !u!222 &31666965
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -484,7 +488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165.4, y: 249.2}
+  m_AnchoredPosition: {x: 117.3, y: 249.2}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49457775
@@ -964,8 +968,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.48, y: -4.8}
-  m_SizeDelta: {x: 206.5453, y: 56.5972}
+  m_AnchoredPosition: {x: 137.42982, y: -4.8}
+  m_SizeDelta: {x: 222.4448, y: 56.5972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149852293
 MonoBehaviour:
@@ -1000,7 +1004,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2020
+  m_Text: 'x = -1/x = -6
+
+'
 --- !u!222 &149852294
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1407,7 +1413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165.4, y: 289.4}
+  m_AnchoredPosition: {x: 117.3, y: 271}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324616907
@@ -1646,7 +1652,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rebois
+  m_Text: 'x = 2/x = -2
+
+'
 --- !u!222 &361944925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2288,7 +2296,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3. Apa merk sampo Bapak Galang?
+  m_Text: '3. x^2 - 4x - 5 = 0, Berapakah nilai dari x?
+
+'
 --- !u!222 &446601677
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2335,7 +2345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.2, y: 189.1}
+  m_AnchoredPosition: {x: -253.2, y: 177.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &463142768
@@ -2871,7 +2881,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1. Udinus Kediri berdiri pada tahun?
+  m_Text: '1. x^2 + 5x + 6 = 0, Berapakah nilai dari x?
+
+'
 --- !u!222 &772802752
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3436,8 +3448,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.48, y: -4.8}
-  m_SizeDelta: {x: 206.5453, y: 56.5972}
+  m_AnchoredPosition: {x: 134.2499, y: -4.8}
+  m_SizeDelta: {x: 216.085, y: 56.5972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970532852
 MonoBehaviour:
@@ -3464,7 +3476,7 @@ MonoBehaviour:
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -3472,7 +3484,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1945
+  m_Text: 'x = -2/x = -3
+
+'
 --- !u!222 &970532853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3519,7 +3533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165.4, y: 154.09}
+  m_AnchoredPosition: {x: 117.3, y: 154.09}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988612649
@@ -3832,7 +3846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165.4, y: 186.4}
+  m_AnchoredPosition: {x: 117.3, y: 186.4}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051212928
@@ -3951,8 +3965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.48, y: -4.8}
-  m_SizeDelta: {x: 206.5453, y: 56.5972}
+  m_AnchoredPosition: {x: 138.1902, y: -4.8}
+  m_SizeDelta: {x: 223.9657, y: 56.5972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056935131
 MonoBehaviour:
@@ -3987,7 +4001,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Detol
+  m_Text: ' x = 1/x = -5
+
+'
 --- !u!222 &1056935132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4443,7 +4459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165.4, y: 189.1}
+  m_AnchoredPosition: {x: 117.3, y: 177.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1227784946
@@ -4641,7 +4657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165.4, y: 287.8}
+  m_AnchoredPosition: {x: 117.3, y: 287.8}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243605290
@@ -5615,7 +5631,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pantene
+  m_Text: 'x = 5/x = -1
+
+'
 --- !u!222 &1449360724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6152,7 +6170,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "2. Ada berapa prodi di Udinus \n   Kediri?"
+  m_Text: '2. 2x^2 - 7x - 4 = 0, Berapakah nilai dari x?
+
+'
 --- !u!222 &1527860817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6199,7 +6219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.2, y: 289.4}
+  m_AnchoredPosition: {x: -253.2, y: 271}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553762833
@@ -6438,7 +6458,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: x = 1/x = -4
 --- !u!222 &1581559705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6635,8 +6655,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.48, y: -4.8}
-  m_SizeDelta: {x: 206.5453, y: 56.5972}
+  m_AnchoredPosition: {x: 147.70418, y: -4.8}
+  m_SizeDelta: {x: 242.9936, y: 56.5972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626038107
 MonoBehaviour:
@@ -6671,7 +6691,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 'x = 4/x = -1/2
+
+'
 --- !u!222 &1626038108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7004,7 +7026,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pramex
+  m_Text: 'x = -5/x = 1
+
+'
 --- !u!222 &1690532578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7754,7 +7778,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2000
+  m_Text: 'x = 1/x = 6
+
+'
 --- !u!222 &1995893846
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8186,7 +8212,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 'x = 2/x = -2
+
+'
 --- !u!222 &2141885443
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -133,6 +133,10 @@ public class TaskManager : MonoBehaviour
             UpdateNPCInteractable();
         }
     }
+    public int GetCurrentTaskIndex()
+    {
+        return currentTaskIndex;
+    }
 }
 
 
