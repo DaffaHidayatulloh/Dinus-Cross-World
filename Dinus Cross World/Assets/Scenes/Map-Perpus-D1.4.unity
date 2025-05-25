@@ -1004,6 +1004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294712315}
   - component: {fileID: 294712314}
+  - component: {fileID: 294712316}
   m_Layer: 0
   m_Name: Background Udinus dalamD1.4
   m_TagString: Untagged
@@ -1086,6 +1087,21 @@ Transform:
   - {fileID: 82729502}
   m_Father: {fileID: 95339920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &294712316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294712313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c102660252dea941adf5b1126bdb05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskManager: {fileID: 193840015}
+  targetTaskIndex: 1
+  objectToActivate: {fileID: 470838235}
 --- !u!1 &315941471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6365,7 +6381,11 @@ MonoBehaviour:
   dialogText: {fileID: 6501758029747851165}
   Nama: {fileID: 1241838662944329596}
   dialogIndicator: {fileID: 8379580888397889989}
-  specialDialogs: []
+  specialDialogs:
+  - Aula?
+  - Kamu tinggal ke lab gambar
+  - Lalu dari lab gambar
+  - kamu bisa lurus!
   useSpecialDialog: 0
 --- !u!212 &6270017748042954150
 SpriteRenderer:

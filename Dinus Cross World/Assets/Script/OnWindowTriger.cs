@@ -5,10 +5,11 @@ using UnityEngine;
 public class OnWindowTriger : MonoBehaviour
 {
     public TaskManager taskManager; // Referensi ke TaskManager
-    public int targetTaskIndex = 2; // Index untuk task "Bawa Tahu Kuning ke Pak Satpam"
     public GameObject objectJendela; // GameObject kosong yang mengandung collider
     public GameObject objectJendela2;
     public GameObject objectJendela3;
+    private int[] validTaskIndices = { 2, 3 };
+
 
     private void Start()
     {
@@ -20,9 +21,20 @@ public class OnWindowTriger : MonoBehaviour
         if (taskManager == null)
             return;
 
-        bool shouldBeActive = taskManager.GetCurrentTaskIndex() == targetTaskIndex;
+        int currentTask = taskManager.GetCurrentTaskIndex();
+        bool shouldBeActive = IsValidTaskIndex(currentTask);
         SetObjectsActive(shouldBeActive);
     }
+    private bool IsValidTaskIndex(int index)
+    {
+        foreach (int validIndex in validTaskIndices)
+        {
+            if (index == validIndex)
+                return true;
+        }
+        return false;
+    }
+
     private void SetObjectsActive(bool isActive)
     {
         if (objectJendela != null)

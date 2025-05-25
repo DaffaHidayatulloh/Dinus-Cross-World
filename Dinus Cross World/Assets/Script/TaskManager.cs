@@ -119,8 +119,16 @@ public class TaskManager : MonoBehaviour
         }
 
         if (npcClara != null)
-            npcClara.enabled = (currentTaskIndex == 1);
+        {
+            npcClara.enabled = (currentTaskIndex == 1 || currentTaskIndex == 4);
+
+            if (currentTaskIndex == 4)
+                npcClara.useSpecialDialog = true;
+            else
+                npcClara.useSpecialDialog = false;
+        }
     }
+
     public void SetTaskIndex(int index)
     {
         if (index >= 0 && index < tasks.Length)
