@@ -8,11 +8,17 @@ public class KeyPickup : MonoBehaviour
     private GameObject player;
     public TaskManager taskManager;
 
+    public GameObject Gondolruwo;
+
     void Start()
     {
         if (PlayerPrefs.GetInt("HasKey", 0) == 1)
         {
             gameObject.SetActive(false); // Jangan destroy, cukup nonaktifkan
+            if (Gondolruwo != null)
+            {
+                Gondolruwo.SetActive(true); // Aktifkan juga object lain jika key sudah pernah diambil
+            }
         }
     }
 
@@ -31,6 +37,10 @@ public class KeyPickup : MonoBehaviour
                     textController.ShowText("Aku menemukan sebuah kunci.");
                     taskManager.CompleteTask();
                 }
+            }
+            if (Gondolruwo != null)
+            {
+                Gondolruwo.SetActive(true); // Aktifkan object lain
             }
 
             gameObject.SetActive(false); // Nonaktifkan key saat diambil
