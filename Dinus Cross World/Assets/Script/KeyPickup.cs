@@ -9,16 +9,16 @@ public class KeyPickup : MonoBehaviour
     public TaskManager taskManager;
 
     public GameObject Gondolruwo;
+    public CutSceneIntroGondolruwo cutsceneManager;
 
     void Start()
     {
+        if (Gondolruwo != null)
+            Gondolruwo.SetActive(false);
+
         if (PlayerPrefs.GetInt("HasKey", 0) == 1)
         {
             gameObject.SetActive(false); // Jangan destroy, cukup nonaktifkan
-            if (Gondolruwo != null)
-            {
-                Gondolruwo.SetActive(true); // Aktifkan juga object lain jika key sudah pernah diambil
-            }
         }
     }
 
@@ -42,6 +42,9 @@ public class KeyPickup : MonoBehaviour
             {
                 Gondolruwo.SetActive(true); // Aktifkan object lain
             }
+
+            if (cutsceneManager != null)
+                cutsceneManager.PlayKeyPickupCutscene();
 
             gameObject.SetActive(false); // Nonaktifkan key saat diambil
         }

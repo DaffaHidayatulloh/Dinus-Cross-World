@@ -16,6 +16,7 @@ public class JumpscareHandler : MonoBehaviour
     public Vector2 enemyRespawnPosition; // Posisi ulang enemy
     public GameObject keyObject;
     public TaskManager taskManager;
+    public GameObject Gondolruwo;
 
 
     private void Start()
@@ -50,6 +51,11 @@ public class JumpscareHandler : MonoBehaviour
         if (taskManager != null)
         {
             taskManager.SetTaskIndex(4);
+        }
+
+        if (Gondolruwo != null)
+        {
+            Gondolruwo.SetActive(false);
         }
 
         // Nonaktifkan panel jumpscare
