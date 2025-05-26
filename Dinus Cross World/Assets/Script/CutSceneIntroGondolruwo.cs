@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CutSceneIntroGondolruwo : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class CutSceneIntroGondolruwo : MonoBehaviour
     public Animator playerAnimator;
 
     public EnemyBlink[] enemiesToDisable;
+
+    [Header("Text")]
+    public Text legacyUIText;
+    public float fadeDuration = 1f;
+    public Vector3 targetScale = Vector3.one;
 
     public void PlayKeyPickupCutscene()
     {
@@ -60,5 +66,41 @@ public class CutSceneIntroGondolruwo : MonoBehaviour
             if (enemy != null)
                 enemy.enabled = true;
         }
+        StartCoroutine(FadeInUIText());
     }
+    private IEnumerator FadeInUIText()
+    {
+        if (legacyUIText == null)
+            yield break;
+
+        legacyUIText.gameObject.SetActive(true);
+
+        Color baseColor = legacyUIText.color;
+        float halfDuration = fadeDuration * 0.5f;
+
+        Vector3 startScale = Vector3.zero;
+        legacyUIText.rectTransform.localScale = startScale;
+
+        float timer = 0f;
+        while (timer < fadeDuration)
+        {
+            float t = timer / fadeDuration;
+            legacyUIText.rectTransform.localScale = Vector3.Lerp(startScale, targetScale, t);
+
+            float alpha;
+            if (t < 0.5f)
+                alpha = Mathf.Lerp(0f, 1f, t * 2f); // Fade in
+            else
+                alpha = Mathf.Lerp(1f, 0f, (t - 0.5f) * 2f); // Fade out
+
+            legacyUIText.color = new Color(baseColor.r, baseColor.g, baseColor.b, alpha);
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        legacyUIText.gameObject.SetActive(false); // Sembunyikan setelah selesai
+    }
+
+
 }

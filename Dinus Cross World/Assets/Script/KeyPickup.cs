@@ -13,8 +13,6 @@ public class KeyPickup : MonoBehaviour
 
     void Start()
     {
-        if (Gondolruwo != null)
-            Gondolruwo.SetActive(false);
 
         if (PlayerPrefs.GetInt("HasKey", 0) == 1)
         {
