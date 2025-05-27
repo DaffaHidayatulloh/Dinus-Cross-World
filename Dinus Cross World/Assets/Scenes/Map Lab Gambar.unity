@@ -2050,6 +2050,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcObject: {fileID: 5597035638700304520}
+  virtualCamera: {fileID: 189218434}
+  zoomSize: 3.5
+  zoomDuration: 0.1
+  zoomHoldTime: 0.5
+  playerMovement: {fileID: 1301846528}
+  playerAnimator: {fileID: 1301846527}
 --- !u!61 &2101899050
 BoxCollider2D:
   m_ObjectHideFlags: 0
