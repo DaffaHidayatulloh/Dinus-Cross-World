@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 2046148131142238209}
   - component: {fileID: 3929594930893016637}
   - component: {fileID: 4060238394811892300}
+  - component: {fileID: 642055039418719030}
   m_Layer: 5
   m_Name: Notifikasi
   m_TagString: Untagged
@@ -521,3 +522,15 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!225 &642055039418719030
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514116819831221732}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
