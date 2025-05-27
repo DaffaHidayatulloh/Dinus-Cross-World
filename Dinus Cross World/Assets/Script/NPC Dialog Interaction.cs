@@ -29,7 +29,14 @@ public class NPCDialogInteraction : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
+            if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
+            {
+                TriggerDialog();
+            }
+    }
+    public void TriggerDialog()
+    {
+        if (!isDialogActive && playerInRange)
         {
             isDialogActive = true;
             dialogPanel.SetActive(true);
@@ -57,6 +64,7 @@ public class NPCDialogInteraction : MonoBehaviour
             dialogIndicator.SetActive(false);
         }
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
