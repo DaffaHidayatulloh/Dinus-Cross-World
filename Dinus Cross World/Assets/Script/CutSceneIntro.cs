@@ -8,8 +8,8 @@ public class CutSceneIntro : MonoBehaviour
 {
     public MonoBehaviour playerMovementScript;
     public Text dialogText;
-    public string[] dialogLines;        // dialog sebelum kamera berpindah
-    public string[] postDialogLines;    // dialog setelah kamera kembali
+    public string[] dialogLines;
+    public string[] postDialogLines;
     public float textDisplayDuration = 3f;
     public float fadeDuration = 0.5f;
 
@@ -18,13 +18,26 @@ public class CutSceneIntro : MonoBehaviour
     public float cameraHoldDuration = 3f;
     public int cameraPriorityBoost = 20;
 
+    public float zoomSize = 3f;
+    public float zoomDuration = 0.5f;
+
+    private float originalMainZoom;
+    private float originalTargetZoom;
+
     private Color originalColor;
     private int originalMainPriority;
     private int originalTargetPriority;
 
+    public GameObject playerObject;
+    public float flipInterval = 0.3f; // waktu antar flip
+    public float flipDuration = 2f;
+
+
     private void Start()
     {
         originalColor = dialogText.color;
+        originalMainZoom = mainCamera.m_Lens.OrthographicSize;
+        originalTargetZoom = targetCamera.m_Lens.OrthographicSize;
         StartCoroutine(PlayCutscene());
     }
 
@@ -32,6 +45,11 @@ public class CutSceneIntro : MonoBehaviour
     {
         if (playerMovementScript != null)
             playerMovementScript.enabled = false;
+
+        // Zoom in kedua kamera
+        yield return StartCoroutine(ZoomBothCameras(originalMainZoom, zoomSize, zoomDuration));
+
+        StartCoroutine(FlipPlayerBriefly());
 
         // Dialog pertama
         foreach (string line in dialogLines)
@@ -52,13 +70,16 @@ public class CutSceneIntro : MonoBehaviour
         targetCamera.Priority = originalTargetPriority;
         mainCamera.Priority = originalMainPriority + cameraPriorityBoost;
 
-        yield return new WaitForSeconds(0.5f); // jeda transisi balik
+        yield return new WaitForSeconds(0.5f);
 
         // Dialog kedua
         foreach (string line in postDialogLines)
         {
             yield return StartCoroutine(ShowTextWithFade(line));
         }
+
+        // Zoom out kedua kamera
+        yield return StartCoroutine(ZoomBothCameras(zoomSize, originalMainZoom, zoomDuration));
 
         if (playerMovementScript != null)
             playerMovementScript.enabled = true;
@@ -92,4 +113,42 @@ public class CutSceneIntro : MonoBehaviour
 
         dialogText.text = "";
     }
+
+    IEnumerator ZoomBothCameras(float fromSize, float toSize, float duration)
+    {
+        float t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float size = Mathf.Lerp(fromSize, toSize, t / duration);
+            mainCamera.m_Lens.OrthographicSize = size;
+            targetCamera.m_Lens.OrthographicSize = size;
+            yield return null;
+        }
+        mainCamera.m_Lens.OrthographicSize = toSize;
+        targetCamera.m_Lens.OrthographicSize = toSize;
+    }
+    IEnumerator FlipPlayerBriefly()
+    {
+        float timer = 0f;
+        bool flipped = false;
+        Vector3 originalScale = playerObject.transform.localScale;
+
+        while (timer < flipDuration)
+        {
+            flipped = !flipped;
+            Vector3 scale = originalScale;
+            scale.x *= flipped ? -1 : 1;
+            playerObject.transform.localScale = scale;
+
+            yield return new WaitForSeconds(flipInterval);
+            timer += flipInterval;
+        }
+
+        // Pastikan kembali ke arah asli
+        playerObject.transform.localScale = originalScale;
+    }
+
+
 }
+
