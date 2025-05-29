@@ -32,17 +32,39 @@ public class CutSceneIntro : MonoBehaviour
     public float flipInterval = 0.3f; // waktu antar flip
     public float flipDuration = 2f;
 
+    public Image fadePanel;
+    public float fadeInDuration = 1f;
+
+    public GameObject pauseMenuUI;
+    public GameObject taskUI;
+
+    private string cutsceneKey = "Cutscene_Intro";
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey(cutsceneKey) || PlayerPrefs.GetInt(cutsceneKey) == 0)
+        {
+            StartCoroutine(PlayCutscene());
+        }
+        else
+        {
+            // Pastikan kontrol player aktif dan UI juga muncul langsung
+            playerMovementScript.enabled = true;
+            pauseMenuUI.SetActive(true);
+            taskUI.SetActive(true);
+        }
         originalColor = dialogText.color;
         originalMainZoom = mainCamera.m_Lens.OrthographicSize;
         originalTargetZoom = targetCamera.m_Lens.OrthographicSize;
-        StartCoroutine(PlayCutscene());
     }
 
     IEnumerator PlayCutscene()
     {
+        pauseMenuUI.SetActive(false);
+        taskUI.SetActive(false);
+
+        yield return StartCoroutine(FadeInFromBlack());
+
         if (playerMovementScript != null)
             playerMovementScript.enabled = false;
 
@@ -81,8 +103,14 @@ public class CutSceneIntro : MonoBehaviour
         // Zoom out kedua kamera
         yield return StartCoroutine(ZoomBothCameras(zoomSize, originalMainZoom, zoomDuration));
 
+        pauseMenuUI.SetActive(true);
+        taskUI.SetActive(true);
+
         if (playerMovementScript != null)
             playerMovementScript.enabled = true;
+
+        PlayerPrefs.SetInt(cutsceneKey, 1);
+        PlayerPrefs.Save();
     }
 
     IEnumerator ShowTextWithFade(string line)
@@ -148,7 +176,26 @@ public class CutSceneIntro : MonoBehaviour
         // Pastikan kembali ke arah asli
         playerObject.transform.localScale = originalScale;
     }
+    IEnumerator FadeInFromBlack()
+    {
+        fadePanel.gameObject.SetActive(true);
+        Color color = fadePanel.color;
+        color.a = 1f;
+        fadePanel.color = color;
 
+        float t = 0f;
+        while (t < fadeInDuration)
+        {
+            t += Time.deltaTime;
+            color.a = Mathf.Lerp(1f, 0f, t / fadeInDuration);
+            fadePanel.color = color;
+            yield return null;
+        }
+
+        color.a = 0f;
+        fadePanel.color = color;
+        fadePanel.gameObject.SetActive(false);
+    }
 
 }
 

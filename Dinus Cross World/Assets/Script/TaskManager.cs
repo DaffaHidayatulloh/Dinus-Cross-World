@@ -17,7 +17,8 @@ public class TaskManager : MonoBehaviour
         "Bawa Tahu Kuning ke Pak Satpam",
         "Cari Informasi Keberadaan Kepingan Artifact",
         "Cari Kunci yang Tergeletak di Depan Aula",
-        "Berbicara Dengan Pak Khamadi di Kelas D1.4"
+        "Berbicara Dengan Pak Hamadi di Kelas D1.4",
+        "Kerjakan Soal dari Pak Hamadi"
     };
 
     private NPCDialogInteraction npcSatpam;
