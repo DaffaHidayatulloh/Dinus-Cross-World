@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public string sceneName; 
+    public string sceneName;
     public void StartGame()
     {
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save(); 
-        SceneManager.LoadScene(sceneName);
+        PlayerPrefs.SetString("SceneToLoad", sceneName); // Simpan nama scene tujuan
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("Loading"); // Panggil scene loading
     }
     public void ExitGame ()
     {
