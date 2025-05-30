@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CheckBoxController : MonoBehaviour
@@ -9,46 +10,44 @@ public class CheckBoxController : MonoBehaviour
     public class AnswerButton
     {
         public Button button;
-        public GameObject checkmarkOverlay; // UI Image di atas button
+        public GameObject checkmarkOverlay;
     }
 
-    public AnswerButton[] answerButtons; // Isi semua button dan overlay-nya di Inspector
-    public int correctIndex = 0;         // Index jawaban yang benar
-    public Text resultText;              // UI Text untuk hasil
+    public AnswerButton[] answerButtons;
+    public int correctIndex = 0;
+    public Text resultText;
+
+    public UnityEvent<bool> OnAnswered; // Event untuk memberitahu hasil jawaban
+
+    private bool hasAnswered = false;
 
     void Start()
     {
         for (int i = 0; i < answerButtons.Length; i++)
         {
-            int index = i; // Capture index
+            int index = i;
             answerButtons[i].button.onClick.AddListener(() => OnButtonClicked(index));
-            answerButtons[i].checkmarkOverlay.SetActive(false); // Pastikan semua overlay tidak aktif saat awal
+            answerButtons[i].checkmarkOverlay.SetActive(false);
         }
     }
 
     void OnButtonClicked(int index)
     {
-        // Nonaktifkan semua overlay terlebih dahulu
+        if (hasAnswered) return; // Hanya bisa menjawab sekali
+        hasAnswered = true;
+
         foreach (var ab in answerButtons)
         {
             ab.checkmarkOverlay.SetActive(false);
         }
 
-        // Aktifkan overlay pada button yang dipilih
         answerButtons[index].checkmarkOverlay.SetActive(true);
 
-        // Cek jawaban
-        if (index == correctIndex)
-        {
-            Debug.Log("Jawaban Benar!");
-            if (resultText != null)
-                resultText.text = "Jawaban Benar!";
-        }
-        else
-        {
-            Debug.Log("Jawaban Salah!");
-            if (resultText != null)
-                resultText.text = "Jawaban Salah!";
-        }
+        bool isCorrect = index == correctIndex;
+
+        if (resultText != null)
+            resultText.text = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
+
+        OnAnswered.Invoke(isCorrect);
     }
 }

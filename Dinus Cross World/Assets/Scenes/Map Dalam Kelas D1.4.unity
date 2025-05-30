@@ -1811,6 +1811,9 @@ MonoBehaviour:
     checkmarkOverlay: {fileID: 1676439329}
   correctIndex: 0
   resultText: {fileID: 0}
+  OnAnswered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &392392848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,6 +2597,7 @@ GameObject:
   - component: {fileID: 559858448}
   - component: {fileID: 559858450}
   - component: {fileID: 559858449}
+  - component: {fileID: 559858451}
   m_Layer: 0
   m_Name: Kertas
   m_TagString: Untagged
@@ -2727,6 +2731,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.9375}
   m_EdgeRadius: 0
+--- !u!114 &559858451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559858446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986ccf7fb3419044e8b0d75e98ef3089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToActivate: {fileID: 1412655042}
 --- !u!1 &710296826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5781,6 +5798,9 @@ MonoBehaviour:
     checkmarkOverlay: {fileID: 1091896230}
   correctIndex: 0
   resultText: {fileID: 0}
+  OnAnswered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1496858927
 GameObject:
   m_ObjectHideFlags: 0
@@ -6388,6 +6408,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1568862358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568862361}
+  - component: {fileID: 1568862360}
+  - component: {fileID: 1568862362}
+  m_Layer: 0
+  m_Name: Triger hantu Bangku
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1568862360
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568862358}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.8155589, y: 0.4537202}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6311178, y: 1.9074404}
+  m_EdgeRadius: 0
+--- !u!4 &1568862361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568862358}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.13, y: -3.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1568862362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568862358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2c07405ac094646aefbbf51fe47b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToActivate: {fileID: 1716666608}
 --- !u!1 &1581559702
 GameObject:
   m_ObjectHideFlags: 0
@@ -6766,6 +6877,9 @@ MonoBehaviour:
     checkmarkOverlay: {fileID: 1351472872}
   correctIndex: 2
   resultText: {fileID: 0}
+  OnAnswered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1676439329
 GameObject:
   m_ObjectHideFlags: 0
@@ -7052,7 +7166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1716666609
 Transform:
   m_ObjectHideFlags: 0
@@ -8142,6 +8256,86 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2113623731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113623732}
+  - component: {fileID: 2113623733}
+  - component: {fileID: 2113623734}
+  - component: {fileID: 2113623735}
+  m_Layer: 0
+  m_Name: StoryManagemen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2113623732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113623731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.669719, y: -2.590029, z: 0.124287665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2113623733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113623731}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c102660252dea941adf5b1126bdb05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskManager: {fileID: 773599469}
+  targetTaskIndex: 6
+  objectToActivate: {fileID: 1568862358}
+--- !u!114 &2113623734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113623731}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c102660252dea941adf5b1126bdb05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskManager: {fileID: 773599469}
+  targetTaskIndex: 6
+  objectToActivate: {fileID: 559858446}
+--- !u!114 &2113623735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113623731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c2e9294f8a9b64097d23d65d381848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questions:
+  - {fileID: 392093150}
+  - {fileID: 1631245284}
+  - {fileID: 1473967679}
 --- !u!1 &2141885440
 GameObject:
   m_ObjectHideFlags: 0
@@ -8893,6 +9087,7 @@ GameObject:
   - component: {fileID: 3000462377140842755}
   - component: {fileID: 1610839449946873569}
   - component: {fileID: 7226258985028990687}
+  - component: {fileID: 7969482241964669986}
   m_Layer: 0
   m_Name: NPC Pak Hamadi
   m_TagString: Untagged
@@ -8900,6 +9095,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7969482241964669986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969482241964669985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d94ef1703e98d44bfd01e6a6c545c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 72642168}
+  taskManager: {fileID: 773599469}
 --- !u!4 &8078790624291324846
 Transform:
   m_ObjectHideFlags: 0
@@ -9042,3 +9251,5 @@ SceneRoots:
   - {fileID: 1041660732}
   - {fileID: 1716666609}
   - {fileID: 559858447}
+  - {fileID: 1568862361}
+  - {fileID: 2113623732}
