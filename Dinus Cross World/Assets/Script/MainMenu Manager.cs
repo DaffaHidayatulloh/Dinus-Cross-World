@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     public string sceneName;
+    public void Start()
+    {
+        AudioManager.instance.PlayBGM();
+    }
     public void StartGame()
     {
+        AudioManager.instance.StopBGM();
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetString("SceneToLoad", sceneName); // Simpan nama scene tujuan
         PlayerPrefs.Save();
