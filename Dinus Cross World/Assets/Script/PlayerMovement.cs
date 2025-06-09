@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
   public float moveSpeed = 5f;
   private SpriteRenderer spriteRenderer;
   private Animator animator;
-
     private bool isWalking = false;
     private bool wasWalking = false;
 
@@ -88,5 +87,4 @@ public class PlayerMovement : MonoBehaviour
         // Simpan posisi dan arah player sebelum berpindah scene
         SaveManager.Instance.SavePlayerState(transform.position, !spriteRenderer.flipX);
     }
-
 }

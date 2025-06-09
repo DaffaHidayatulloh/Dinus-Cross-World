@@ -423,7 +423,7 @@ MonoBehaviour:
   bgmList:
   - {fileID: 8300000, guid: f2381fe0dfd84244792f708e245b3dc3, type: 3}
   sfxClips: []
-  walkClip: {fileID: 8300000, guid: ea5fdd57ecdddb04d90d9492a484c090, type: 3}
+  walkClip: {fileID: 8300000, guid: 277fe369d235df5478c8900bb5c8c534, type: 3}
   rainClips:
   - {fileID: 8300000, guid: c39a7777f91c0c748b319a2796a64e86, type: 3}
 --- !u!4 &133869094
@@ -453,7 +453,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0

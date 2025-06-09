@@ -23,6 +23,9 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Hujan")]
     public AudioClip[] rainClips;
 
+    private Coroutine walkFadeCoroutine;
+
+
     private void Awake()
     {
         // Singleton pattern
@@ -81,10 +84,33 @@ public class AudioManager : MonoBehaviour
         {
             walkSource.clip = walkClip;
             walkSource.loop = true;
+            walkSource.volume = 0f; // mulai dari volume 0
             walkSource.Play();
+
+            // Mulai fade in
+            if (walkFadeCoroutine != null)
+            {
+                StopCoroutine(walkFadeCoroutine);
+            }
+            walkFadeCoroutine = StartCoroutine(FadeInWalkSound(0.5f)); // durasi 0.5 detik
         }
     }
 
+    private IEnumerator FadeInWalkSound(float duration)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            walkSource.volume = Mathf.Lerp(0f, 1f, time / duration);
+            yield return null;
+        }
+        walkSource.volume = 1f;
+    }
+    public bool IsWalkSoundPlaying()
+    {
+        return walkSource.isPlaying;
+    }
     // Menghentikan audio langkah
     public void StopWalkSound()
     {
