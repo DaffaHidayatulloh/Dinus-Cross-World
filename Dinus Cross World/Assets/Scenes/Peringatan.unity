@@ -422,6 +422,7 @@ MonoBehaviour:
   rainSource: {fileID: 133869096}
   bgmList:
   - {fileID: 8300000, guid: f2381fe0dfd84244792f708e245b3dc3, type: 3}
+  - {fileID: 8300000, guid: ea2688b6c84221c46afa210831c9cbfd, type: 3}
   sfxClips: []
   walkClip: {fileID: 8300000, guid: 277fe369d235df5478c8900bb5c8c534, type: 3}
   rainClips:

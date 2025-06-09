@@ -54,6 +54,7 @@ public class CutSceneIntro : MonoBehaviour
             taskUI.SetActive(true);
         }
         AudioManager.instance.PlayRainSound(0);
+        AudioManager.instance.PlayBGM(1);
         originalColor = dialogText.color;
         originalMainZoom = mainCamera.m_Lens.OrthographicSize;
         originalTargetZoom = targetCamera.m_Lens.OrthographicSize;

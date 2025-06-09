@@ -60,6 +60,9 @@ public class PauseMenu : MonoBehaviour
     public void ExitToMainMenu()
     {
         Time.timeScale = 1f;
+        AudioManager.instance.StopBGM();
+        AudioManager.instance.StopWalkSound();
+        AudioManager.instance.StopRainSound();
         SceneManager.LoadScene("Main Menu"); // Pastikan ada scene bernama "MainMenu"
     }
 }
