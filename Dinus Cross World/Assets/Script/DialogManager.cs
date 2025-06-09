@@ -20,6 +20,9 @@ public class DialogManager : MonoBehaviour
     private bool isDialogActive = false;
     private bool isTyping = false;
 
+    private float typingSoundCooldown = 0.5f; // jeda minimal antar suara
+    private float lastTypingSoundTime = -1f;
+
     public static event System.Action OnDialogFinished;
     public PlayerMovement playerMovement;
     public Animator playerAnimator;
@@ -93,6 +96,11 @@ public class DialogManager : MonoBehaviour
         foreach (char letter in dialog.ToCharArray())
         {
             dialogText.text += letter;
+            if (Time.time - lastTypingSoundTime >= typingSoundCooldown)
+            {
+                AudioManager.instance.PlayTypingSound();
+                lastTypingSoundTime = Time.time;
+            }
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -141,6 +149,11 @@ public class DialogManager : MonoBehaviour
             foreach (char letter in dialog.ToCharArray())
             {
                 dialogText.text += letter;
+                if (Time.time - lastTypingSoundTime >= typingSoundCooldown)
+                {
+                    AudioManager.instance.PlayTypingSound();
+                    lastTypingSoundTime = Time.time;
+                }
                 yield return new WaitForSeconds(typingSpeed);
             }
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) && !isTyping);

@@ -23,6 +23,9 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Hujan")]
     public AudioClip[] rainClips;
 
+    [Header("Audio Typing")]
+    public AudioClip typingClip;
+
     private Coroutine walkFadeCoroutine;
 
 
@@ -135,5 +138,14 @@ public class AudioManager : MonoBehaviour
             rainSource.Stop();
         }
     }
+
+    public void PlayTypingSound()
+    {
+        if (typingClip != null)
+        {
+            sfxSource.PlayOneShot(typingClip);
+        }
+    }
+
 }
 

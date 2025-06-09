@@ -427,6 +427,7 @@ MonoBehaviour:
   walkClip: {fileID: 8300000, guid: 277fe369d235df5478c8900bb5c8c534, type: 3}
   rainClips:
   - {fileID: 8300000, guid: c39a7777f91c0c748b319a2796a64e86, type: 3}
+  typingClip: {fileID: 8300000, guid: 4569d32d437794141966e8e800ccf289, type: 3}
 --- !u!4 &133869094
 Transform:
   m_ObjectHideFlags: 0
