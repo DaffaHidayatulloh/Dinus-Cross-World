@@ -8,13 +8,24 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource bgmSource;
     public AudioSource sfxSource;
+    public AudioSource walkSource;
+    public AudioSource rainSource;
 
-    public AudioClip backgroundMusic;
+    [Header("Daftar BGM")]
+    public AudioClip[] bgmList;
+
+    [Header("Daftar SFX")]
     public AudioClip[] sfxClips;
+
+    [Header("Audio Jalan Kaki")]
+    public AudioClip walkClip;
+
+    [Header("Audio Hujan")]
+    public AudioClip[] rainClips;
 
     private void Awake()
     {
-        // Singleton pattern agar AudioManager tidak dobel saat pindah scene
+        // Singleton pattern
         if (instance == null)
         {
             instance = this;
@@ -27,31 +38,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    // Memainkan BGM dari index tertentu
+    public void PlayBGM(int index)
     {
-        //PlayBGM();
-    }
-
-    // Memainkan background music yang di-loop
-    public void PlayBGM()
-    {
-        if (bgmSource != null && backgroundMusic != null)
+        if (bgmList.Length > index && bgmList[index] != null)
         {
-            bgmSource.clip = backgroundMusic;
+            bgmSource.clip = bgmList[index];
             bgmSource.loop = true;
             bgmSource.Play();
         }
     }
 
-    // Memainkan sound effect sekali
-    public void PlaySFX(int index)
-    {
-        if (sfxSource != null && sfxClips.Length > index)
-        {
-            sfxSource.PlayOneShot(sfxClips[index]);
-        }
-    }
-
+    // Menghentikan BGM
     public void StopBGM()
     {
         if (bgmSource.isPlaying)
@@ -60,9 +58,56 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void StopAllSFX()
+    // Memainkan sound effect dari index tertentu
+    public void PlaySFX(int index)
     {
-        sfxSource.Stop();
+        if (sfxClips.Length > index && sfxClips[index] != null)
+        {
+            sfxSource.PlayOneShot(sfxClips[index]);
+        }
+    }
+
+    // Pause / Unpause BGM
+    public void ToggleBGM()
+    {
+        if (bgmSource.isPlaying)
+            bgmSource.Pause();
+        else
+            bgmSource.UnPause();
+    }
+    public void PlayWalkSound()
+    {
+        if (walkClip != null && !walkSource.isPlaying)
+        {
+            walkSource.clip = walkClip;
+            walkSource.loop = true;
+            walkSource.Play();
+        }
+    }
+
+    // Menghentikan audio langkah
+    public void StopWalkSound()
+    {
+        if (walkSource.isPlaying)
+        {
+            walkSource.Stop();
+        }
+    }
+    public void PlayRainSound(int index)
+    {
+        if (rainClips.Length > index && rainClips[index] != null)
+        {
+            rainSource.clip = rainClips[index];
+            rainSource.loop = true;
+            rainSource.Play();
+        }
+    }
+    public void StopRainSound()
+    {
+        if (rainSource.isPlaying)
+        {
+            rainSource.Stop();
+        }
     }
 }
 

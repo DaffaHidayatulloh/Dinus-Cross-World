@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
   private SpriteRenderer spriteRenderer;
   private Animator animator;
 
+    private bool isWalking = false;
+    private bool wasWalking = false;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -50,6 +53,18 @@ public class PlayerMovement : MonoBehaviour
         else if (moveHorizontal < 0)
         {
             Facing(false); // Menghadap ke kiri
+        }
+
+        wasWalking = isWalking;
+        isWalking = Mathf.Abs(Input.GetAxis("Horizontal")) > 0.01f;
+
+        if (isWalking && !wasWalking)
+        {
+            AudioManager.instance.PlayWalkSound();
+        }
+        else if (!isWalking && wasWalking)
+        {
+            AudioManager.instance.StopWalkSound();
         }
     }
     private void Facing(bool isFacingRight)
