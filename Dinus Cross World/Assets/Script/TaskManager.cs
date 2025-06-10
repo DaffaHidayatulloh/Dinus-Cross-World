@@ -18,7 +18,8 @@ public class TaskManager : MonoBehaviour
         "Cari Informasi Keberadaan Kepingan Artifact",
         "Cari Kunci yang Tergeletak di Depan Aula",
         "Berbicara Dengan Pak Hamadi di Kelas D1.4",
-        "Kerjakan Soal dari Pak Hamadi"
+        "Kerjakan Soal dari Pak Hamadi",
+        "Berikan lembar soal ke Pak Hamadi"
     };
 
     private NPCDialogInteraction npcSatpam;
