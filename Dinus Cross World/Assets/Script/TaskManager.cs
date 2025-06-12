@@ -24,6 +24,7 @@ public class TaskManager : MonoBehaviour
 
     private NPCDialogInteraction npcSatpam;
     private NPCDialogInteraction npcClara;
+    private NPCDialogInteraction npcHamadi;
 
     void Start()
     {
@@ -46,6 +47,10 @@ public class TaskManager : MonoBehaviour
         GameObject claraObj = GameObject.FindGameObjectWithTag("Clara");
         if (claraObj != null)
             npcClara = claraObj.GetComponent<NPCDialogInteraction>();
+
+        GameObject hamadiObj = GameObject.FindGameObjectWithTag("Hamadi");
+        if (hamadiObj != null)
+            npcHamadi = hamadiObj.GetComponent<NPCDialogInteraction>();
     }
 
     public void CompleteTask()
@@ -128,6 +133,11 @@ public class TaskManager : MonoBehaviour
                 npcClara.useSpecialDialog = true;
             else
                 npcClara.useSpecialDialog = false;
+        }
+        if (npcHamadi != null)
+        {
+            npcHamadi.enabled = (currentTaskIndex == 5); // indeks ke-5 = "Berbicara Dengan Pak Hamadi di Kelas D1.4"
+            npcHamadi.useSpecialDialog = false; // Atur true kalau kamu ingin dialog khusus
         }
     }
 

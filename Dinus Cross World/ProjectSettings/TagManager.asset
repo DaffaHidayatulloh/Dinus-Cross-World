@@ -7,6 +7,7 @@ TagManager:
   - HideSpot
   - Satpam
   - Clara
+  - Hamadi
   layers:
   - Default
   - TransparentFX

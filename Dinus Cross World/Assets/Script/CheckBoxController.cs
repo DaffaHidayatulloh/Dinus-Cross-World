@@ -20,6 +20,7 @@ public class CheckBoxController : MonoBehaviour
     public UnityEvent<bool> OnAnswered; // Event untuk memberitahu hasil jawaban
 
     private bool hasAnswered = false;
+    public bool HasAnswered => hasAnswered;
 
     void Start()
     {
@@ -49,5 +50,17 @@ public class CheckBoxController : MonoBehaviour
             resultText.text = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
 
         OnAnswered.Invoke(isCorrect);
+    }
+    public void ResetAnswer()
+    {
+        hasAnswered = false;
+
+        foreach (var ab in answerButtons)
+        {
+            ab.checkmarkOverlay.SetActive(false);
+        }
+
+        if (resultText != null)
+            resultText.text = "";
     }
 }
