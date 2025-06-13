@@ -19,7 +19,8 @@ public class TaskManager : MonoBehaviour
         "Cari Kunci yang Tergeletak di Depan Aula",
         "Berbicara Dengan Pak Hamadi di Kelas D1.4",
         "Kerjakan Soal dari Pak Hamadi",
-        "Berikan lembar soal ke Pak Hamadi"
+        "Berikan lembar soal ke Pak Hamadi",
+        "Eror 404 not found"
     };
 
     private NPCDialogInteraction npcSatpam;
@@ -136,8 +137,9 @@ public class TaskManager : MonoBehaviour
         }
         if (npcHamadi != null)
         {
-            npcHamadi.enabled = (currentTaskIndex == 5); // indeks ke-5 = "Berbicara Dengan Pak Hamadi di Kelas D1.4"
-            npcHamadi.useSpecialDialog = false; // Atur true kalau kamu ingin dialog khusus
+            npcHamadi.enabled = (currentTaskIndex == 5 || currentTaskIndex == 7);
+
+            npcHamadi.useSpecialDialog = (currentTaskIndex == 7);
         }
     }
 

@@ -6041,6 +6041,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513474578}
   m_CullTransparentMesh: 1
+--- !u!1 &1513844541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1513844542}
+  - component: {fileID: 1513844544}
+  - component: {fileID: 1513844543}
+  m_Layer: 0
+  m_Name: Image Transisi CutScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1513844542
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513844541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1894072494}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1513844543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513844541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f3b2d297c24053a4ab87a5d929b73d4e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1513844544
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513844541}
+  m_CullTransparentMesh: 1
 --- !u!1 &1518559137
 GameObject:
   m_ObjectHideFlags: 0
@@ -7746,6 +7821,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 657159765333638556, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1412655043}
+    - targetCorrespondingSourceObject: {fileID: 657159765333638556, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1513844542}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
 --- !u!224 &1894072494 stripped
@@ -8497,7 +8575,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113623731}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c102660252dea941adf5b1126bdb05f, type: 3}
   m_Name: 
@@ -8512,7 +8590,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113623731}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c102660252dea941adf5b1126bdb05f, type: 3}
   m_Name: 
@@ -9154,7 +9232,13 @@ MonoBehaviour:
   dialogText: {fileID: 7504674593530951816}
   Nama: {fileID: 2532415100107700329}
   dialogIndicator: {fileID: 5068053546260133584}
-  specialDialogs: []
+  specialDialogs:
+  - Sudah selesai, ya?
+  - Hmm...
+  - Nomor satu, benar.
+  - Nomor dua, juga benar.
+  - Nomor tiga... benar juga.
+  - Selamat, kamu lolos. Ini dia artifact-nya.
   useSpecialDialog: 0
 --- !u!114 &7312394640468064110
 MonoBehaviour:
