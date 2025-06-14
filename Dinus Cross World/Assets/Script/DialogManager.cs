@@ -96,11 +96,11 @@ public class DialogManager : MonoBehaviour
         foreach (char letter in dialog.ToCharArray())
         {
             dialogText.text += letter;
-            if (Time.time - lastTypingSoundTime >= typingSoundCooldown)
-            {
-                AudioManager.instance.PlayTypingSound();
-                lastTypingSoundTime = Time.time;
-            }
+           // if (Time.time - lastTypingSoundTime >= typingSoundCooldown)
+            //{
+                //AudioManager.instance.PlayTypingSound();
+                //lastTypingSoundTime = Time.time;
+            //}
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -149,11 +149,11 @@ public class DialogManager : MonoBehaviour
             foreach (char letter in dialog.ToCharArray())
             {
                 dialogText.text += letter;
-                if (Time.time - lastTypingSoundTime >= typingSoundCooldown)
-                {
-                    AudioManager.instance.PlayTypingSound();
-                    lastTypingSoundTime = Time.time;
-                }
+                //if (Time.time - lastTypingSoundTime >= typingSoundCooldown)
+                //{
+                    //AudioManager.instance.PlayTypingSound();
+                    //lastTypingSoundTime = Time.time;
+                //}
                 yield return new WaitForSeconds(typingSpeed);
             }
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) && !isTyping);
