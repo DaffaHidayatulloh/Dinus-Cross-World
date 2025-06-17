@@ -73,6 +73,7 @@ public class CutSceneEnd : MonoBehaviour
         {
             fadeImage.gameObject.SetActive(true);
             StartCoroutine(FadeInImage());
+            StartCoroutine(FlipPlayerRepeatedly());
         }
 
         if (npcPakHamadi != null)
@@ -101,7 +102,7 @@ public class CutSceneEnd : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(FlipPlayerRepeatedly());
+        //StartCoroutine(FlipPlayerRepeatedly());
     }
 
     IEnumerator FadeOutNPC(SpriteRenderer sr)

@@ -1554,7 +1554,7 @@ MonoBehaviour:
   taskManager: {fileID: 773599469}
   taskUI: {fileID: 1558896387}
   player: {fileID: 317417202}
-  fadeImage: {fileID: 1513844543}
+  fadeImage: {fileID: 284378020}
   npcPakHamadi: {fileID: 7969482241964669985}
   gotItemUI: {fileID: 1700896508}
   gotItemScript: {fileID: 1700896510}
