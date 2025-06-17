@@ -10,6 +10,16 @@ public class CutSceneEnd : MonoBehaviour
     public GameObject player;
     public Image fadeImage; // UI Image yang akan di-fade in
     public GameObject npcPakHamadi; // Referensi ke GameObject Pak Hamadi
+
+    [Header("Got Item UI")]
+    public GameObject gotItemUI;
+    public GotItem gotItemScript;
+
+    [Header("Pause System")]
+    public GameObject pauseMenuUI; // UI pause menu
+    public MonoBehaviour pauseScript; // script pause, misal PauseMenu.cs
+
+    [Header("Settings")]
     public float fadeDuration = 2f;
 
     private PlayerMovement playerMovement;
@@ -33,15 +43,31 @@ public class CutSceneEnd : MonoBehaviour
     {
         if (!hasTriggered && taskManager != null && taskManager.GetCurrentTaskIndex() == 8)
         {
-            TriggerFadeImage();
+            TriggerCutscene();
             hasTriggered = true;
         }
     }
 
-    void TriggerFadeImage()
+    void TriggerCutscene()
     {
         if (taskUI != null) taskUI.SetActive(false);
         if (playerMovement != null) playerMovement.enabled = false;
+
+        if (pauseMenuUI != null) pauseMenuUI.SetActive(false);
+        if (pauseScript != null) pauseScript.enabled = false;
+
+        StartCoroutine(ShowGotItemThenFade());
+    }
+
+    IEnumerator ShowGotItemThenFade()
+    {
+        if (gotItemScript != null && gotItemUI != null)
+        {
+            gotItemScript.isClosed = false;     // Reset status tutup
+            gotItemUI.SetActive(true);
+
+            yield return new WaitUntil(() => gotItemScript.isClosed);
+        }
 
         if (fadeImage != null)
         {
@@ -55,9 +81,10 @@ public class CutSceneEnd : MonoBehaviour
             if (sr != null)
                 StartCoroutine(FadeOutNPC(sr));
             else
-                npcPakHamadi.SetActive(false); // fallback kalau tidak ada sprite renderer
+                npcPakHamadi.SetActive(false);
         }
     }
+
     IEnumerator FadeInImage()
     {
         float elapsed = 0f;
@@ -94,13 +121,14 @@ public class CutSceneEnd : MonoBehaviour
 
         npcPakHamadi.SetActive(false); // Setelah fade out, nonaktifkan objek
     }
+
     IEnumerator FlipPlayerRepeatedly()
     {
         SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
         if (sr == null) yield break;
 
-        float duration = 4f; // durasi total efek bingung
-        float flipInterval = 0.9f; // waktu antara flip
+        float duration = 4f;
+        float flipInterval = 0.9f;
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -110,10 +138,6 @@ public class CutSceneEnd : MonoBehaviour
             elapsed += flipInterval;
         }
 
-        // Kembalikan ke posisi semula jika perlu
         sr.flipX = false;
     }
 }
-
-
-
