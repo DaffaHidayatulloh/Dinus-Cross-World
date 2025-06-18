@@ -37,6 +37,7 @@ public class CutSceneIntro : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject taskUI;
+    public GameObject PauseManager;
 
     private string cutsceneKey = "Cutscene_Intro";
 
@@ -62,6 +63,7 @@ public class CutSceneIntro : MonoBehaviour
 
     IEnumerator PlayCutscene()
     {
+        PauseManager.SetActive(false);
         pauseMenuUI.SetActive(false);
         taskUI.SetActive(false);
 
@@ -107,6 +109,7 @@ public class CutSceneIntro : MonoBehaviour
 
         pauseMenuUI.SetActive(true);
         taskUI.SetActive(true);
+        PauseManager.SetActive(true);
 
         if (playerMovementScript != null)
             playerMovementScript.enabled = true;

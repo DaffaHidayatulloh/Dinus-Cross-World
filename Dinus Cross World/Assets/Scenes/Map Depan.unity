@@ -1112,6 +1112,7 @@ MonoBehaviour:
   fadeInDuration: 2
   pauseMenuUI: {fileID: 133315411}
   taskUI: {fileID: 267126575}
+  PauseManager: {fileID: 795616597}
 --- !u!4 &248033723
 Transform:
   m_ObjectHideFlags: 0
@@ -2232,6 +2233,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &795616597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 335516089373118940, guid: b6eed4998e1cff64eb30c7f282599e6f, type: 3}
+  m_PrefabInstance: {fileID: 795616595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &829283231
 GameObject:
   m_ObjectHideFlags: 0
