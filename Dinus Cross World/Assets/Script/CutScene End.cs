@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CutSceneEnd : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class CutSceneEnd : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private bool hasTriggered = false;
+
+    public Text transitionText;
 
     void Start()
     {
@@ -101,7 +104,13 @@ public class CutSceneEnd : MonoBehaviour
             fadeImage.color = c;
             yield return null;
         }
+        if (transitionText != null)
+        {
+            transitionText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(2f);
+        }
 
+        SceneManager.LoadScene("CutScene");
         //StartCoroutine(FlipPlayerRepeatedly());
     }
 
