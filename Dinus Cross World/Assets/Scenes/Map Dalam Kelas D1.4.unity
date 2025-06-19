@@ -8094,7 +8094,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Salah satu dari ke empat kepingan Artifact yang dimaksud oleh pak Satpam
+  m_Text: Salah satu dari ke empat kepingan Artefak yang dimaksud oleh pak Satpam
 --- !u!222 &1636227091
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10434,7 +10434,7 @@ MonoBehaviour:
   - Nomor satu, benar.
   - Nomor dua, juga benar.
   - Nomor tiga... benar juga.
-  - Selamat, kamu lolos. Ini dia    artifact-nya.
+  - Selamat, kamu lolos. Ini dia     artefak-nya.
   useSpecialDialog: 0
 --- !u!114 &7312394640468064110
 MonoBehaviour:
@@ -10573,6 +10573,7 @@ GameObject:
   - component: {fileID: 1610839449946873569}
   - component: {fileID: 7226258985028990687}
   - component: {fileID: 7969482241964669986}
+  - component: {fileID: 7969482241964669987}
   m_Layer: 0
   m_Name: NPC Pak Hamadi
   m_TagString: Hamadi
@@ -10594,6 +10595,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 72642168}
   taskManager: {fileID: 773599469}
+--- !u!114 &7969482241964669987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969482241964669985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de29c8c2661b8304cb571e86831d9e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObj: {fileID: 317417202}
+  playerMovement: {fileID: 315546743}
+  playerAnimator: {fileID: 315546742}
 --- !u!4 &8078790624291324846
 Transform:
   m_ObjectHideFlags: 0

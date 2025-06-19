@@ -1092,7 +1092,7 @@ MonoBehaviour:
   dialogText: {fileID: 672352474}
   dialogLines:
   - "Ugh\u2026 Di mana aku?"
-  - "Terakhir aku ingat\u2026 aku baru selesai mengerjakan soal?"
+  - "Terakhir aku ingat\u2026 aku baru pulang dari kampus"
   - "Kenapa sekarang aku ada di depan kampus\u2026 dan semuanya terasa\u2026 aneh?"
   postDialogLines:
   - "Ah, itu Pak Satpam\u2026"
