@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CutSceneEnd2 : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CutSceneEnd2 : MonoBehaviour
     public float fadeInDuration = 1f;
     public GameObject panelBesar; // Panel besar yang difade-in terakhir
     public GameObject panelTandaTanya;
+    public GameObject imageFadeOut;
     public float fadeOutDuration = 1f;
 
     private Vector3 startFallPosition;
@@ -21,6 +23,10 @@ public class CutSceneEnd2 : MonoBehaviour
     private SpriteRenderer playerRenderer;
     private bool isFalling = false;
     private float alpha = 0f;
+
+    [Header("Scale Effect Settings")]
+    public float scaleMultiplier = 1.2f; // Ukuran akhir relatif terhadap ukuran asli
+    public float scaleDuration = 0.3f;   // Lama efek scale
 
 
     void Start()
@@ -94,7 +100,7 @@ public class CutSceneEnd2 : MonoBehaviour
             player.SetActive(false);
 
             // Lanjutkan tunggu 1 detik lagi (total 2 detik sejak animator aktif)
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
 
             // Aktifkan panel satu per satu
             // Aktifkan panel-panel satu per satu dengan efek fade-in
@@ -145,7 +151,7 @@ public class CutSceneEnd2 : MonoBehaviour
                 panelTandaTanya.SetActive(true);
                 StartCoroutine(ShakeObject(panelTandaTanya));
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             List<Coroutine> fadeOuts = new List<Coroutine>();
 
             if (panelBesar != null)
@@ -168,9 +174,17 @@ public class CutSceneEnd2 : MonoBehaviour
             if (objectToActivateAfterCutscene != null)
             {
                 objectToActivateAfterCutscene.SetActive(true);
-                yield return StartCoroutine(FadeInObject(objectToActivateAfterCutscene));
-
+                yield return StartCoroutine(FadeInWithScale(objectToActivateAfterCutscene));
             }
+
+            yield return new WaitForSeconds(1f);
+
+            if (imageFadeOut != null)
+            {
+                imageFadeOut.SetActive(true);
+                yield return StartCoroutine(FadeInObject(imageFadeOut));
+            }
+            SceneManager.LoadScene("Main Menu");
         }
     }
 
@@ -265,6 +279,39 @@ public class CutSceneEnd2 : MonoBehaviour
 
         rt.anchoredPosition = originalPos;
     }
+    IEnumerator FadeInWithScale(GameObject target)
+    {
+        // Ambil atau tambahkan CanvasGroup jika belum ada
+        CanvasGroup cg = target.GetComponent<CanvasGroup>();
+        if (cg == null)
+        {
+            cg = target.AddComponent<CanvasGroup>();
+        }
+
+        cg.alpha = 0f;
+
+        Transform tf = target.transform;
+        Vector3 originalScale = tf.localScale;
+        Vector3 targetScale = originalScale * scaleMultiplier;
+
+        float t = 0f;
+        while (t < scaleDuration)
+        {
+            t += Time.deltaTime;
+            float normalized = Mathf.Clamp01(t / scaleDuration);
+
+            // Fade-in & Scale bersamaan
+            cg.alpha = normalized;
+            tf.localScale = Vector3.Lerp(originalScale, targetScale, normalized);
+
+            yield return null;
+        }
+
+        // Pastikan hasil akhir akurat
+        cg.alpha = 1f;
+        tf.localScale = targetScale;
+    }
+
 
 }
 

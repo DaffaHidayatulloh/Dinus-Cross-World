@@ -27,6 +27,7 @@ public class CutSceneEnd : MonoBehaviour
     private bool hasTriggered = false;
 
     public Text transitionText;
+    private RectTransform transitionRect;
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class CutSceneEnd : MonoBehaviour
             fadeImage.color = c;
             fadeImage.gameObject.SetActive(false);
         }
+        if (transitionText != null)
+            transitionRect = transitionText.GetComponent<RectTransform>();
     }
 
     void Update()
@@ -107,6 +110,7 @@ public class CutSceneEnd : MonoBehaviour
         if (transitionText != null)
         {
             transitionText.gameObject.SetActive(true);
+            StartCoroutine(ShakeTextEffect());
             yield return new WaitForSeconds(2f);
         }
 
@@ -137,7 +141,7 @@ public class CutSceneEnd : MonoBehaviour
         SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
         if (sr == null) yield break;
 
-        float duration = 4f;
+        float duration = 3f;
         float flipInterval = 0.9f;
         float elapsed = 0f;
 
@@ -150,4 +154,25 @@ public class CutSceneEnd : MonoBehaviour
 
         sr.flipX = false;
     }
+    IEnumerator ShakeTextEffect(float duration = 0.5f, float magnitude = 5f)
+    {
+        if (transitionRect == null) yield break;
+
+        Vector3 originalPos = transitionRect.anchoredPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float offsetX = Random.Range(-1f, 1f) * magnitude;
+            float offsetY = Random.Range(-1f, 1f) * magnitude;
+
+            transitionRect.anchoredPosition = originalPos + new Vector3(offsetX, offsetY, 0);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transitionRect.anchoredPosition = originalPos;
+    }
+
+
 }

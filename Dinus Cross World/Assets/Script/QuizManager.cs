@@ -10,6 +10,8 @@ public class QuizManager : MonoBehaviour
     public GameObject paperObject;
 
     public TaskManager taskManager;
+    public GameObject npcPakHamadi;
+
 
     private bool[] answers;
 
@@ -48,10 +50,19 @@ public class QuizManager : MonoBehaviour
             else
             {
                 textUI.SetActive(true); // Ada yang salah
+                StartCoroutine(ShakeTextUI());
+
+                if (npcPakHamadi != null)
+                {
+                    SpriteRenderer sprite = npcPakHamadi.GetComponent<SpriteRenderer>();
+                    if (sprite != null)
+                        StartCoroutine(FlipSpriteTemporarily(sprite));
+                }
+
             }
 
             // Reset setelah hasil ditampilkan
-            Invoke(nameof(ResetQuiz), 1.5f); // Reset setelah 1.5 detik
+            Invoke(nameof(ResetQuiz), 1f); // Reset setelah 1.5 detik
         }
     }
 
@@ -75,5 +86,30 @@ public class QuizManager : MonoBehaviour
 
         textUI.SetActive(false);
     }
+    IEnumerator ShakeTextUI(float duration = 0.3f, float magnitude = 5f)
+    {
+        Vector3 originalPos = textUI.transform.localPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            textUI.transform.localPosition = originalPos + new Vector3(x, y, 0);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        textUI.transform.localPosition = originalPos;
+    }
+    IEnumerator FlipSpriteTemporarily(SpriteRenderer sprite, float duration = 1.5f)
+    {
+        sprite.flipX = true;
+        yield return new WaitForSeconds(duration);
+        sprite.flipX = false;
+    }
+
 }
 
