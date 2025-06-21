@@ -40,6 +40,7 @@ public class TerpalController : MonoBehaviour
                 Debug.Log("Tombol E ditekan dalam jangkauan!");
                 StartCoroutine(OpenDoorWithCover()); // Gunakan coroutine
                 PlayerPrefs.SetInt("TerpalOpened", 1);
+                PlayerPrefs.DeleteKey("HasRuler");
             }
             else
             {

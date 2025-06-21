@@ -37,6 +37,7 @@ public class DoorInteraction : MonoBehaviour
             {
                 PlayerPrefs.SetInt("DoorOpened", 1);
                 OpenDoor();
+                PlayerPrefs.DeleteKey("HasKey");
             }
             else
             {

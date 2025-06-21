@@ -46,10 +46,12 @@ public class CutSceneIntro : MonoBehaviour
         if (!PlayerPrefs.HasKey(cutsceneKey) || PlayerPrefs.GetInt(cutsceneKey) == 0)
         {
             StartCoroutine(PlayCutscene());
+            playerMovementScript.enabled = false;
+            pauseMenuUI.SetActive(false);
+            taskUI.SetActive(false);
         }
         else
         {
-            // Pastikan kontrol player aktif dan UI juga muncul langsung
             playerMovementScript.enabled = true;
             pauseMenuUI.SetActive(true);
             taskUI.SetActive(true);

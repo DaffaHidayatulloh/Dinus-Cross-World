@@ -28,6 +28,9 @@ public class AudioManager : MonoBehaviour
 
     private Coroutine walkFadeCoroutine;
 
+    private int currentBGMIndex = -1;
+    private int currentRainIndex = -1;
+
 
     private void Awake()
     {
@@ -47,11 +50,15 @@ public class AudioManager : MonoBehaviour
     // Memainkan BGM dari index tertentu
     public void PlayBGM(int index)
     {
+        if (currentBGMIndex == index && bgmSource.isPlaying)
+            return;
+
         if (bgmList.Length > index && bgmList[index] != null)
         {
             bgmSource.clip = bgmList[index];
             bgmSource.loop = true;
             bgmSource.Play();
+            currentBGMIndex = index;
         }
     }
 
@@ -124,11 +131,15 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayRainSound(int index)
     {
+        if (currentRainIndex == index && rainSource.isPlaying)
+            return;
+
         if (rainClips.Length > index && rainClips[index] != null)
         {
             rainSource.clip = rainClips[index];
             rainSource.loop = true;
             rainSource.Play();
+            currentRainIndex = index;
         }
     }
     public void StopRainSound()
