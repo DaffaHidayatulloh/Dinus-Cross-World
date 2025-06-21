@@ -2503,7 +2503,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12560165, y: 0}
+  m_Offset: {x: 0.5171596, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2514,7 +2514,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.63377595, y: 5}
+  m_Size: {x: 0.2932899, y: 5}
   m_EdgeRadius: 0
 --- !u!212 &4214095825880075158
 SpriteRenderer:
@@ -2603,7 +2603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f42ab57005e564ca61a0fea158a0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactCollider: {fileID: 0}
   interactKey: 101
   dialogManager: {fileID: 1840585360}
   dialogPanel: {fileID: 6085598760454262751}
@@ -2612,6 +2611,9 @@ MonoBehaviour:
   dialogIndicator: {fileID: 7305036802103370361}
   specialDialogs: []
   useSpecialDialog: 0
+  npcSpriteRenderer: {fileID: 110196449287436127}
+  boxCollider1: {fileID: 3850360443159464520}
+  boxCollider2: {fileID: 5597035638700304522}
 --- !u!1 &5408847709848677409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,11 +2666,12 @@ GameObject:
   - component: {fileID: 110196449287436127}
   - component: {fileID: 762844737351706026}
   - component: {fileID: 3850360443159464520}
+  - component: {fileID: 5597035638700304522}
   - component: {fileID: 5151334979738280566}
   - component: {fileID: 5597035638700304521}
   m_Layer: 0
   m_Name: NPC Pak Galang
-  m_TagString: Untagged
+  m_TagString: Galang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2687,6 +2690,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 1840585360}
   taskManager: {fileID: 1825378022}
+--- !u!61 &5597035638700304522
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597035638700304520}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.6128733, y: -0.022627473}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.8461537, y: 3.8461537}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.30510902, y: 4.9473705}
+  m_EdgeRadius: 0
 --- !u!222 &5751031893742265797
 CanvasRenderer:
   m_ObjectHideFlags: 0

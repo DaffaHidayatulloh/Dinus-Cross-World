@@ -5233,7 +5233,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12560165, y: 0}
+  m_Offset: {x: 0.25395966, y: -0.0123176575}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5244,7 +5244,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.63377595, y: 5}
+  m_Size: {x: 0.21418, y: 3.8668156}
   m_EdgeRadius: 0
 --- !u!224 &312681752301369567
 RectTransform:
@@ -5510,7 +5510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &3988578386804544404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5732,7 +5732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &7400718177351644362
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5854,7 +5854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f42ab57005e564ca61a0fea158a0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactCollider: {fileID: 0}
   interactKey: 101
   dialogManager: {fileID: 638190130}
   dialogPanel: {fileID: 7109312628810279700}
@@ -5879,6 +5878,9 @@ MonoBehaviour:
   - Apa? aku tidak membawanya
   - Hanya ini yang bisa kuberitahu, jadi carilah sendiri!
   useSpecialDialog: 1
+  npcSpriteRenderer: {fileID: 3988578386804544404}
+  boxCollider1: {fileID: 266279259486301827}
+  boxCollider2: {fileID: 8895053180752006214}
 --- !u!222 &8724313563162951950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5899,6 +5901,7 @@ GameObject:
   - component: {fileID: 3988578386804544404}
   - component: {fileID: 4344586881701216609}
   - component: {fileID: 266279259486301827}
+  - component: {fileID: 8895053180752006214}
   - component: {fileID: 8187559653787846333}
   - component: {fileID: 8895053180752006212}
   - component: {fileID: 8895053180752006213}
@@ -5936,6 +5939,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 638190130}
+--- !u!61 &8895053180752006214
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895053180752006211}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.60974693, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.8461537, y: 3.8461537}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1901207, y: 3.8461537}
+  m_EdgeRadius: 0
 --- !u!224 &9047461846399229310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5975,7 +6023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

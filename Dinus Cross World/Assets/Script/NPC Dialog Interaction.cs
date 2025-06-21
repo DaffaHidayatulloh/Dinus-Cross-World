@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class NPCDialogInteraction : MonoBehaviour
 {
-    public BoxCollider2D interactCollider;
     public KeyCode interactKey = KeyCode.E;
     public DialogManager dialogManager;
     public GameObject dialogPanel;
@@ -14,10 +13,17 @@ public class NPCDialogInteraction : MonoBehaviour
 
     public GameObject dialogIndicator;
     public string[] specialDialogs;
-
     public bool useSpecialDialog = false;
+
+    public SpriteRenderer npcSpriteRenderer;
+
+    public BoxCollider2D boxCollider1;
+    public BoxCollider2D boxCollider2;
+
     private bool isDialogActive = false;
     private bool playerInRange = false;
+    private bool fromCollider2 = false;
+    private bool fromCollider1 = false;
 
     private void Start()
     {
@@ -29,11 +35,12 @@ public class NPCDialogInteraction : MonoBehaviour
 
     void Update()
     {
-            if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
-            {
-                TriggerDialog();
-            }
+        if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
+        {
+            TriggerDialog();
+        }
     }
+
     public void TriggerDialog()
     {
         if (!isDialogActive && playerInRange)
@@ -43,35 +50,44 @@ public class NPCDialogInteraction : MonoBehaviour
             dialogText.SetActive(true);
             Nama.SetActive(true);
 
+            if (npcSpriteRenderer != null)
+            {
+                if (fromCollider2)
+                {
+                    npcSpriteRenderer.flipX = true;
+                }
+                else if (fromCollider1)
+                {
+                    npcSpriteRenderer.flipX = false;
+                }
+            }
+
+            TaskTriggerOnDialogComplete taskTrigger = GetComponent<TaskTriggerOnDialogComplete>();
+            if (taskTrigger != null) taskTrigger.BeginWatch();
+
             if (useSpecialDialog && specialDialogs.Length > 0)
             {
-                TaskTriggerOnDialogComplete taskTrigger = GetComponent<TaskTriggerOnDialogComplete>();
-                if (taskTrigger != null)
-                {
-                    taskTrigger.BeginWatch();
-                }
                 dialogManager.ShowCustomDialog(specialDialogs);
             }
             else
             {
-                TaskTriggerOnDialogComplete taskTrigger = GetComponent<TaskTriggerOnDialogComplete>();
-                if (taskTrigger != null)
-                {
-                    taskTrigger.BeginWatch();
-                }
                 dialogManager.ShowIdleDialog();
             }
+
             dialogIndicator.SetActive(false);
         }
     }
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            if (!isDialogActive && enabled) 
+
+            fromCollider1 = boxCollider1 != null && other.IsTouching(boxCollider1);
+            fromCollider2 = boxCollider2 != null && other.IsTouching(boxCollider2);
+
+            if (!isDialogActive && enabled)
             {
                 dialogIndicator.SetActive(true);
             }
@@ -88,6 +104,9 @@ public class NPCDialogInteraction : MonoBehaviour
             Nama?.SetActive(false);
             dialogIndicator.SetActive(false);
             isDialogActive = false;
+
+            fromCollider1 = false;
+            fromCollider2 = false;
         }
     }
 
@@ -102,8 +121,9 @@ public class NPCDialogInteraction : MonoBehaviour
         if (dialogIndicator != null)
             dialogIndicator.SetActive(false);
     }
-
 }
+
+
 
 
 

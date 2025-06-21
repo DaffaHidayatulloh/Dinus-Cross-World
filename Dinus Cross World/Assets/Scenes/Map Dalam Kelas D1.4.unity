@@ -10230,7 +10230,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12560165, y: 0}
+  m_Offset: {x: 0.6071404, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10241,7 +10241,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.63377595, y: 5}
+  m_Size: {x: 0.24403024, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &1721069592045200876
 MonoBehaviour:
@@ -10601,7 +10601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f42ab57005e564ca61a0fea158a0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactCollider: {fileID: 0}
   interactKey: 101
   dialogManager: {fileID: 72642168}
   dialogPanel: {fileID: 8593290618671176566}
@@ -10616,6 +10615,9 @@ MonoBehaviour:
   - Nomor tiga... benar juga.
   - Selamat, kamu lolos. Ini dia     artefak-nya.
   useSpecialDialog: 0
+  npcSpriteRenderer: {fileID: 2500232866184684534}
+  boxCollider1: {fileID: 1610839449946873569}
+  boxCollider2: {fileID: 7969482241964669988}
 --- !u!114 &7312394640468064110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10751,6 +10753,7 @@ GameObject:
   - component: {fileID: 2500232866184684534}
   - component: {fileID: 3000462377140842755}
   - component: {fileID: 1610839449946873569}
+  - component: {fileID: 7969482241964669988}
   - component: {fileID: 7226258985028990687}
   - component: {fileID: 7969482241964669986}
   - component: {fileID: 7969482241964669987}
@@ -10790,6 +10793,51 @@ MonoBehaviour:
   playerObj: {fileID: 317417202}
   playerMovement: {fileID: 315546743}
   playerAnimator: {fileID: 315546742}
+--- !u!61 &7969482241964669988
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969482241964669985}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.47691262, y: -0.0029411316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.8461537, y: 3.8461537}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2494371, y: 4.9260416}
+  m_EdgeRadius: 0
 --- !u!4 &8078790624291324846
 Transform:
   m_ObjectHideFlags: 0
