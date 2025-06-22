@@ -26,6 +26,7 @@ public class TaskManager : MonoBehaviour
     private NPCDialogInteraction npcSatpam;
     private NPCDialogInteraction npcClara;
     private NPCDialogInteraction npcHamadi;
+    private NPCDialogInteraction npcGalang;
 
     void Start()
     {
@@ -38,7 +39,12 @@ public class TaskManager : MonoBehaviour
         FindNPCsInScene();
         UpdateNPCInteractable();
     }
-
+    void Update()
+    {
+        GameObject galangObj = GameObject.FindGameObjectWithTag("Galang");
+        if (galangObj != null)
+            npcGalang = galangObj.GetComponent<NPCDialogInteraction>();
+    }
     private void FindNPCsInScene()
     {
         GameObject satpamObj = GameObject.FindGameObjectWithTag("Satpam");
@@ -140,6 +146,12 @@ public class TaskManager : MonoBehaviour
             npcHamadi.enabled = (currentTaskIndex == 5 || currentTaskIndex == 7);
 
             npcHamadi.useSpecialDialog = (currentTaskIndex == 7);
+        }
+        if (npcGalang != null)
+        {
+            npcGalang.enabled = (currentTaskIndex == 3);
+            npcGalang.useSpecialDialog = false;
+
         }
     }
 

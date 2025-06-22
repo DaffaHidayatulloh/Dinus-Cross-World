@@ -79,13 +79,21 @@ public class CutSceneIntroGondolruwo : MonoBehaviour
         float halfDuration = fadeDuration * 0.5f;
 
         Vector3 startScale = Vector3.zero;
+        Vector3 originalPosition = legacyUIText.rectTransform.localPosition;
         legacyUIText.rectTransform.localScale = startScale;
 
         float timer = 0f;
+        float shakeStrength = 5f;
+
         while (timer < fadeDuration)
         {
             float t = timer / fadeDuration;
             legacyUIText.rectTransform.localScale = Vector3.Lerp(startScale, targetScale, t);
+
+            // Shake effect (ringan)
+            float shakeX = Random.Range(-1f, 1f) * shakeStrength;
+            float shakeY = Random.Range(-1f, 1f) * shakeStrength;
+            legacyUIText.rectTransform.localPosition = originalPosition + new Vector3(shakeX, shakeY, 0);
 
             float alpha;
             if (t < 0.5f)
@@ -99,8 +107,10 @@ public class CutSceneIntroGondolruwo : MonoBehaviour
             yield return null;
         }
 
-        legacyUIText.gameObject.SetActive(false); // Sembunyikan setelah selesai
+        legacyUIText.rectTransform.localPosition = originalPosition; // Reset posisi
+        legacyUIText.gameObject.SetActive(false);
     }
+
 
 
 }

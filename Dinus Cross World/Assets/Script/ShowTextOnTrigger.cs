@@ -15,9 +15,17 @@ public class ShowTextOnTrigger : MonoBehaviour
     public float showDuration = 1f;
 
     private bool hasTriggered = false;
+    private string prefsKey;
 
     private void Start()
     {
+        prefsKey = gameObject.name + "_Triggered";
+
+        if (PlayerPrefs.GetInt(prefsKey, 0) == 1)
+        {
+            gameObject.SetActive(false); // Sudah terpanggil sebelumnya
+        }
+
         if (messageText != null)
         {
             messageText.gameObject.SetActive(false); // Sembunyikan teks di awal
@@ -29,6 +37,8 @@ public class ShowTextOnTrigger : MonoBehaviour
         if (!hasTriggered && other.CompareTag("Player") && messageText != null)
         {
             hasTriggered = true;
+            PlayerPrefs.SetInt(prefsKey, 1); // Simpan status sudah dipicu
+            PlayerPrefs.Save();
             StopAllCoroutines();
             StartCoroutine(ShowMessagesRoutine());
         }
@@ -36,14 +46,17 @@ public class ShowTextOnTrigger : MonoBehaviour
 
     private IEnumerator ShowMessagesRoutine()
     {
-        messageText.gameObject.SetActive(true); // Tampilkan teks
-        yield return StartCoroutine(ShowSingleMessage(message1));
-        yield return StartCoroutine(ShowSingleMessage(message2));
-        messageText.gameObject.SetActive(false); // Sembunyikan teks lagi
-        gameObject.SetActive(false); // Nonaktifkan pemicu agar tidak bisa disentuh lagi
+        messageText.gameObject.SetActive(true);
+
+        // Tampilkan pesan pertama dengan efek shake
+        yield return StartCoroutine(ShowSingleMessage(message1, true));
+        yield return StartCoroutine(ShowSingleMessage(message2, false));
+
+        messageText.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
-    private IEnumerator ShowSingleMessage(string msg)
+    private IEnumerator ShowSingleMessage(string msg, bool doShake)
     {
         messageText.text = msg;
 
@@ -52,9 +65,17 @@ public class ShowTextOnTrigger : MonoBehaviour
         color.a = 0;
         messageText.color = color;
 
-        yield return StartCoroutine(FadeText(0, 1)); // Fade in
+        Coroutine fadeCoroutine = StartCoroutine(FadeText(0, 1));
+
+        if (doShake)
+        {
+            StartCoroutine(ShakeText(1.5f, 5f)); // Jalankan shake bersamaan
+        }
+
+        yield return fadeCoroutine;
+
         yield return new WaitForSeconds(showDuration);
-        yield return StartCoroutine(FadeText(1, 0)); // Fade out
+        yield return StartCoroutine(FadeText(1, 0));
         messageText.text = "";
     }
 
@@ -73,4 +94,22 @@ public class ShowTextOnTrigger : MonoBehaviour
 
         messageText.color = new Color(color.r, color.g, color.b, endAlpha);
     }
+
+    private IEnumerator ShakeText(float duration, float strength)
+    {
+        Vector3 originalPos = messageText.rectTransform.localPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * strength;
+            float y = Random.Range(-1f, 1f) * strength;
+            messageText.rectTransform.localPosition = originalPos + new Vector3(x, y, 0);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        messageText.rectTransform.localPosition = originalPos;
+    }
 }
+

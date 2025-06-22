@@ -358,9 +358,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = -4/x = 1/2
-
-'
+  m_Text: 3
 --- !u!222 &19004622
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -439,7 +437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = 2/x = 3
+  m_Text: '2007
 
 '
 --- !u!222 &31666965
@@ -1154,7 +1152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = -1/x = -6
+  m_Text: '2014
 
 '
 --- !u!222 &149852294
@@ -1203,7 +1201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.2, y: 287.8}
+  m_AnchoredPosition: {x: -260, y: 214.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &226784577
@@ -1713,7 +1711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117.3, y: 271}
+  m_AnchoredPosition: {x: 117.3, y: 296.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324616907
@@ -1916,8 +1914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.48, y: -4.8}
-  m_SizeDelta: {x: 206.5453, y: 56.5972}
+  m_AnchoredPosition: {x: 141.68117, y: -4.8}
+  m_SizeDelta: {x: 230.9476, y: 56.5972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &361944924
 MonoBehaviour:
@@ -1952,9 +1950,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = 2/x = -2
-
-'
+  m_Text: Kedokteran
 --- !u!222 &361944925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2109,7 +2105,7 @@ MonoBehaviour:
     checkmarkOverlay: {fileID: 1237023123}
   - button: {fileID: 1227784946}
     checkmarkOverlay: {fileID: 1676439329}
-  correctIndex: 0
+  correctIndex: 3
   resultText: {fileID: 0}
   OnAnswered:
     m_PersistentCalls:
@@ -2684,8 +2680,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.69034, y: 344.5}
-  m_SizeDelta: {x: 694.2298, y: 116.9774}
+  m_AnchoredPosition: {x: 33.69034, y: 332.89}
+  m_SizeDelta: {x: 694.2298, y: 140.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446601676
 MonoBehaviour:
@@ -2720,7 +2716,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '3. x^2 - 4x - 5 = 0, Berapakah nilai dari x?
+  m_Text: '3. Di bawah ini yang merupakan salah satu program studi yang ada di Udinus
+    Kediri adalah:
 
 '
 --- !u!222 &446601677
@@ -2769,7 +2766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.2, y: 177.7}
+  m_AnchoredPosition: {x: -253.2, y: 198.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &463142768
@@ -3482,7 +3479,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1. x^2 + 5x + 6 = 0, Berapakah nilai dari x?
+  m_Text: '1. Kapan Udinus Kediri berdiri?
 
 '
 --- !u!222 &772802752
@@ -4164,7 +4161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = -2/x = -3
+  m_Text: '2000
 
 '
 --- !u!222 &970532853
@@ -4537,7 +4534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117.3, y: 186.4}
+  m_AnchoredPosition: {x: 108.1, y: 116.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051212928
@@ -4656,8 +4653,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138.1902, y: -4.8}
-  m_SizeDelta: {x: 223.9657, y: 56.5972}
+  m_AnchoredPosition: {x: 153.10292, y: -4.8}
+  m_SizeDelta: {x: 253.791, y: 56.5972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056935131
 MonoBehaviour:
@@ -4692,9 +4689,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' x = 1/x = -5
-
-'
+  m_Text: Teknik Mesin
 --- !u!222 &1056935132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5242,7 +5237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117.3, y: 177.7}
+  m_AnchoredPosition: {x: 117.3, y: 198.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1227784946
@@ -5440,7 +5435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117.3, y: 287.8}
+  m_AnchoredPosition: {x: 108.1, y: 214.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243605290
@@ -5865,7 +5860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.2, y: 186.4}
+  m_AnchoredPosition: {x: -260, y: 116.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314959143
@@ -6528,8 +6523,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.48, y: -4.8}
-  m_SizeDelta: {x: 206.5453, y: 56.5972}
+  m_AnchoredPosition: {x: 140.32552, y: -4.8}
+  m_SizeDelta: {x: 228.2363, y: 56.5972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449360723
 MonoBehaviour:
@@ -6564,9 +6559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = 5/x = -1
-
-'
+  m_Text: Teknik Sipil
 --- !u!222 &1449360724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6809,7 +6802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -617.1}
+  m_AnchoredPosition: {x: 0, y: -561.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1473967679
@@ -6833,7 +6826,7 @@ MonoBehaviour:
     checkmarkOverlay: {fileID: 1472794686}
   - button: {fileID: 1051212928}
     checkmarkOverlay: {fileID: 1091896230}
-  correctIndex: 0
+  correctIndex: 1
   resultText: {fileID: 0}
   OnAnswered:
     m_PersistentCalls:
@@ -7227,9 +7220,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '2. 2x^2 - 7x - 4 = 0, Berapakah nilai dari x?
-
-'
+  m_Text: 2. Berapa jumlah program studi di Udinus Kediri per tahun 2024?
 --- !u!222 &1527860817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7276,7 +7267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.2, y: 271}
+  m_AnchoredPosition: {x: -253.2, y: 296.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553762833
@@ -7611,7 +7602,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x = 1/x = -4
+  m_Text: 5
 --- !u!222 &1581559705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7844,9 +7835,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = 4/x = -1/2
-
-'
+  m_Text: 2
 --- !u!222 &1626038108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7893,7 +7882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -288}
+  m_AnchoredPosition: {x: 0, y: -245.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631245284
@@ -8299,9 +8288,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = -5/x = 1
-
-'
+  m_Text: DKV
 --- !u!222 &1690532578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9466,9 +9453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = 1/x = 6
-
-'
+  m_Text: 2021
 --- !u!222 &1995893846
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10064,9 +10049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'x = 2/x = -2
-
-'
+  m_Text: 4
 --- !u!222 &2141885443
 CanvasRenderer:
   m_ObjectHideFlags: 0
