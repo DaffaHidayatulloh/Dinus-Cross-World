@@ -38,6 +38,7 @@ public class NPCDialogInteraction : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(interactKey) && !isDialogActive)
         {
             TriggerDialog();
+            AudioManager.instance.StopWalkSound();
         }
     }
 
@@ -49,6 +50,7 @@ public class NPCDialogInteraction : MonoBehaviour
             dialogPanel.SetActive(true);
             dialogText.SetActive(true);
             Nama.SetActive(true);
+
 
             if (npcSpriteRenderer != null)
             {

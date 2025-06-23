@@ -31,6 +31,8 @@ public class SceneTransition : MonoBehaviour
             // Simpan posisi dan arah player sebelum berpindah
             SaveManager.Instance.SavePlayerState(GameObject.FindGameObjectWithTag("Player").transform.position,
                                                  !GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().flipX);
+            
+            AudioManager.instance.StopWalkSound();
 
             SceneManager.LoadScene(sceneName);
         }

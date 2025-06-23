@@ -95,7 +95,7 @@ public class CutSceneEnd2 : MonoBehaviour
         {
 
             // Tunggu 0.2 detik, baru aktifkan player2
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             if (player2 != null) player2.SetActive(true);
             player.SetActive(false);
 

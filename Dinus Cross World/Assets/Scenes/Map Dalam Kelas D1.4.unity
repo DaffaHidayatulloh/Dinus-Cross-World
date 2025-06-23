@@ -10596,7 +10596,7 @@ MonoBehaviour:
   - Nomor satu, benar.
   - Nomor dua, juga benar.
   - Nomor tiga... benar juga.
-  - Selamat, kamu lolos. Ini dia     artefak-nya.
+  - Selamat, kamu lolos. Ini dia      artefak-nya.
   useSpecialDialog: 0
   npcSpriteRenderer: {fileID: 2500232866184684534}
   boxCollider1: {fileID: 1610839449946873569}

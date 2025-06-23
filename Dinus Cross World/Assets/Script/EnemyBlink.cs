@@ -148,8 +148,13 @@ public class EnemyBlink : MonoBehaviour
         {
             if (PlayerHide.IsHiding) return;
             //masukan jumpscare screen disini
-            jumpscareImage.gameObject.SetActive(true);
+            StartCoroutine(ShowJumpscareWithDelay(0.1f));
         }
+    }
+    private IEnumerator ShowJumpscareWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        jumpscareImage.gameObject.SetActive(true);
     }
     public void ResetChaseState()
     {
