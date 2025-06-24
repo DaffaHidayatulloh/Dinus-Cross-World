@@ -50,6 +50,7 @@ public class CutSceneIntroGondolruwo : MonoBehaviour
             cutsceneCamera.Priority = 20;
 
         yield return new WaitForSeconds(cutsceneDuration);
+        AudioManager.instance.PlaySFX(3);
 
         if (cutsceneCamera != null)
             cutsceneCamera.Priority = 0;

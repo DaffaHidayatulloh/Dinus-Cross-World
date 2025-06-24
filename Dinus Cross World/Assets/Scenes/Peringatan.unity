@@ -423,7 +423,12 @@ MonoBehaviour:
   bgmList:
   - {fileID: 8300000, guid: f2381fe0dfd84244792f708e245b3dc3, type: 3}
   - {fileID: 8300000, guid: ea2688b6c84221c46afa210831c9cbfd, type: 3}
-  sfxClips: []
+  sfxClips:
+  - {fileID: 8300000, guid: 6053ee4e92f07da47816f777efc2d2b3, type: 3}
+  - {fileID: 8300000, guid: dbba8feb76227dc45bc2dda5c2055081, type: 3}
+  - {fileID: 8300000, guid: 4e7fa667f88a1ca43833cd7aa3635f25, type: 3}
+  - {fileID: 8300000, guid: e41e6afdf0c73ba419fd016b795420f4, type: 3}
+  - {fileID: 8300000, guid: 743329b20fcacb048bb672ded3ab8a61, type: 3}
   walkClip: {fileID: 8300000, guid: 277fe369d235df5478c8900bb5c8c534, type: 3}
   rainClips:
   - {fileID: 8300000, guid: c39a7777f91c0c748b319a2796a64e86, type: 3}

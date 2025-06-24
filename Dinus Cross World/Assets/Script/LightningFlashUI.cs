@@ -17,6 +17,7 @@ public class LightningFlashUI : MonoBehaviour
         if (other.CompareTag("Player") && !isFlashing)
         {
             StartCoroutine(FlashEffect());
+            AudioManager.instance.PlaySFX(1);
         }
     }
 

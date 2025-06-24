@@ -30,6 +30,7 @@ public class AutoDialogTrigger : MonoBehaviour
             if (!npcObject.activeSelf)
             {
                 npcObject.SetActive(true);
+                AudioManager.instance.PlaySFX(3);
                 StartCoroutine(ZoomAndReturn(other));
             }
             else

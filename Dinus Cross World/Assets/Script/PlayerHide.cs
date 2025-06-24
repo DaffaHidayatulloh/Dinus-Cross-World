@@ -35,6 +35,7 @@ public class PlayerHide : MonoBehaviour
 
     private void ToggleHide()
     {
+        AudioManager.instance.StopWalkSound();
         isHiding = !isHiding;
         IsHiding = isHiding;
 

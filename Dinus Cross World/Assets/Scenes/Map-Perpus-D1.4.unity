@@ -947,7 +947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetImage: {fileID: 752651248}
   flashAlpha: 0.5
-  flashDuration: 0.1
+  flashDuration: 0.3
 --- !u!61 &288003210
 BoxCollider2D:
   m_ObjectHideFlags: 0

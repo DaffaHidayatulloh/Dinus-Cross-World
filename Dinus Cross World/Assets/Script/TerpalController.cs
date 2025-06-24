@@ -39,6 +39,7 @@ public class TerpalController : MonoBehaviour
             {
                 Debug.Log("Tombol E ditekan dalam jangkauan!");
                 StartCoroutine(OpenDoorWithCover()); // Gunakan coroutine
+                AudioManager.instance.PlaySFX(0);
                 PlayerPrefs.SetInt("TerpalOpened", 1);
                 PlayerPrefs.DeleteKey("HasRuler");
             }
@@ -57,7 +58,7 @@ public class TerpalController : MonoBehaviour
             coverImage.gameObject.SetActive(true);
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         if (coverImage != null)
         {
@@ -116,7 +117,7 @@ public class TerpalController : MonoBehaviour
         Vector3 startPos = rectTransform.anchoredPosition;
         Vector3 endPos = startPos + new Vector3(0, 30f, 0);
 
-        float duration = 2f;
+        float duration = 1f;
         float elapsed = 0f;
 
         while (elapsed < duration)

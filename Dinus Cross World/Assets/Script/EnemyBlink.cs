@@ -155,6 +155,7 @@ public class EnemyBlink : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         jumpscareImage.gameObject.SetActive(true);
+        AudioManager.instance.PlaySFX(4);
     }
     public void ResetChaseState()
     {
