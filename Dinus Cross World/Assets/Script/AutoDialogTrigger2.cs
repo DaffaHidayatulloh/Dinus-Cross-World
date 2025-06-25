@@ -44,6 +44,8 @@ public class AutoDialogTrigger2 : MonoBehaviour
                 if (playerMovement != null)
                     playerMovement.enabled = false;
 
+                AudioManager.instance.StopWalkSound();
+
                 if (playerAnimator != null)
                     playerAnimator.SetBool("IsMove", false); // Pastikan sesuai Animator
 

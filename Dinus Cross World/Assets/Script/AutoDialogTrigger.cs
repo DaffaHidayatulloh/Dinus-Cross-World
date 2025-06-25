@@ -54,6 +54,7 @@ public class AutoDialogTrigger : MonoBehaviour
         // Disable gerakan pemain & set animasi idle
         if (playerMovement != null)
             playerMovement.enabled = false;
+        AudioManager.instance.StopWalkSound();
 
         if (playerAnimator != null)
             playerAnimator.SetBool("IsMove", false);

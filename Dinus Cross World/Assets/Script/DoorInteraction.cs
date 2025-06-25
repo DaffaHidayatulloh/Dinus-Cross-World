@@ -36,6 +36,7 @@ public class DoorInteraction : MonoBehaviour
             if (PlayerPrefs.GetInt("HasKey", 0) == 1)
             {
                 PlayerPrefs.SetInt("DoorOpened", 1);
+                AudioManager.instance.PlaySFX(6);
                 OpenDoor();
                 PlayerPrefs.DeleteKey("HasKey");
             }

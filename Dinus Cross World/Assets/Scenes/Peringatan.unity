@@ -423,6 +423,7 @@ MonoBehaviour:
   bgmList:
   - {fileID: 8300000, guid: f2381fe0dfd84244792f708e245b3dc3, type: 3}
   - {fileID: 8300000, guid: ea2688b6c84221c46afa210831c9cbfd, type: 3}
+  - {fileID: 8300000, guid: 41fed6d83f3232349b4eb61f9a51fa73, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: 6053ee4e92f07da47816f777efc2d2b3, type: 3}
   - {fileID: 8300000, guid: dbba8feb76227dc45bc2dda5c2055081, type: 3}
@@ -430,6 +431,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e41e6afdf0c73ba419fd016b795420f4, type: 3}
   - {fileID: 8300000, guid: 743329b20fcacb048bb672ded3ab8a61, type: 3}
   - {fileID: 8300000, guid: a241450bce9d8ab40831487db5700142, type: 3}
+  - {fileID: 8300000, guid: e6ce7693c8266c344a3d524a0115e46b, type: 3}
+  - {fileID: 8300000, guid: f80ac82e3ef2fd645ae3fb301a2bf9bc, type: 3}
   walkClip: {fileID: 8300000, guid: 277fe369d235df5478c8900bb5c8c534, type: 3}
   rainClips:
   - {fileID: 8300000, guid: bc121e379354bc04c97946bdbe1760ed, type: 3}
@@ -1176,6 +1179,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099061154}
   m_CullTransparentMesh: 1
+--- !u!1 &1117228576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117228578}
+  - component: {fileID: 1117228577}
+  m_Layer: 0
+  m_Name: RainZoneTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1117228577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117228576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d83ce87e5dc99428cede8a4d34d5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInRainZone: 0
+--- !u!4 &1117228578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117228576}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.7742004, y: -1.822111, z: -0.06822559}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1279517585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,3 +1433,4 @@ SceneRoots:
   - {fileID: 1061947983}
   - {fileID: 88793027}
   - {fileID: 133869094}
+  - {fileID: 1117228578}
