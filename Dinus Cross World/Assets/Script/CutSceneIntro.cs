@@ -65,6 +65,7 @@ public class CutSceneIntro : MonoBehaviour
 
     IEnumerator PlayCutscene()
     {
+        PauseManager.SetActive(false);
 
         yield return StartCoroutine(FadeInFromBlack());
 

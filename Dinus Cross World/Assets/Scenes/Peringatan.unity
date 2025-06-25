@@ -426,12 +426,14 @@ MonoBehaviour:
   sfxClips:
   - {fileID: 8300000, guid: 6053ee4e92f07da47816f777efc2d2b3, type: 3}
   - {fileID: 8300000, guid: dbba8feb76227dc45bc2dda5c2055081, type: 3}
-  - {fileID: 8300000, guid: 4e7fa667f88a1ca43833cd7aa3635f25, type: 3}
+  - {fileID: 8300000, guid: bf3d0a6894ca04843bd93221b5c90660, type: 3}
   - {fileID: 8300000, guid: e41e6afdf0c73ba419fd016b795420f4, type: 3}
   - {fileID: 8300000, guid: 743329b20fcacb048bb672ded3ab8a61, type: 3}
+  - {fileID: 8300000, guid: a241450bce9d8ab40831487db5700142, type: 3}
   walkClip: {fileID: 8300000, guid: 277fe369d235df5478c8900bb5c8c534, type: 3}
   rainClips:
-  - {fileID: 8300000, guid: c39a7777f91c0c748b319a2796a64e86, type: 3}
+  - {fileID: 8300000, guid: bc121e379354bc04c97946bdbe1760ed, type: 3}
+  - {fileID: 8300000, guid: 52b3044094a61d5428e59b2e09b433eb, type: 3}
   typingClip: {fileID: 8300000, guid: 4569d32d437794141966e8e800ccf289, type: 3}
 --- !u!4 &133869094
 Transform:

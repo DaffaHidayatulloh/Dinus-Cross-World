@@ -26,6 +26,7 @@ public class KeyPickup : MonoBehaviour
         {
             Debug.Log("Tombol E ditekan dalam jangkauan!");
             PlayerPrefs.SetInt("HasKey", 1); // Simpan bahwa kunci sudah diambil
+            AudioManager.instance.PlaySFX(5);
 
             if (player != null)
             {

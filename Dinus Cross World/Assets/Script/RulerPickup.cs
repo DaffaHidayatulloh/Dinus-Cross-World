@@ -21,6 +21,7 @@ public class RulerPickup : MonoBehaviour
         {
             Debug.Log("Tombol E ditekan dalam jangkauan!");
             PlayerPrefs.SetInt("HasRuler", 1);
+            AudioManager.instance.PlaySFX(5);
 
             if (player != null)
             {

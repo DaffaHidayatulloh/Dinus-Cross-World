@@ -22,6 +22,7 @@ public class TahuPickup : MonoBehaviour
         {
             Debug.Log("Tombol E ditekan dalam jangkauan!");
             PlayerPrefs.SetInt("HasTahu", 1);
+            AudioManager.instance.PlaySFX(5);
 
             if (player != null)
             {
