@@ -10,6 +10,7 @@ public class OnColider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.instance.PlayBGM(3);
             objectToActivate.SetActive(true);
         }
     }
@@ -18,6 +19,7 @@ public class OnColider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.instance.StopBGM();
             objectToActivate.SetActive(false);
         }
     }

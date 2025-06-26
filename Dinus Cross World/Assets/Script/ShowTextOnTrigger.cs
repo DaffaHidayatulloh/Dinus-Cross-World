@@ -36,6 +36,7 @@ public class ShowTextOnTrigger : MonoBehaviour
     {
         if (!hasTriggered && other.CompareTag("Player") && messageText != null)
         {
+            AudioManager.instance.PlaySFX(8);
             hasTriggered = true;
             PlayerPrefs.SetInt(prefsKey, 1); // Simpan status sudah dipicu
             PlayerPrefs.Save();

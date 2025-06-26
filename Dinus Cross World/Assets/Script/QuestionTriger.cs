@@ -11,6 +11,7 @@ public class QuestionTriger : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            AudioManager.instance.PlaySFX(13);
             objectToActivate.SetActive(true);
         }
     }

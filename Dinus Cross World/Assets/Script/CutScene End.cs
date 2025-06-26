@@ -70,11 +70,12 @@ public class CutSceneEnd : MonoBehaviour
         if (gotItemScript != null && gotItemUI != null)
         {
             gotItemScript.isClosed = false;     // Reset status tutup
+            AudioManager.instance.PlaySFX(12);
             gotItemUI.SetActive(true);
 
             yield return new WaitUntil(() => gotItemScript.isClosed);
         }
-
+        
         if (fadeImage != null)
         {
             fadeImage.gameObject.SetActive(true);
@@ -111,6 +112,7 @@ public class CutSceneEnd : MonoBehaviour
         {
             transitionText.gameObject.SetActive(true);
             StartCoroutine(ShakeTextEffect());
+            AudioManager.instance.PlaySFX(15);
             yield return new WaitForSeconds(2f);
         }
 

@@ -31,6 +31,7 @@ public class CutSceneEnd2 : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.StopRainSound();
         playerRenderer = player.GetComponent<SpriteRenderer>();
         targetPosition = player.transform.position;
 
@@ -59,9 +60,10 @@ public class CutSceneEnd2 : MonoBehaviour
         player.SetActive(false);
 
         yield return new WaitForSeconds(1f);
-
+        AudioManager.instance.PlaySFX(14);
         player.transform.position = startFallPosition;
         player.SetActive(true);
+
         playerRenderer.color = new Color(1f, 1f, 1f, 0f);
 
         float timer = 0f;
@@ -110,6 +112,7 @@ public class CutSceneEnd2 : MonoBehaviour
                 {
                     if (panel != null)
                     {
+                        AudioManager.instance.PlaySFX(9);
                         panel.SetActive(true);
                         yield return StartCoroutine(FadeInObject(panel));
                     }
@@ -142,16 +145,20 @@ public class CutSceneEnd2 : MonoBehaviour
             // Aktifkan panel besar
             if (panelBesar != null)
             {
+                AudioManager.instance.PlaySFX(10);
                 panelBesar.SetActive(true);
                 StartCoroutine(ShakeObject(panelBesar));
             }
             yield return new WaitForSeconds(1f);
             if (panelTandaTanya != null)
             {
+                AudioManager.instance.PlaySFX(10);
+                AudioManager.instance.PlaySFX(11);
+                AudioManager.instance.StopBGM();
                 panelTandaTanya.SetActive(true);
                 StartCoroutine(ShakeObject(panelTandaTanya));
             }
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             List<Coroutine> fadeOuts = new List<Coroutine>();
 
             if (panelBesar != null)
@@ -170,11 +177,11 @@ public class CutSceneEnd2 : MonoBehaviour
             if (panelTandaTanya != null)
                 panelTandaTanya.SetActive(false);
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2f);
             if (objectToActivateAfterCutscene != null)
             {
                 objectToActivateAfterCutscene.SetActive(true);
-                yield return StartCoroutine(FadeInWithScale(objectToActivateAfterCutscene));
+                yield return StartCoroutine(FadeInWithScale(objectToActivateAfterCutscene, 1.2f, 3f));
             }
 
             yield return new WaitForSeconds(1f);
@@ -279,7 +286,7 @@ public class CutSceneEnd2 : MonoBehaviour
 
         rt.anchoredPosition = originalPos;
     }
-    IEnumerator FadeInWithScale(GameObject target)
+    IEnumerator FadeInWithScale(GameObject target, float scaleMultiplier, float scaleDuration)
     {
         // Ambil atau tambahkan CanvasGroup jika belum ada
         CanvasGroup cg = target.GetComponent<CanvasGroup>();

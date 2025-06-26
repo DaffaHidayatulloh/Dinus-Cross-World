@@ -44,11 +44,13 @@ public class QuizManager : MonoBehaviour
 
             if (correctCount == answers.Length)
             {
+                AudioManager.instance.PlaySFX(5);
                 paperObject.SetActive(false); // Semua benar
                 taskManager?.CompleteTask();
             }
             else
             {
+                AudioManager.instance.PlaySFX(10);
                 textUI.SetActive(true); // Ada yang salah
                 StartCoroutine(ShakeTextUI());
 
