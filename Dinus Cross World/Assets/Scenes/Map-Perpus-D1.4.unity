@@ -376,7 +376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &97371000
 RectTransform:
   m_ObjectHideFlags: 0
@@ -949,6 +949,7 @@ MonoBehaviour:
   targetImage: {fileID: 752651248}
   flashAlpha: 0.5
   flashDuration: 0.3
+  lightningKey: LightningTriggered
 --- !u!61 &288003210
 BoxCollider2D:
   m_ObjectHideFlags: 0

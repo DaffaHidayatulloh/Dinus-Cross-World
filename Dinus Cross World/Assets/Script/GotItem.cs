@@ -10,6 +10,7 @@ public class GotItem : MonoBehaviour
     public Button closeButton1;            // Tombol tutup 1
     public Button closeButton2;            // Tombol tutup 2
     public Text blinkingText;              // Legacy UI Text
+    public GameObject Item;
 
     [Header("Blinking Text Settings")]
     public float blinkSpeed = 0.5f;        // Kecepatan kedap-kedip teks
@@ -36,6 +37,8 @@ public class GotItem : MonoBehaviour
             panel.SetActive(false);
 
         isClosed = true;
+
+        Item.SetActive(true);
     }
 
     System.Collections.IEnumerator BlinkText()
