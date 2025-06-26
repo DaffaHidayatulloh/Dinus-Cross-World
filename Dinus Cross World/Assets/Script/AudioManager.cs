@@ -157,6 +157,18 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(typingClip);
         }
     }
+    public void PauseAllAudio()
+    {
+        if (bgmSource.isPlaying) bgmSource.Pause();
+        if (rainSource.isPlaying) rainSource.Pause();
+    }
+
+    public void ResumeAllAudio()
+    {
+        if (bgmSource.clip != null) bgmSource.UnPause();
+        if (rainSource.clip != null) rainSource.UnPause();
+    }
+
 
 }
 

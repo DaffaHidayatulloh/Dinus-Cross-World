@@ -174,14 +174,16 @@ public class CutSceneEnd2 : MonoBehaviour
             if (panelBesar != null)
                 panelBesar.SetActive(false);
 
+            yield return new WaitForSeconds(2f);
+
             if (panelTandaTanya != null)
                 panelTandaTanya.SetActive(false);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
             if (objectToActivateAfterCutscene != null)
             {
                 objectToActivateAfterCutscene.SetActive(true);
-                yield return StartCoroutine(FadeInWithScale(objectToActivateAfterCutscene, 1.2f, 3f));
+                yield return StartCoroutine(FadeInWithScale(objectToActivateAfterCutscene, 1.2f, 2.5f));
             }
 
             yield return new WaitForSeconds(1f);

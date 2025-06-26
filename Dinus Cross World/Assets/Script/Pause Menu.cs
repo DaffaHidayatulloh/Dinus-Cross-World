@@ -9,19 +9,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject surat;
     public GameObject SuratTerbuka;
     public GameObject pauseMenuUI;
-    //public Button resumeButton;
-    //public Button exitButton;
 
     private bool isPaused = false;
 
     void Start()
     {
-        // Pastikan menu tidak aktif saat game dimulai
         pauseMenuUI.SetActive(false);
-
-        // Tambahkan listener ke tombol
-        //resumeButton.onClick.AddListener(Resume);
-        //exitButton.onClick.AddListener(ExitToMainMenu);
     }
 
     void Update()
@@ -39,23 +32,33 @@ public class PauseMenu : MonoBehaviour
     {
         Pause();
     }
-    public void Resume()
-    {
-        surat.SetActive(true);
-        SuratTerbuka.SetActive(false);
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-    }
 
     void Pause()
     {
+        AudioManager.instance.PlaySFX(13);
         surat.SetActive(false);
         SuratTerbuka.SetActive(true);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+
+        AudioManager.instance.PauseAllAudio(); // pause, bukan stop
+        AudioManager.instance.StopWalkSound();
+
     }
+
+    public void Resume()
+    {
+        AudioManager.instance.PlaySFX(16);
+        surat.SetActive(true);
+        SuratTerbuka.SetActive(false);
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+
+        AudioManager.instance.ResumeAllAudio(); // lanjutkan
+    }
+
 
     public void ExitToMainMenu()
     {
@@ -63,7 +66,8 @@ public class PauseMenu : MonoBehaviour
         AudioManager.instance.StopBGM();
         AudioManager.instance.StopWalkSound();
         AudioManager.instance.StopRainSound();
-        SceneManager.LoadScene("Main Menu"); // Pastikan ada scene bernama "MainMenu"
+        SceneManager.LoadScene("Main Menu");
     }
 }
+
 
