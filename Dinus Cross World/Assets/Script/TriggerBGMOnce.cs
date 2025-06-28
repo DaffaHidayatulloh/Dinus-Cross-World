@@ -4,22 +4,41 @@ using UnityEngine;
 
 public class TriggerBGMOnce : MonoBehaviour
 {
-    public TaskManager taskManager; // Drag dari scene ke Inspector
+    public TaskManager taskManager;
     public string playerTag = "Player";
-    public int requiredTaskIndex = 5; // Task: "Berbicara Dengan Pak Hamadi di Kelas D1.4"
-    public string bgmPlayKey = "BGM_PakHamadiSudahDiputar";
+
+    public int taskIndexForBGM1 = 5;
+    public int taskIndexForBGM3 = 4;
+
+    private bool hasPlayedBGM1 = false;
+    private bool hasPlayedBGM3 = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag(playerTag)) return;
-        if (PlayerPrefs.HasKey(bgmPlayKey)) return;
+        if (taskManager == null || AudioManager.instance == null) return;
 
-        if (taskManager != null && taskManager.GetCurrentTaskIndex() == requiredTaskIndex)
+        int currentTask = taskManager.GetCurrentTaskIndex();
+
+        if (currentTask == taskIndexForBGM3 && !hasPlayedBGM3)
         {
-            AudioManager.instance?.PlayBGM(1);
-            PlayerPrefs.SetInt(bgmPlayKey, 1);
-            PlayerPrefs.Save();
+            if (AudioManager.instance.GetCurrentBGMIndex() != 3)
+            {
+                AudioManager.instance.PlayBGM(3);
+                hasPlayedBGM3 = true;
+            }
+        }
+        else if (currentTask == taskIndexForBGM1 && !hasPlayedBGM1)
+        {
+            if (AudioManager.instance.GetCurrentBGMIndex() != 1)
+            {
+                AudioManager.instance.PlayBGM(1);
+                hasPlayedBGM1 = true;
+            }
         }
     }
 }
+
+
+
 

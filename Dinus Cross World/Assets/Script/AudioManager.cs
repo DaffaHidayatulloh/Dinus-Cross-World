@@ -79,7 +79,13 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(sfxClips[index]);
         }
     }
-
+    public void StopSFX()
+    {
+        if (sfxSource.isPlaying)
+        {
+            sfxSource.Stop();
+        }
+    }
     // Pause / Unpause BGM
     public void ToggleBGM()
     {
@@ -167,6 +173,10 @@ public class AudioManager : MonoBehaviour
     {
         if (bgmSource.clip != null) bgmSource.UnPause();
         if (rainSource.clip != null) rainSource.UnPause();
+    }
+    public int GetCurrentBGMIndex()
+    {
+        return currentBGMIndex;
     }
 
 

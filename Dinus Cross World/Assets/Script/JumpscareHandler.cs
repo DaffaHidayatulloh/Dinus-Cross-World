@@ -64,7 +64,7 @@ public class JumpscareHandler : MonoBehaviour
             jumpscarePanel.SetActive(false);
         }
         AudioManager.instance.PlayRainSound(0);
-        AudioManager.instance.PlayBGM(1);
+        AudioManager.instance.PlayBGM(3);
     }
 }
 

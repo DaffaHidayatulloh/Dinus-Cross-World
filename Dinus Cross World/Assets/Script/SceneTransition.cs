@@ -33,6 +33,7 @@ public class SceneTransition : MonoBehaviour
                                                  !GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().flipX);
             
             AudioManager.instance.StopWalkSound();
+            AudioManager.instance.StopSFX();
 
             SceneManager.LoadScene(sceneName);
         }
