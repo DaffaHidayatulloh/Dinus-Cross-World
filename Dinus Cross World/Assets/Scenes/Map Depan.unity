@@ -1093,10 +1093,12 @@ MonoBehaviour:
   dialogLines:
   - "Ugh\u2026 Di mana aku?"
   - "Terakhir aku ingat\u2026 aku baru pulang dari kampus"
-  - "Kenapa sekarang aku ada di depan kampus\u2026 dan semuanya terasa\u2026 aneh?"
+  - "Kenapa sekarang aku ada di depan kampus\u2026 "
+  - "dan suasananya terasa\u2026 aneh?"
   postDialogLines:
-  - "Ah, itu Pak Satpam\u2026"
-  - Mungkin dia tahu apa yang sedang terjadi.
+  - "Ah, seragam itu\u2026"
+  - Itu pasti Pak Satpam
+  - Mungkin dia tahu apa yang sedang terjadi
   textDisplayDuration: 3
   fadeDuration: 0.5
   mainCamera: {fileID: 829283232}
@@ -1616,7 +1618,6 @@ MonoBehaviour:
   taskManager: {fileID: 2020390210}
   playerTag: Player
   requiredTaskIndex: 2
-  sfxPlayKey: SFX_BawaTahuSudahDiputar
 --- !u!4 &524189186
 Transform:
   m_ObjectHideFlags: 0
@@ -5961,8 +5962,8 @@ MonoBehaviour:
   - Kamu harus mencari 4 keping artefak!
   - Jika disatukan ke 4 keping artefak itu akan berbentuk jam saku
   - 'Kumpulkan semuanya, dan    kamu bisa kembali pulang... '
-  - Ketempat mu berasal!
-  - Kamu berani mempertanyakan kata-kataku?
+  - Ketempat mu berasal
+  - Aku sedang tidak bercanda!
   - 'Aku telah melihat sendiri! '
   - Salah satu penyintas berhasil kabur dari sini menggunakan artefak itu!
   - Karena itu ke 4 kepingan       artefak kami bawa

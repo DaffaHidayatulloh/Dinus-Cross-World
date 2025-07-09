@@ -72,10 +72,12 @@ public class CutSceneIntro : MonoBehaviour
         if (playerMovementScript != null)
             playerMovementScript.enabled = false;
 
+        StartCoroutine(FlipPlayerBriefly());
+
         // Zoom in kedua kamera
         yield return StartCoroutine(ZoomBothCameras(originalMainZoom, zoomSize, zoomDuration));
 
-        StartCoroutine(FlipPlayerBriefly());
+        
 
         // Dialog pertama
         foreach (string line in dialogLines)
@@ -183,24 +185,59 @@ public class CutSceneIntro : MonoBehaviour
     }
     IEnumerator FadeInFromBlack()
     {
+        // Buat player menjadi transparan
+        SetPlayerTransparency(0f);
+
+        // Tunggu sebentar sebelum berkedip
+        yield return new WaitForSeconds(1f);
+
         fadePanel.gameObject.SetActive(true);
         Color color = fadePanel.color;
-        color.a = 1f;
+        color.a = 0f;
         fadePanel.color = color;
 
+        // Fade in (berkedip masuk)
         float t = 0f;
         while (t < fadeInDuration)
         {
             t += Time.deltaTime;
-            color.a = Mathf.Lerp(1f, 0f, t / fadeInDuration);
+            float alpha = Mathf.Lerp(0f, 1f, t / fadeInDuration);
+            color.a = alpha;
             fadePanel.color = color;
             yield return null;
         }
 
-        color.a = 0f;
-        fadePanel.color = color;
+        SetPlayerTransparency(1f);
+
+        // Fade out (berkedip keluar)
+        t = 0f;
+        while (t < fadeInDuration)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, t / fadeInDuration);
+            color.a = alpha;
+            fadePanel.color = color;
+            yield return null;
+        }
+
+        fadePanel.color = new Color(color.r, color.g, color.b, 0f);
         fadePanel.gameObject.SetActive(false);
     }
+    void SetPlayerTransparency(float alpha)
+    {
+        if (playerObject != null)
+        {
+            SpriteRenderer[] renderers = playerObject.GetComponentsInChildren<SpriteRenderer>();
+            foreach (var renderer in renderers)
+            {
+                Color color = renderer.color;
+                color.a = alpha;
+                renderer.color = color;
+            }
+        }
+    }
+
+
 
 }
 

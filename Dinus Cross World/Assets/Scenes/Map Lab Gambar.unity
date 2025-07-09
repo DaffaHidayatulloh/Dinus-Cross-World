@@ -2099,9 +2099,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogText: {fileID: 2746747221122974009}
   idleDialogs:
-  - Hm? Kamu bukan anak sini ya?
-  - Datang lagi aja?
-  - Udah, ke Pak Hamadi sana
+  - Hm? Kamu bukan anak sini, ya?
+  - ...Kenal aku?
+  - Heh, datang lagi aja
+  - Udah, sana ke Pak Hamadi
   - Beliau di kelas D1.4
   - Tapi kelas itu sedang terkunci
   - Tadi sih, aku lihat kunci di depan Aula. Coba cek aja!
