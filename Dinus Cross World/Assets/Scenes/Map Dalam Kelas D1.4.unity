@@ -10426,7 +10426,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: 2f04043c9a732c9459ac9c484da9dc54, type: 3}
+  m_Sprite: {fileID: 1849730265, guid: b7087969a660dfa41ba57785ddcb4e5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10830,6 +10830,7 @@ GameObject:
   - component: {fileID: 7226258985028990687}
   - component: {fileID: 7969482241964669986}
   - component: {fileID: 7969482241964669987}
+  - component: {fileID: 7969482241964669989}
   m_Layer: 0
   m_Name: NPC Pak Hamadi
   m_TagString: Hamadi
@@ -10911,6 +10912,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2494371, y: 4.9260416}
   m_EdgeRadius: 0
+--- !u!95 &7969482241964669989
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969482241964669985}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80674524f7e829d4fbe8cd5de60f354d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8078790624291324846
 Transform:
   m_ObjectHideFlags: 0
@@ -11024,7 +11046,7 @@ Transform:
   m_GameObject: {fileID: 3232333830214942998}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -1.43, z: 0}
+  m_LocalPosition: {x: -0.1, y: -1.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -2445,7 +2445,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: d1ebc76e64093a842801d86608e948cd, type: 3}
+  m_Sprite: {fileID: -549774319, guid: 34fdd398fc558c04389ba27a2de5de10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -2610,7 +2610,7 @@ Transform:
   m_GameObject: {fileID: 5597035638700304520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.54, y: -1.71, z: 0}
+  m_LocalPosition: {x: 3.54, y: -1.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2691,7 +2691,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.4285715, y: 3.4285715}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1.2, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2853,6 +2853,7 @@ GameObject:
   - component: {fileID: 5597035638700304522}
   - component: {fileID: 5151334979738280566}
   - component: {fileID: 5597035638700304521}
+  - component: {fileID: 5597035638700304523}
   m_Layer: 0
   m_Name: NPC Pak Galang
   m_TagString: Galang
@@ -2910,7 +2911,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.4285715, y: 3.4285715}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1.2, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2919,6 +2920,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.30510902, y: 4.9473705}
   m_EdgeRadius: 0
+--- !u!95 &5597035638700304523
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597035638700304520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26d681cc6402d684e9ef045d64dd16b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!222 &5751031893742265797
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3006,7 +3028,7 @@ Transform:
   m_GameObject: {fileID: 1147975778941015487}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -1.42, z: 0}
+  m_LocalPosition: {x: -0.05, y: -1.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

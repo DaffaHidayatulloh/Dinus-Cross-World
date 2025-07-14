@@ -12,7 +12,6 @@ public class KantinTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             taskManager.CompleteTask();
-            Destroy(gameObject);
         }
     }
 }
