@@ -31,7 +31,7 @@ public class DialogManager : MonoBehaviour
     private void Update()
     {
         // Jika tombol Space ditekan
-        if (Input.GetKeyDown(KeyCode.Space) && !isDialogInProgress && !isTyping)
+        if (isDialogActive && !isDialogInProgress && !isTyping && Input.GetKeyDown(KeyCode.Space))
         {
             NextIdleDialog();
         }
