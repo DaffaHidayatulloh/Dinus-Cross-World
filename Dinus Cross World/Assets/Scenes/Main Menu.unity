@@ -1155,8 +1155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.24069214, y: -1443.5253}
-  m_SizeDelta: {x: 679.1248, y: 2667.4792}
+  m_AnchoredPosition: {x: -0.24069214, y: -1648.8568}
+  m_SizeDelta: {x: 679.1248, y: 3078.1423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &917882123
 CanvasGroup:
@@ -2171,8 +2171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creditText: {fileID: 917882122}
   scrollSpeed: 30
-  resetPositionY: -1550
-  endPositionY: 1550
+  resetPositionY: -1700
+  endPositionY: 1600
 --- !u!1 &2045657766
 GameObject:
   m_ObjectHideFlags: 0
